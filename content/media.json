@@ -1,0 +1,36 @@
+{
+  "_comment": "Table des médias. 'remote' = chemin sur l'ancien WordPress (mode démo). 'local' = nom du fichier dans static/img/ après exécution de tools/download-images.sh.",
+  "wordpress_base": "https://orchestre-wissembourg.com/wp-content/uploads/",
+  "files": {
+    "logo":            { "remote": "2023/01/sans-titre-1-1.jpg", "local": "logo-ocw.jpg" },
+    "hero":            { "remote": "2023/02/img_8959.jpg", "local": "orchestre-tutti.jpg" },
+    "affiche_actu":    { "remote": "2026/01/whatsapp-image-2025-12-05-at-22.43.01.jpeg", "local": "affiche-prochain-concert.jpeg" },
+    "affiche_mai25":   { "remote": "2025/05/whatsapp-image-2025-05-21-a-21.20.20_c83eed04.jpg", "local": "affiche-2025-05.jpg" },
+    "affiche_mars25":  { "remote": "2025/05/whatsapp-image-2025-03-31-a-20.38.56_e2f6cf9c.jpg", "local": "affiche-2025-03.jpg" },
+    "affiche_df25":    { "remote": "2025/01/plakat_a3_deutsch-franzosisches-konzert_01.jpg", "local": "plakat-deutsch-franzoesisches-konzert.jpg" },
+    "affiche_oct24":   { "remote": "2024/10/whatsapp-image-2024-10-02-a-13.45.43_c71eb05f.jpg", "local": "affiche-2024-10.jpg" },
+    "affiche_oct24b":  { "remote": "2024/10/scanner-2-oct.-2024-a-15.56_01.jpg", "local": "affiche-2024-10-b.jpg" },
+    "weimar":          { "remote": "2024/08/whatsapp-image-2024-08-30-a-00.34.32_d8a1e042.jpg", "local": "prix-triangle-weimar-2024.jpg" },
+    "marc_bender":     { "remote": "2024/01/marc-bender.jpg", "local": "marc-bender.jpg" },
+    "orchestre_2":     { "remote": "2023/02/image-2.png", "local": "orchestre-visuel-2.png" },
+    "orchestre_3":     { "remote": "2023/02/image.png", "local": "orchestre-visuel-3.png" },
+    "presse_1":        { "remote": "2023/02/camscanner-01-31-2023-10.58_page-0001-1.jpg", "local": "presse-dna-2023-01.jpg" },
+    "presse_bender":   { "remote": "2023/02/marc-bender_page-0001.jpg", "local": "presse-portrait-marc-bender.jpg" },
+    "presse_2022":     { "remote": "2023/02/photo-2022-09-28-23-17-28.jpg", "local": "presse-2022-09.jpg" },
+    "presse_2020":     { "remote": "2023/02/photo-2020-01-19-15-37-59.jpg", "local": "presse-2020-01.jpg" },
+    "pupitre_violons": { "remote": "2023/01/pexels-cottonbro-studio-7095506.jpg", "local": "pupitre-violons.jpg" },
+    "pupitre_altos":   { "remote": "2023/01/pexels-pixabay-462447.jpg", "local": "pupitre-altos.jpg" },
+    "pupitre_celli":   { "remote": "2023/01/pexels-pixabay-462510.jpg", "local": "pupitre-violoncelles.jpg" },
+    "pupitre_basses":  { "remote": "2023/01/bass-1423289.jpg", "local": "pupitre-contrebasses.jpg" },
+    "sponsor_1":       { "remote": "2023/01/image-1.png", "local": "sponsor-1.png" },
+    "sponsor_2":       { "remote": "2023/01/image-2.png", "local": "sponsor-2.png" },
+    "sponsor_3":       { "remote": "2023/01/image-3.png", "local": "sponsor-3.png" },
+    "sponsor_4":       { "remote": "2023/01/image-4.png", "local": "sponsor-4.png" },
+    "sponsor_smsas":   { "remote": "2023/02/smsas_logo_complet_rvb_2018.png", "local": "sponsor-smsas.png" },
+    "sponsor_ville":   { "remote": "2023/01/wissembourg1.webp", "local": "sponsor-ville-wissembourg.webp" },
+    "sponsor_fb":      { "remote": "2023/01/299996335_406686971554488_659623588427408321_n.jpg", "local": "sponsor-7.jpg" }
+  },
+  "documents": {
+    "article_dna_2024": "2024/06/article-dna-2024_05_22-concert-trinational.pdf"
+  }
+}

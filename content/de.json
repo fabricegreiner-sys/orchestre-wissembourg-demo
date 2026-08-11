@@ -1,0 +1,827 @@
+{
+  "lang": "de",
+  "locale": "de_DE",
+  "base_url": "https://orchestre-wissembourg.com",
+  "site_name": "Kammerorchester Wissembourg",
+  "brand_name": "Kammerorchester",
+  "brand_tag": "Wissembourg · Deutsch-französisch",
+  "same_as": [
+    "https://www.facebook.com/OrchestredeWissembourg/",
+    "https://www.linkedin.com/in/marc-bender-30762224/"
+  ],
+  "ribbon": "<div class=\"demo-ribbon\">Demo-Entwurf — Vorschlag für die Neugestaltung der Website des Kammerorchesters Wissembourg. Keine offiziellen Inhalte.</div>",
+  "ui": {
+    "skip": "Zum Hauptinhalt springen",
+    "nav_label": "Hauptnavigation",
+    "menu": "Menü öffnen",
+    "support": "Unterstützen",
+    "support_href": "page:soutenir",
+    "play": "Video abspielen",
+    "video_note": "Das Video wird erst nach Ihrem Klick geladen. Vorher keine YouTube-Cookies."
+  },
+  "nav": [
+    {
+      "slug": "index",
+      "label": "Startseite"
+    },
+    {
+      "slug": "orchestre",
+      "label": "Das Orchester"
+    },
+    {
+      "slug": "agenda",
+      "label": "Termine"
+    },
+    {
+      "slug": "archives",
+      "label": "Archiv"
+    },
+    {
+      "slug": "presse",
+      "label": "Presse"
+    },
+    {
+      "slug": "contact",
+      "label": "Kontakt"
+    }
+  ],
+  "footer": {
+    "address": "8 rue de l'Ordre Teutonique<br>67160 Wissembourg — Frankreich",
+    "blurb": "Eingetragener Verein nach lokalem Recht (Registergericht Haguenau), gegründet im Dezember 2013.",
+    "legal": "© 2026 Kammerorchester Wissembourg — Gemeinnütziger Verein",
+    "credit": "Schlanke Website, ohne Tracking-Cookies und ohne Werbe-Tracker.",
+    "columns": [
+      {
+        "title": "Entdecken",
+        "links": [
+          {
+            "label": "Das deutsch-französische Orchester",
+            "href": "page:orchestre"
+          },
+          {
+            "label": "Künstlerische Leitung",
+            "href": "page:orchestre#direction"
+          },
+          {
+            "label": "Termine & Spielzeiten",
+            "href": "page:agenda"
+          },
+          {
+            "label": "Pressespiegel",
+            "href": "page:presse"
+          }
+        ]
+      },
+      {
+        "title": "Mitmachen",
+        "links": [
+          {
+            "label": "Spenden",
+            "href": "page:soutenir#don"
+          },
+          {
+            "label": "Mitglied werden",
+            "href": "page:soutenir#adhesion"
+          },
+          {
+            "label": "Unternehmens-Sponsoring",
+            "href": "page:soutenir#mecenat"
+          },
+          {
+            "label": "Im Orchester mitspielen",
+            "href": "page:contact"
+          }
+        ]
+      },
+      {
+        "title": "Folgen",
+        "links": [
+          {
+            "label": "Facebook",
+            "href": "https://www.facebook.com/OrchestredeWissembourg/"
+          },
+          {
+            "label": "Newsletter",
+            "href": "page:contact#newsletter"
+          },
+          {
+            "label": "Archiv",
+            "href": "page:archives"
+          }
+        ]
+      }
+    ]
+  },
+  "pages": {
+    "index": {
+      "title": "Kammerorchester Wissembourg — Musik ist unsere Leidenschaft",
+      "description": "Deutsch-französisches Kammerorchester in Wissembourg: rund fünfzig Laien- und Berufsmusikerinnen und -musiker unter der Leitung von Marc Bender. Preisträger des Weimarer-Dreieck-Preises 2024.",
+      "og_image": "hero",
+      "blocks": [
+        {
+          "type": "hero",
+          "image": "hero",
+          "image_alt": "Das Kammerorchester Wissembourg im Konzert",
+          "badges": [
+            "Preis des Weimarer Dreiecks 2024",
+            "Partnerschaft mit der Musikschule Landau",
+            "Gegründet 2013"
+          ],
+          "h1": "Kammerorchester Wissembourg",
+          "tagline": "Musik ist unsere Leidenschaft",
+          "lead": "Rund fünfzig Laien- und Berufsmusikerinnen und -musiker aus Frankreich und Deutschland, aller Altersgruppen und Herkunft, vereint unter der Leitung von <strong>Marc Bender</strong>, um die Kammermusik beiderseits des Rheins lebendig zu halten.",
+          "buttons": [
+            {
+              "label": "Konzerte ansehen",
+              "href": "page:agenda",
+              "style": "primary"
+            },
+            {
+              "label": "Orchester unterstützen",
+              "href": "page:soutenir",
+              "style": "ghost"
+            }
+          ]
+        },
+        {
+          "type": "stats",
+          "ink": true,
+          "items": [
+            {
+              "n": "50",
+              "l": "Musikerinnen und Musiker"
+            },
+            {
+              "n": "2013",
+              "l": "Gründungsjahr"
+            },
+            {
+              "n": "2",
+              "l": "Länder, ein Orchester"
+            },
+            {
+              "n": "14",
+              "l": "Konzertspielzeiten"
+            }
+          ]
+        },
+        {
+          "type": "posterFeatured",
+          "eyebrow": "Auf dem Programm",
+          "h2": "Nächster Termin",
+          "image": "affiche_actu",
+          "image_alt": "Plakat des nächsten Konzerts des Kammerorchesters Wissembourg",
+          "html": "<p class=\"lead\">Begleiten Sie das Orchester beim nächsten Konzert. Eintritt frei, Spende erbeten — die Online-Reservierung wird in Kürze freigeschaltet.</p><p class=\"muted\">Datum und Ort in diesem Entwurf sind noch dem offiziellen Plakat zu entnehmen. In der endgültigen Website wird jedes Konzert als strukturierter Eintrag erfasst (Datum, Uhrzeit, Ort, Programm, Eintritt) und ist dadurch für Google und Kulturkalender auffindbar — mit einem reinen Bild ist das unmöglich.</p>",
+          "buttons": [
+            {
+              "label": "Alle Konzerte",
+              "href": "page:agenda",
+              "style": "dark"
+            },
+            {
+              "label": "Reservieren (noch inaktiv)",
+              "href": "page:soutenir#billetterie",
+              "style": "ghost"
+            }
+          ]
+        },
+        {
+          "type": "split",
+          "alt": true,
+          "eyebrow": "Das Ensemble",
+          "h2": "Ein Orchester ohne Grenzen",
+          "image": "weimar",
+          "image_alt": "Verleihung des Weimarer-Dreieck-Preises 2024 an das Orchester",
+          "image_right": true,
+          "html": "<p class=\"lead\">Der Verein OCW wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet, umgeben von leidenschaftlichen Lehrkräften.</p><p>In Partnerschaft mit der Musikschule Landau seit 2021 vereint das Ensemble heute rund fünfzig Laien- und Berufsmusikerinnen und -musiker aller Altersgruppen und Herkunft unter der Leitung von Marc Bender.</p><p>Konzerte, Tourneen und Partnerschaften mit anderen internationalen Musikschulen: Jedes Projekt bringt eine persönliche, kulturelle und musikalische Bereicherung — und schafft dauerhafte Freundschaften.</p><div class=\"bilingual\"><p class=\"eyebrow\">En français</p><p>La musique, un langage universel, au-delà des frontières ! L'association OCW a été fondée en 2013 à l'initiative d'élèves motivés.</p></div>",
+          "buttons": [
+            {
+              "label": "Das Orchester entdecken",
+              "href": "page:orchestre",
+              "style": "dark"
+            }
+          ]
+        },
+        {
+          "type": "videos",
+          "ink": true,
+          "eyebrow": "Auszeichnung",
+          "h2": "Preis des Weimarer Dreiecks 2024",
+          "html": "<p class=\"lead\" style=\"max-width:70ch\">Der Preis des Weimarer Dreiecks 2024 wurde dem Projekt <em>Youth Europe Music</em> vom Verein Weimarer Dreieck verliehen — in Anwesenheit des Oberbürgermeisters der Stadt und von Ministerpräsident Bodo Ramelow. Eine Anerkennung für das europäische Engagement des Orchesters.</p>",
+          "items": [
+            {
+              "id": "goOJV-_8cI0",
+              "label": "Verleihung des Weimarer-Dreieck-Preises 2024"
+            },
+            {
+              "id": "D73fEIjB0qc",
+              "label": "Youth Europe Music — Konzertausschnitt"
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "eyebrow": "Mitmachen",
+          "h2": "Drei Wege, das Orchester lebendig zu halten",
+          "items": [
+            {
+              "image": "affiche_df25",
+              "title": "Ein Konzert besuchen",
+              "text": "Konzerte in Frankreich und Deutschland während der ganzen Spielzeit — in Kirchen, Sälen und Musikschulen am Oberrhein.",
+              "link": "page:agenda",
+              "link_label": "Zu den Terminen"
+            },
+            {
+              "image": "pupitre_violons",
+              "title": "Im Orchester mitspielen",
+              "text": "Sie spielen ein Streich- oder Blasinstrument, als Laie oder Profi? Das Orchester nimmt in jeder Spielzeit neue Mitglieder auf.",
+              "link": "page:contact",
+              "link_label": "Schreiben Sie uns"
+            },
+            {
+              "image": "pupitre_celli",
+              "title": "Förderer werden",
+              "text": "Privatpersonen und Unternehmen: Ihre Spende finanziert Noten, Transporte und Saalmieten — und ist in Frankreich zu 60 bis 66 % steuerlich absetzbar.",
+              "link": "page:soutenir",
+              "link_label": "Unterstützen"
+            }
+          ]
+        },
+        {
+          "type": "sponsors",
+          "alt": true,
+          "eyebrow": "Sie unterstützen uns",
+          "h2": "Partner und Förderer",
+          "html": "<p class=\"lead\">Wir danken unseren Sponsoren herzlich — ihre Unterstützung macht jede Konzertspielzeit möglich.</p>",
+          "items": [
+            {
+              "image": "sponsor_ville",
+              "name": "Stadt Wissembourg"
+            },
+            {
+              "image": "sponsor_smsas",
+              "name": "SMSAS"
+            },
+            {
+              "image": "sponsor_1",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_2",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_3",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_4",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_fb",
+              "name": "Partner"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Partner werden",
+              "href": "page:soutenir#mecenat",
+              "style": "dark"
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Newsletter",
+          "h2": "Kein Konzert mehr verpassen",
+          "html": "Erhalten Sie zwei- bis viermal jährlich das Spielzeitprogramm und Erinnerungen an bevorstehende Konzerte. Abmeldung mit einem Klick, keine Weitergabe von Daten an Dritte.",
+          "buttons": [
+            {
+              "label": "Newsletter abonnieren",
+              "href": "page:contact#newsletter",
+              "style": "primary"
+            },
+            {
+              "label": "Auf Facebook folgen",
+              "href": "https://www.facebook.com/OrchestredeWissembourg/",
+              "style": "ghost"
+            }
+          ]
+        }
+      ]
+    },
+    "orchestre": {
+      "title": "Das deutsch-französische Orchester — Kammerorchester Wissembourg",
+      "description": "Ein deutsch-französisches Kammerorchester mit rund fünfzig Musikerinnen und Musikern unter der Leitung von Marc Bender, in Partnerschaft mit der Musikschule Landau seit 2021.",
+      "og_image": "hero",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Das Ensemble",
+          "h1": "Das deutsch-französische Orchester",
+          "lead": "Musik, eine universelle Sprache, über Grenzen hinweg. — La musique, un langage universel, au-delà des frontières."
+        },
+        {
+          "type": "prose",
+          "narrow": true,
+          "html": "<p class=\"lead\">Das Ziel einer solchen Struktur ist, gemeinsam und nachhaltig die Freude am Spielen eines Instruments in einer freundlichen Atmosphäre zu teilen und auch die Offenheit gegenüber anderen Ländern — Deutschland, Polen … — zu fördern. Musik ist eine universelle Sprache!</p><p>Das deutsch-französische Orchester bietet daher das ganze Jahr über verschiedene Projekte an: Konzerte, Tourneen und Partnerschaften mit anderen internationalen Musikschulen. Diese Erfahrungen bringen eine persönliche, zwischenmenschliche, kulturelle und musikalische Bereicherung und schaffen so dauerhafte Freundschaften.</p><p>Der Verein OCW (Orchestre de Chambre de Wissembourg) wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet, umgeben von leidenschaftlichen Lehrkräften. Dieses Ensemble besteht — in Partnerschaft mit der Musikschule Landau seit 2021 und unter der Leitung von Marc Bender — aus rund fünfzig Laien- und Berufsmusikerinnen und -musikern aller Altersgruppen und Herkunft.</p><div class=\"bilingual\"><p class=\"eyebrow\">En français</p><p>L'objectif d'une telle structure est de partager ensemble et de façon pérenne le plaisir de jouer d'un instrument dans une ambiance conviviale, et d'encourager une ouverture vers d'autres pays. La musique étant un langage universel !</p></div>"
+        },
+        {
+          "type": "split",
+          "alt": true,
+          "eyebrow": "Künstlerische Leitung",
+          "h2": "Marc Bender",
+          "image": "marc_bender",
+          "image_alt": "Marc Bender, musikalischer Leiter des Kammerorchesters Wissembourg",
+          "html": "<p class=\"lead\">Musikalischer Leiter des Orchesters seit 2010.</p><p>Marc Bender studierte Violine am Conservatoire de Strasbourg in den Klassen von Odile Meyer-Siat und Haïk Davtian und vervollkommnete seine Ausbildung an der Musikhochschule Stuttgart bei Kolja Lessing sowie am Royal College of Music in London bei Levon Chilingirian.</p><p>Er spielte im English Chamber Orchestra, im Heilbronner Kammerorchester, im Tübinger Kammerorchester und im Orchestre Philharmonique de Strasbourg und konzertierte in ganz Europa und in Asien. Heute ist er Geiger bei der Philharmonie Baden-Baden.</p>",
+          "buttons": [
+            {
+              "label": "LinkedIn-Profil",
+              "href": "https://www.linkedin.com/in/marc-bender-30762224/",
+              "style": "ghost"
+            }
+          ],
+          "ratio": "tall"
+        },
+        {
+          "type": "desks",
+          "eyebrow": "Die Musikerinnen und Musiker",
+          "h2": "Die Register",
+          "html": "<p class=\"lead\" style=\"max-width:70ch\">Streicher, Bläser und Schlagwerk: Das Orchester vereint rund fünfzig Instrumentalistinnen und Instrumentalisten aus Frankreich und Deutschland. Die namentliche Liste nach Registern wird derzeit erstellt und hier veröffentlicht.</p>",
+          "items": [
+            {
+              "image": "pupitre_violons",
+              "label": "Violinen I & II"
+            },
+            {
+              "image": "pupitre_altos",
+              "label": "Violen"
+            },
+            {
+              "image": "pupitre_celli",
+              "label": "Violoncelli"
+            },
+            {
+              "image": "pupitre_basses",
+              "label": "Kontrabässe"
+            }
+          ]
+        },
+        {
+          "type": "split",
+          "alt": true,
+          "eyebrow": "Der Verein",
+          "h2": "Ein Verein im Dienst der musikalischen Ausbildung",
+          "image": "orchestre_2",
+          "image_alt": "Partnerschaft mit der Kreismusikschule Südliche Weinstraße Landau",
+          "image_right": true,
+          "html": "<p>Der Verein <strong>Orchestre de Chambre de Wissembourg</strong> wurde im Dezember 2013 gegründet, um die musikalische Ausbildung weiterzuentwickeln. Er ist im Vereinsregister des Amtsgerichts Haguenau eingetragen.</p><h3>Der Vorstand</h3><ul class=\"infolist\"><li><strong>Marc Bender</strong>Musikalische Leitung</li><li><strong>William Hege</strong>Präsident</li><li><strong>Adeline Hirschler</strong>Schatzmeisterin</li><li><strong>Gabrièle Hege</strong>Schriftführerin</li></ul>",
+          "fit": "contain"
+        },
+        {
+          "type": "cta",
+          "h2": "Sie spielen ein Instrument?",
+          "html": "Das Orchester nimmt in jeder Spielzeit neue Mitglieder auf — fortgeschrittene Laien wie Profis, aus Frankreich wie aus Deutschland. Schreiben Sie uns, wir nennen Ihnen die nächsten Probentermine.",
+          "buttons": [
+            {
+              "label": "Im Orchester mitspielen",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
+    "agenda": {
+      "title": "Termine & Spielzeiten — Kammerorchester Wissembourg",
+      "description": "Die kommenden Konzerte des Kammerorchesters Wissembourg und das Archiv der vierzehn Spielzeiten seit 2011.",
+      "og_image": "affiche_actu",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Laufende Spielzeit",
+          "h1": "Konzerttermine",
+          "lead": "Konzerte in Frankreich und Deutschland — in Kirchen, Sälen und Musikschulen am Oberrhein. Eintritt frei oder Spende erbeten, sofern nicht anders angegeben."
+        },
+        {
+          "type": "events",
+          "eyebrow": "Demnächst",
+          "h2": "Kommende Konzerte",
+          "html": "<p class=\"lead\">Beispielhafte Darstellung: In der endgültigen Website ist jedes Konzert ein strukturierter Eintrag — von Google auffindbar, in Kulturkalender exportierbar und per Newsletter erinnerbar.</p>",
+          "items": [
+            {
+              "day": "18",
+              "month": "Okt.",
+              "year": "2026",
+              "title": "Eröffnungskonzert der Spielzeit",
+              "meta": "20.00 Uhr · Kirche Saints-Pierre-et-Paul, Wissembourg · Programm folgt · Eintritt frei, Spende erbeten",
+              "link": "page:soutenir#billetterie",
+              "link_label": "Reservieren"
+            },
+            {
+              "day": "29",
+              "month": "Nov.",
+              "year": "2026",
+              "title": "Deutsch-Französisches Konzert",
+              "meta": "17.00 Uhr · Musikschule Landau · In Partnerschaft mit der Musikschule Landau",
+              "link": "page:soutenir#billetterie",
+              "link_label": "Reservieren"
+            },
+            {
+              "day": "24",
+              "month": "Jan.",
+              "year": "2027",
+              "title": "Neujahrskonzert",
+              "meta": "16.00 Uhr · Salle de la Nef, Wissembourg · Wiener Programm",
+              "link": "page:soutenir#billetterie",
+              "link_label": "Reservieren"
+            }
+          ],
+          "note": "<p><strong>Vom Verein zu ergänzen.</strong> Diese drei Termine sind Gestaltungsbeispiele und zeigen lediglich die Darstellung. Sie sind durch das tatsächliche Spielzeitprogramm zu ersetzen.</p>"
+        }
+      ]
+    },
+    "archives": {
+      "title": "Archiv — Kammerorchester Wissembourg",
+      "description": "Vierzehn Konzertspielzeiten, Plakate, Fotos und Videos des Kammerorchesters Wissembourg seit 2011.",
+      "og_image": "weimar",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Das Gedächtnis des Orchesters",
+          "h1": "Archiv",
+          "lead": "Vierzehn Konzertspielzeiten seit 2011, in Frankreich wie in Deutschland. Plakate, Fotografien und Konzertmitschnitte: alles bleibt erhalten und kommt zurück ins Netz — endlich in einer Form, die man auch ansehen kann."
+        },
+        {
+          "type": "posters",
+          "alt": false,
+          "eyebrow": "Spielzeit 2024-2025",
+          "h2": "Die Plakate der letzten Spielzeit",
+          "html": "<p class=\"lead\">Jede Spielzeit hat ihre eigene Galerie. Die Plakate werden bildschirmfüllend gezeigt und laden schnell — auch auf dem Handy im Mobilfunknetz.</p>",
+          "items": [
+            {
+              "image": "affiche_mai25",
+              "caption": "Konzert im Mai 2025"
+            },
+            {
+              "image": "affiche_mars25",
+              "caption": "Frühjahrskonzert 2025"
+            },
+            {
+              "image": "affiche_df25",
+              "caption": "Deutsch-Französisches Konzert — Januar 2025"
+            },
+            {
+              "image": "affiche_oct24",
+              "caption": "Konzert im Oktober 2024"
+            },
+            {
+              "image": "affiche_oct24b",
+              "caption": "Herbstkonzert 2024"
+            }
+          ]
+        },
+        {
+          "type": "videos",
+          "ink": true,
+          "eyebrow": "Mitschnitte",
+          "h2": "Die Konzerte im Video",
+          "html": "<p class=\"lead\" style=\"max-width:70ch\">Die Videos bleiben auf dem Kanal des Orchesters und werden hier eingebunden. Vor Ihrem Klick wird nichts geladen: beim Öffnen der Seite entstehen keine Cookies von Dritten.</p>",
+          "items": [
+            {
+              "id": "goOJV-_8cI0",
+              "label": "Verleihung des Weimarer-Dreieck-Preises 2024"
+            },
+            {
+              "id": "D73fEIjB0qc",
+              "label": "Youth Europe Music — Konzertausschnitt"
+            }
+          ]
+        },
+        {
+          "type": "seasons",
+          "eyebrow": "Alle Spielzeiten",
+          "h2": "2011 bis heute",
+          "html": "<p class=\"lead\">Die ausführlichen Seiten jeder Spielzeit, übernommen von der alten Website. Sie werden im Zuge der Migration hier eingegliedert.</p>",
+          "items": [
+            {
+              "label": "Spielzeit 2024-2025",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2024-2025/"
+            },
+            {
+              "label": "Spielzeit 2023-2024",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2023-2024/"
+            },
+            {
+              "label": "Spielzeit 2022-2023",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2022-2023/"
+            },
+            {
+              "label": "Spielzeit 2021-2022",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2021-2022/"
+            },
+            {
+              "label": "Spielzeit 2020-2021",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2020-2021/"
+            },
+            {
+              "label": "Spielzeit 2019-2020",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2019-2020/"
+            },
+            {
+              "label": "Spielzeit 2018-2019",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2018-2019/"
+            },
+            {
+              "label": "Spielzeit 2017-2018",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2017-2018/"
+            },
+            {
+              "label": "Spielzeit 2016-2017",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2016-2017/"
+            },
+            {
+              "label": "Spielzeit 2015-2016",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2015-2016/"
+            },
+            {
+              "label": "Spielzeit 2014-2015",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2014-2015/"
+            },
+            {
+              "label": "Spielzeit 2013-2014",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2013-2014/"
+            },
+            {
+              "label": "Spielzeit 2012-2013",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2012-2013/"
+            },
+            {
+              "label": "Spielzeit 2011-2012",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2011-2012/"
+            }
+          ],
+          "alt": true
+        },
+        {
+          "type": "prose",
+          "narrow": true,
+          "eyebrow": "Der Fotobestand",
+          "h2": "Dreizehn Jahre Bilder, dauerhaft gesichert",
+          "html": "<p class=\"lead\">Die seit 2013 gewachsene Mediathek umfasst fast 3 GB: Konzertfotos, Plakate, Pressescans, Programmhefte.</p><p>Dieser Bestand wird vollständig übernommen und gesichert. Er lebt künftig an zwei Orten, jeder mit seiner Aufgabe:</p><div class=\"note\"><p><strong>Auf der Website</strong> — eine Auswahl je Spielzeit, in bildschirmgerechter Auflösung. Die Bilder erscheinen in Sekundenbruchteilen, während die Originaldateien mit bis zu 5 000 Pixeln Breite bisher jeden Seitenaufruf ausbremsten.</p></div><div class=\"note\" style=\"margin-top:16px\"><p><strong>Außerhalb der Website</strong> — sämtliche Originale in hoher Auflösung, auf dem Speicher des Vereins und auf einer physischen Sicherung. Eine Website dient dem Zeigen, nicht dem Archivieren: die Originale bleiben für Presse, Plakate und Abzüge verfügbar.</p></div><p class=\"muted\" style=\"margin-top:20px\">Diese Sicherung muss erfolgen, solange der alte Hosting-Vertrag läuft. Nach der Kündigung sind die Dateien nicht mehr herunterladbar.</p>"
+        }
+      ]
+    },
+    "presse": {
+      "title": "Pressespiegel — Kammerorchester Wissembourg",
+      "description": "Presseartikel über das Kammerorchester Wissembourg und seinen musikalischen Leiter Marc Bender.",
+      "og_image": "presse_bender",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Pressebereich",
+          "h1": "Über uns in der Presse",
+          "lead": "Artikel aus der französischen und deutschen Regionalpresse. Für Journalistinnen und Journalisten: hochauflösende Bilder und Pressemappe auf Anfrage."
+        },
+        {
+          "type": "clips",
+          "eyebrow": "Auswahl",
+          "h2": "Artikel",
+          "items": [
+            {
+              "source": "Dernières Nouvelles d'Alsace · 22. Mai 2024",
+              "title": "Ein trinationales Konzert in Wissembourg",
+              "text": "Das Orchester vereint französische, deutsche und polnische Musikerinnen und Musiker zu einem Konzert im Zeichen der europäischen Freundschaft.",
+              "image": "presse_1",
+              "link": "https://orchestre-wissembourg.com/wp-content/uploads/2024/06/article-dna-2024_05_22-concert-trinational.pdf",
+              "link_label": "Artikel lesen (PDF)"
+            },
+            {
+              "source": "Porträt",
+              "title": "Marc Bender — die Geige als Brücke",
+              "text": "Porträt des musikalischen Leiters, Geiger bei der Philharmonie Baden-Baden.",
+              "image": "presse_bender"
+            },
+            {
+              "source": "Regionalpresse · September 2022",
+              "title": "Das Orchester startet in die Saison",
+              "text": "Rückblick auf das Saisoneröffnungskonzert des deutsch-französischen Ensembles.",
+              "image": "presse_2022"
+            },
+            {
+              "source": "Regionalpresse · Januar 2020",
+              "title": "Neujahrskonzert",
+              "text": "Das Orchester eröffnet das Jahr vor vollem Haus.",
+              "image": "presse_2020"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Pressekontakt",
+          "h2": "Pressemappe",
+          "html": "<div class=\"note\"><p>Lizenzfreie Fotos in hoher Auflösung, Biografie des Dirigenten, Vereinsgeschichte und Plakatmotive: Nehmen Sie Kontakt auf, wir senden Ihnen alles innerhalb von 48 Stunden zu.</p></div>",
+          "buttons": [
+            {
+              "label": "Pressemappe anfordern",
+              "href": "page:contact",
+              "style": "dark"
+            }
+          ]
+        }
+      ]
+    },
+    "soutenir": {
+      "title": "Unterstützen — Kammerorchester Wissembourg",
+      "description": "Spende, Mitgliedschaft, Unternehmens-Sponsoring: drei Wege, das Kammerorchester Wissembourg zu unterstützen.",
+      "og_image": "weimar",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Förderung & Spenden",
+          "h1": "Das Orchester am Leben halten",
+          "lead": "Noten, Saalmieten, Instrumententransport, grenzüberschreitende Fahrten: Jede Spielzeit kostet Geld. Das Orchester ist ein rein ehrenamtlicher Verein — Ihre Unterstützung fließt unmittelbar in die Musik."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Spenden",
+              "text": "Einmalig oder monatlich, ab 10 €. Automatische Spendenquittung: Eine Spende von 100 € kostet in Frankreich nach 66 % Steuerermäßigung real nur 34 €.",
+              "link": "https://www.helloasso.com/",
+              "link_label": "Online spenden"
+            },
+            {
+              "title": "Mitglied werden",
+              "text": "Werden Sie Mitglied, erhalten Sie das Programm vorab und nehmen Sie an der Mitgliederversammlung teil. Jahresbeitrag ab 20 €.",
+              "link": "https://www.helloasso.com/",
+              "link_label": "Beitreten"
+            },
+            {
+              "title": "Unternehmens-Sponsoring",
+              "text": "Ihr Logo auf Plakaten, im Programmheft und auf dieser Website, mit Link zu Ihrem Unternehmen. Für französische Unternehmen: 60 % Steuerermäßigung.",
+              "link": "page:contact",
+              "link_label": "Kontakt aufnehmen"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "So funktioniert es",
+          "h2": "Online-Zahlung, für den Verein kostenlos",
+          "html": "<p class=\"lead\">Spenden, Mitgliedsbeiträge und Kartenverkauf laufen künftig über <strong>HelloAsso</strong>, die führende Plattform französischer Vereine: 0 % Provision, automatische Spendenquittung, Hosting in Frankreich und DSGVO-Konformität.</p><div class=\"note\"><p><strong>Noch zu aktivieren.</strong> Die Schaltflächen oben verweisen derzeit beispielhaft auf HelloAsso. Sobald das Vereinskonto eingerichtet ist (kostenlos, rund dreißig Minuten), führen sie zu den echten Formularen für Spende, Mitgliedschaft und Kartenreservierung.</p></div><h3 id=\"billetterie\">Kartenreservierung</h3><p>Die Online-Reservierung erlaubt es, im Voraus einen Platz zu sichern, die erwartete Auslastung abzuschätzen und am Vortag automatisch zu erinnern. Sie ist mit freiem Eintritt vereinbar: Man reserviert kostenlos, die Spende erfolgt vor Ort.</p><h3 id=\"adhesion\">Mitgliedschaft</h3><p>Die Mitgliedschaft trägt den laufenden Betrieb des Vereins und gibt Stimmrecht in der jährlichen Mitgliederversammlung.</p><h3 id=\"mecenat\">Unternehmens-Sponsoring</h3><p>Das Mäzenatentum ist in Frankreich durch das Gesetz Aillagon vom 1. August 2003 geregelt: 60 % des Spendenbetrags sind von der Körperschaftsteuer absetzbar, begrenzt auf 0,5 ‰ des Nettoumsatzes, mit Übertragsmöglichkeit auf fünf Geschäftsjahre. Als Gegenleistung erhält das Unternehmen Sichtbarkeit (Logo, Nennung, Einladungen) bis zu 25 % des Spendenbetrags.</p>"
+        },
+        {
+          "type": "sponsors",
+          "eyebrow": "Sie unterstützen uns bereits",
+          "h2": "Unsere Partner",
+          "html": "<p class=\"lead\">Wir danken unseren Sponsoren herzlich für ihre treue Unterstützung.</p>",
+          "items": [
+            {
+              "image": "sponsor_ville",
+              "name": "Stadt Wissembourg"
+            },
+            {
+              "image": "sponsor_smsas",
+              "name": "SMSAS"
+            },
+            {
+              "image": "sponsor_1",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_2",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_3",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_4",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_fb",
+              "name": "Partner"
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "h2": "Fragen zum Sponsoring?",
+          "html": "William Hege, Präsident des Vereins, antwortet Unternehmen und Stiftungen, die sich an der Seite des Orchesters engagieren möchten, persönlich.",
+          "buttons": [
+            {
+              "label": "Kontakt aufnehmen",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Kontakt — Kammerorchester Wissembourg",
+      "description": "Kontakt zum Kammerorchester Wissembourg: Konzertprojekt, Bewerbung als Musikerin oder Musiker, Sponsoring, Presse.",
+      "og_image": "hero",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Kontakt",
+          "h1": "Schreiben Sie uns",
+          "lead": "Ein Konzertprojekt, eine Frage, eine Anregung? Lust, im Orchester mitzuspielen? Der Wunsch, Förderer zu werden? Wir beantworten jede Nachricht."
+        },
+        {
+          "type": "contact",
+          "eyebrow": "Kontaktdaten",
+          "h2": "Kammerorchester Wissembourg",
+          "html": "",
+          "info": [
+            {
+              "label": "Anschrift",
+              "value": "8 rue de l'Ordre Teutonique<br>67160 Wissembourg — Frankreich"
+            },
+            {
+              "label": "Präsident",
+              "value": "William Hege"
+            },
+            {
+              "label": "Musikalische Leitung",
+              "value": "Marc Bender"
+            },
+            {
+              "label": "Schatzmeisterin",
+              "value": "Adeline Hirschler"
+            },
+            {
+              "label": "Schriftführerin",
+              "value": "Gabrièle Hege"
+            },
+            {
+              "label": "Soziale Netzwerke",
+              "value": "<a href=\"https://www.facebook.com/OrchestredeWissembourg/\" target=\"_blank\" rel=\"noopener\">Facebook — Orchestre de Wissembourg</a>"
+            },
+            {
+              "label": "Rechtsform",
+              "value": "Eingetragener Verein nach lokalem Recht (Registergericht Haguenau), gegründet im Dezember 2013."
+            }
+          ],
+          "form": {
+            "title": "Kontaktformular",
+            "action": "https://formspree.io/f/VOTRE-IDENTIFIANT",
+            "submit": "Nachricht senden",
+            "consent": "Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. Sie werden weder weitergegeben noch verkauft und nach Abschluss des Austauschs gelöscht.",
+            "note": "Demo-Formular: Die Zieladresse muss noch konfiguriert werden.",
+            "fields": [
+              {
+                "id": "nom",
+                "name": "nom",
+                "label": "Vor- und Nachname",
+                "type": "text"
+              },
+              {
+                "id": "email",
+                "name": "email",
+                "label": "E-Mail-Adresse",
+                "type": "email"
+              },
+              {
+                "id": "sujet",
+                "name": "sujet",
+                "label": "Betreff",
+                "type": "text"
+              },
+              {
+                "id": "message",
+                "name": "message",
+                "label": "Ihre Nachricht",
+                "type": "textarea"
+              }
+            ]
+          }
+        },
+        {
+          "type": "prose",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Newsletter",
+          "h2": "Das Programm erhalten",
+          "html": "<div id=\"newsletter\" class=\"note\"><p>Zwei bis vier Aussendungen pro Jahr: Spielzeitprogramm, Konzerterinnerungen, Neuigkeiten aus dem Orchester. Abmeldung mit einem Klick, keine Weitergabe an Dritte.</p><p class=\"muted\">In der endgültigen Website ist dieser Bereich an einen DSGVO-konformen Versanddienst angebunden (Brevo, europäisches Hosting, kostenloses Kontingent bis 300 Nachrichten pro Tag).</p></div>",
+          "buttons": [
+            {
+              "label": "Newsletter abonnieren",
+              "href": "https://www.brevo.com/",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
