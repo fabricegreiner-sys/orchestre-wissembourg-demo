@@ -105,8 +105,8 @@
             "href": "https://www.facebook.com/OrchestredeWissembourg/"
           },
           {
-            "label": "Newsletter",
-            "href": "page:contact#newsletter"
+            "label": "Recevoir le programme",
+            "href": "mailto:contact@orchestre-wissembourg.com?subject=Inscription à la lettre d'information"
           },
           {
             "label": "Archives",
@@ -302,8 +302,8 @@
           "html": "Recevez le programme de la saison et le rappel des concerts, deux à quatre fois par an. Désinscription en un clic, aucune donnée transmise à des tiers.",
           "buttons": [
             {
-              "label": "S'inscrire à la newsletter",
-              "href": "page:contact#newsletter",
+              "label": "Recevoir le programme par mail",
+              "href": "mailto:contact@orchestre-wissembourg.com?subject=Inscription à la lettre d'information",
               "style": "primary"
             },
             {
@@ -856,6 +856,10 @@
           "html": "",
           "info": [
             {
+              "label": "E-mail",
+              "value": "<a href=\"mailto:contact@orchestre-wissembourg.com\">contact@orchestre-wissembourg.com</a>"
+            },
+            {
               "label": "Adresse",
               "value": "8 rue de l'Ordre Teutonique<br>67160 Wissembourg — France"
             },
@@ -884,54 +888,34 @@
               "value": "Association loi locale inscrite au registre du Tribunal d'instance de Haguenau, fondée en décembre 2013."
             }
           ],
-          "form": {
-            "title": "Formulaire de contact",
-            "action": "https://formspree.io/f/VOTRE-IDENTIFIANT",
-            "submit": "Envoyer le message",
-            "consent": "J'accepte que mes données soient utilisées pour traiter ma demande. Elles ne sont ni cédées ni revendues, et sont supprimées une fois l'échange terminé.",
-            "note": "Formulaire de démonstration : l'adresse de destination reste à configurer.",
-            "fields": [
+          "mailto": {
+            "address": "contact@orchestre-wissembourg.com",
+            "title": "Nous écrire",
+            "html": "Une seule adresse pour toutes les demandes. Votre message arrive directement dans la boîte du bureau.",
+            "hint": "Pas de formulaire, pas de service tiers, aucune donnée enregistrée sur le site.",
+            "subjects": [
               {
-                "id": "nom",
-                "name": "nom",
-                "label": "Nom et prénom",
-                "type": "text"
+                "label": "Proposer un concert",
+                "subject": "Proposition de concert"
               },
               {
-                "id": "email",
-                "name": "email",
-                "label": "Adresse e-mail",
-                "type": "email"
+                "label": "Rejoindre l'orchestre",
+                "subject": "Candidature musicien"
               },
               {
-                "id": "sujet",
-                "name": "sujet",
-                "label": "Sujet",
-                "type": "text"
+                "label": "Devenir mécène",
+                "subject": "Mécénat et partenariat"
               },
               {
-                "id": "message",
-                "name": "message",
-                "label": "Votre message",
-                "type": "textarea"
+                "label": "Demande presse",
+                "subject": "Demande presse"
+              },
+              {
+                "label": "Recevoir le programme",
+                "subject": "Inscription à la lettre d'information"
               }
             ]
           }
-        },
-        {
-          "type": "prose",
-          "alt": true,
-          "narrow": true,
-          "eyebrow": "Newsletter",
-          "h2": "Recevoir le programme",
-          "html": "<div id=\"newsletter\" class=\"note\"><p>Deux à quatre envois par an : programme de la saison, rappel des concerts, nouvelles de l'orchestre. Désinscription en un clic, aucune donnée transmise à des tiers.</p><p class=\"muted\">Dans le site définitif, ce bloc est relié à un service d'envoi conforme au RGPD (Brevo, hébergement européen, offre gratuite jusqu'à 300 messages par jour).</p></div>",
-          "buttons": [
-            {
-              "label": "S'inscrire à la newsletter",
-              "href": "https://www.brevo.com/",
-              "style": "primary"
-            }
-          ]
         }
       ]
     }

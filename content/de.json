@@ -105,8 +105,8 @@
             "href": "https://www.facebook.com/OrchestredeWissembourg/"
           },
           {
-            "label": "Newsletter",
-            "href": "page:contact#newsletter"
+            "label": "Programm erhalten",
+            "href": "mailto:contact@orchestre-wissembourg.com?subject=Anmeldung zum Newsletter"
           },
           {
             "label": "Archiv",
@@ -302,8 +302,8 @@
           "html": "Erhalten Sie zwei- bis viermal jährlich das Spielzeitprogramm und Erinnerungen an bevorstehende Konzerte. Abmeldung mit einem Klick, keine Weitergabe von Daten an Dritte.",
           "buttons": [
             {
-              "label": "Newsletter abonnieren",
-              "href": "page:contact#newsletter",
+              "label": "Programm per E-Mail erhalten",
+              "href": "mailto:contact@orchestre-wissembourg.com?subject=Anmeldung zum Newsletter",
               "style": "primary"
             },
             {
@@ -856,6 +856,10 @@
           "html": "",
           "info": [
             {
+              "label": "E-Mail",
+              "value": "<a href=\"mailto:contact@orchestre-wissembourg.com\">contact@orchestre-wissembourg.com</a>"
+            },
+            {
               "label": "Anschrift",
               "value": "8 rue de l'Ordre Teutonique<br>67160 Wissembourg — Frankreich"
             },
@@ -884,54 +888,34 @@
               "value": "Eingetragener Verein nach lokalem Recht (Registergericht Haguenau), gegründet im Dezember 2013."
             }
           ],
-          "form": {
-            "title": "Kontaktformular",
-            "action": "https://formspree.io/f/VOTRE-IDENTIFIANT",
-            "submit": "Nachricht senden",
-            "consent": "Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. Sie werden weder weitergegeben noch verkauft und nach Abschluss des Austauschs gelöscht.",
-            "note": "Demo-Formular: Die Zieladresse muss noch konfiguriert werden.",
-            "fields": [
+          "mailto": {
+            "address": "contact@orchestre-wissembourg.com",
+            "title": "Schreiben Sie uns",
+            "html": "Eine einzige Adresse für alle Anfragen. Ihre Nachricht landet direkt im Postfach des Vorstands.",
+            "hint": "Kein Formular, kein Drittanbieter, keine auf der Website gespeicherten Daten.",
+            "subjects": [
               {
-                "id": "nom",
-                "name": "nom",
-                "label": "Vor- und Nachname",
-                "type": "text"
+                "label": "Ein Konzert vorschlagen",
+                "subject": "Konzertvorschlag"
               },
               {
-                "id": "email",
-                "name": "email",
-                "label": "E-Mail-Adresse",
-                "type": "email"
+                "label": "Im Orchester mitspielen",
+                "subject": "Bewerbung Musiker/in"
               },
               {
-                "id": "sujet",
-                "name": "sujet",
-                "label": "Betreff",
-                "type": "text"
+                "label": "Förderer werden",
+                "subject": "Sponsoring und Partnerschaft"
               },
               {
-                "id": "message",
-                "name": "message",
-                "label": "Ihre Nachricht",
-                "type": "textarea"
+                "label": "Presseanfrage",
+                "subject": "Presseanfrage"
+              },
+              {
+                "label": "Programm erhalten",
+                "subject": "Anmeldung zum Newsletter"
               }
             ]
           }
-        },
-        {
-          "type": "prose",
-          "alt": true,
-          "narrow": true,
-          "eyebrow": "Newsletter",
-          "h2": "Das Programm erhalten",
-          "html": "<div id=\"newsletter\" class=\"note\"><p>Zwei bis vier Aussendungen pro Jahr: Spielzeitprogramm, Konzerterinnerungen, Neuigkeiten aus dem Orchester. Abmeldung mit einem Klick, keine Weitergabe an Dritte.</p><p class=\"muted\">In der endgültigen Website ist dieser Bereich an einen DSGVO-konformen Versanddienst angebunden (Brevo, europäisches Hosting, kostenloses Kontingent bis 300 Nachrichten pro Tag).</p></div>",
-          "buttons": [
-            {
-              "label": "Newsletter abonnieren",
-              "href": "https://www.brevo.com/",
-              "style": "primary"
-            }
-          ]
         }
       ]
     }

@@ -286,6 +286,26 @@ def b_seasons(b: dict, lang: str, ctx: dict) -> str:
 
 def b_contact(b: dict, lang: str, ctx: dict) -> str:
     info = "".join(f'<li><strong>{e(i["label"])}</strong>{i["value"]}</li>' for i in b["info"])
+
+    # Variante sans formulaire : lien mailto direct, aucun service tiers, aucune donnée traitée.
+    if not b.get("form"):
+        m = b["mailto"]
+        subjects = "".join(
+            f'<li><a href="mailto:{e(m["address"])}?subject={e(s["subject"])}">{e(s["label"])}</a></li>'
+            for s in m.get("subjects", [])
+        )
+        return f"""
+<section class="section"><div class="wrap"><div class="split">
+  <div>{eyebrow(b)}{heading(b)}{b.get("html", "")}<ul class="infolist">{info}</ul></div>
+  <div>
+    <h3>{e(m["title"])}</h3>
+    <p class="lead">{m.get("html", "")}</p>
+    <p><a class="btn btn--primary" href="mailto:{e(m["address"])}">{e(m["address"])}</a></p>
+    {f'<p class="muted">{e(m["hint"])}</p>' if m.get("hint") else ''}
+    {f'<ul class="seasons" style="margin-top:18px">{subjects}</ul>' if subjects else ''}
+  </div>
+</div></div></section>"""
+
     f = b["form"]
     fields = "".join(
         f'<div class="field"><label for="{e(x["id"])}">{e(x["label"])}</label>'
