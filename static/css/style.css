@@ -114,10 +114,10 @@ h3 { font-size: 1.2rem; }
 .nav a:hover { background: var(--paper-alt); color: var(--ink); }
 .nav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--gold); border-radius: 0; }
 
-.header-actions { display: flex; align-items: center; gap: 10px; }
+.header-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
 
 .lang {
-  display: inline-flex; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+  display: inline-flex; flex: 0 0 auto; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
   font-size: .76rem; font-weight: 700; letter-spacing: .06em;
 }
 .lang a { padding: 6px 10px; text-decoration: none; color: var(--muted); background: var(--white); }
@@ -134,7 +134,7 @@ h3 { font-size: 1.2rem; }
 .burger span::before { position: absolute; top: -6px; }
 .burger span::after  { position: absolute; top: 6px; }
 
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
   .burger { display: inline-flex; }
   .nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0;

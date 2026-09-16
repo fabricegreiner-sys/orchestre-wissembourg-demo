@@ -22,9 +22,15 @@ command -v gh      >/dev/null || { echo "${RED}gh introuvable — lance : brew i
 gh auth status >/dev/null 2>&1 || gh auth login -h github.com -p https -w || fin 1
 OWNER=$(gh api user --jq .login) || fin 1
 
-# URL publique réelle : dépend du domaine personnalisé du site utilisateur.
-PAGES_HOST=$(gh api "repos/$OWNER/$OWNER.github.io/pages" --jq '.cname // empty' 2>/dev/null)
-[ -n "$PAGES_HOST" ] && BASE="https://$PAGES_HOST/$REPO" || BASE="https://$OWNER.github.io/$REPO"
+# URL publique réelle. Le fichier .baseurl prime : c'est lui qui porte l'adresse
+# de l'hébergement de production (Cloudflare Workers), et il détermine les URL
+# canoniques, les hreflang et le sitemap.
+if [ -s .baseurl ]; then
+  BASE=$(tr -d '[:space:]' < .baseurl)
+else
+  PAGES_HOST=$(gh api "repos/$OWNER/$OWNER.github.io/pages" --jq '.cname // empty' 2>/dev/null)
+  [ -n "$PAGES_HOST" ] && BASE="https://$PAGES_HOST/$REPO" || BASE="https://$OWNER.github.io/$REPO"
+fi
 
 echo "${BOLD}[1/3] Reconstruction${RESET}"
 IMGFLAG=""
@@ -49,5 +55,5 @@ echo
 echo "${GREEN}${BOLD}Publié.${RESET}  $BASE/"
 echo "Compter une à deux minutes avant que la mise à jour soit visible."
 read -r -p "Ouvrir le site ? [O/n] " rep
-[[ "$rep" =~ ^[nN]$ ]] || { sleep 60; open "$BASE/fr/direction.html"; }
+[[ "$rep" =~ ^[nN]$ ]] || { sleep 60; open "$BASE/fr/index.html"; }
 fin 0

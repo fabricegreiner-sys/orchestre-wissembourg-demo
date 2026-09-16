@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.fabrice-greiner.com/orchestre-wissembourg-demo/sitemap.xml
+Sitemap: https://orchestre-wissembourg-demo.fabricegreiner.workers.dev/sitemap.xml
