@@ -310,6 +310,26 @@ def b_contact(b: dict, lang: str, ctx: dict) -> str:
 </div></div></section>"""
 
 
+def b_timeline(b: dict, lang: str, ctx: dict) -> str:
+    items = "".join(
+        f'<li class="timeline__item">'
+        f'<span class="timeline__when">{e(i["when"])}</span>'
+        f'<h3 class="timeline__what">{e(i["what"])}</h3>'
+        f'<p>{i.get("text", "")}</p></li>'
+        for i in b["items"]
+    )
+    return (section_open(b) + eyebrow(b) + heading(b) + b.get("html", "")
+            + f'<ul class="timeline">{items}</ul>'
+            + buttons(b.get("buttons", []), lang) + SECTION_CLOSE)
+
+
+def b_quote(b: dict, lang: str, ctx: dict) -> str:
+    cite = f'<figcaption>{e(b["cite"])}</figcaption>' if b.get("cite") else ""
+    return (section_open(b) + eyebrow(b)
+            + f'<figure class="quote"><p>{b["text"]}</p>{cite}</figure>'
+            + SECTION_CLOSE)
+
+
 def b_cta(b: dict, lang: str, ctx: dict) -> str:
     return (f'<section class="section"><div class="wrap"><div class="cta-band">'
             f'{eyebrow(b)}<h2>{e(b["h2"])}</h2><p>{b.get("html", "")}</p>'
@@ -321,7 +341,7 @@ BLOCKS = {
     "stats": b_stats, "posterFeatured": b_poster_featured, "posters": b_posters,
     "events": b_events, "videos": b_videos, "cards": b_cards, "desks": b_desks,
     "clips": b_clips, "sponsors": b_sponsors, "seasons": b_seasons,
-    "contact": b_contact, "cta": b_cta,
+    "contact": b_contact, "cta": b_cta, "timeline": b_timeline, "quote": b_quote,
 }
 
 

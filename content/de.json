@@ -25,6 +25,10 @@
       "label": "Startseite"
     },
     {
+      "slug": "direction",
+      "label": "Künstlerische Leitung"
+    },
+    {
       "slug": "orchestre",
       "label": "Das Orchester"
     },
@@ -60,7 +64,7 @@
           },
           {
             "label": "Künstlerische Leitung",
-            "href": "page:orchestre#direction"
+            "href": "page:direction"
           },
           {
             "label": "Termine & Spielzeiten",
@@ -311,6 +315,114 @@
         }
       ]
     },
+    "direction": {
+      "title": "Marc Bender, künstlerische Leitung — Kammerorchester Wissembourg",
+      "description": "Marc Bender leitet das Kammerorchester Wissembourg seit 2010. Geiger bei der Philharmonie Baden-Baden, ausgebildet in Straßburg, Stuttgart und London.",
+      "og_image": "marc_bender",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Künstlerische Leitung",
+          "h1": "Marc Bender",
+          "lead": "Geiger und Dirigent. Er leitet das Kammerorchester Wissembourg seit 2010 und trägt das deutsch-französische Projekt des Ensembles."
+        },
+        {
+          "type": "split",
+          "image": "marc_bender",
+          "ratio": "tall",
+          "image_alt": "Marc Bender, künstlerische leitung",
+          "eyebrow": "Porträt",
+          "h2": "Die Geige als Brücke",
+          "html": "<p class=\"lead\">Marc Bender studierte Violine am Conservatoire de Strasbourg, in den Klassen von Odile Meyer-Siat und Haïk Davtian.</p><p>Anschließend vervollkommnete er seine Ausbildung an der Musikhochschule Stuttgart bei Kolja Lessing und am Royal College of Music in London bei Levon Chilingirian.</p><p>Er spielte im English Chamber Orchestra, im Heilbronner Kammerorchester, im Tübinger Kammerorchester und im Orchestre Philharmonique de Strasbourg und konzertierte in ganz Europa und in Asien. Heute ist er Geiger bei der Philharmonie Baden-Baden.</p><p>Seit 2010 hat er die musikalische Leitung des Kammerorchesters Wissembourg inne und hat dessen Entwicklung zum deutsch-französischen Ensemble an der Seite der Musikschule Landau begleitet.</p>",
+          "buttons": [
+            {
+              "label": "LinkedIn-Profil",
+              "href": "https://www.linkedin.com/in/marc-bender-30762224/",
+              "style": "ghost"
+            }
+          ]
+        },
+        {
+          "type": "stats",
+          "ink": true,
+          "items": [
+            {
+              "n": "2010",
+              "l": "an der Spitze des Orchesters"
+            },
+            {
+              "n": "3",
+              "l": "Hochschulen und Akademien"
+            },
+            {
+              "n": "4",
+              "l": "Berufsorchester"
+            },
+            {
+              "n": "2",
+              "l": "Kontinente auf Tournee"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Werdegang",
+          "h2": "Ausbildung und Laufbahn",
+          "items": [
+            {
+              "when": "Ausbildung",
+              "what": "Conservatoire de Strasbourg",
+              "text": "Violine, in den Klassen von Odile Meyer-Siat und Haïk Davtian."
+            },
+            {
+              "when": "Weiterbildung",
+              "what": "Musikhochschule Stuttgart",
+              "text": "Bei Kolja Lessing."
+            },
+            {
+              "when": "Weiterbildung",
+              "what": "Royal College of Music, London",
+              "text": "Bei Levon Chilingirian."
+            },
+            {
+              "when": "Orchesterlaufbahn",
+              "what": "English Chamber Orchestra, Heilbronn, Tübingen, Straßburg",
+              "text": "Geiger im Heilbronner Kammerorchester, im Tübinger Kammerorchester und im Orchestre Philharmonique de Strasbourg. Konzerte in ganz Europa und in Asien."
+            },
+            {
+              "when": "Seit 2010",
+              "what": "Leitung des Kammerorchesters Wissembourg",
+              "text": "Musikalische Leitung des Ensembles und Ausbau des deutsch-französischen Projekts mit der Musikschule Landau."
+            },
+            {
+              "when": "Heute",
+              "what": "Philharmonie Baden-Baden",
+              "text": "Geiger im Orchester."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "ink": true,
+          "text": "Musik, eine universelle Sprache, über Grenzen hinweg.",
+          "cite": "Leitspruch des Kammerorchesters Wissembourg"
+        },
+        {
+          "type": "cta",
+          "h2": "Mit dem Orchester arbeiten",
+          "html": "Konzertprojekt, Einladung einer Solistin oder eines Solisten, Partnerschaft mit einer Musikschule oder Institution: Die künstlerische Leitung antwortet direkt auf Anfragen.",
+          "buttons": [
+            {
+              "label": "Dem Orchester schreiben",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
     "orchestre": {
       "title": "Das deutsch-französische Orchester — Kammerorchester Wissembourg",
       "description": "Ein deutsch-französisches Kammerorchester mit rund fünfzig Musikerinnen und Musikern unter der Leitung von Marc Bender, in Partnerschaft mit der Musikschule Landau seit 2021.",
@@ -334,12 +446,12 @@
           "h2": "Marc Bender",
           "image": "marc_bender",
           "image_alt": "Marc Bender, musikalischer Leiter des Kammerorchesters Wissembourg",
-          "html": "<p class=\"lead\">Musikalischer Leiter des Orchesters seit 2010.</p><p>Marc Bender studierte Violine am Conservatoire de Strasbourg in den Klassen von Odile Meyer-Siat und Haïk Davtian und vervollkommnete seine Ausbildung an der Musikhochschule Stuttgart bei Kolja Lessing sowie am Royal College of Music in London bei Levon Chilingirian.</p><p>Er spielte im English Chamber Orchestra, im Heilbronner Kammerorchester, im Tübinger Kammerorchester und im Orchestre Philharmonique de Strasbourg und konzertierte in ganz Europa und in Asien. Heute ist er Geiger bei der Philharmonie Baden-Baden.</p>",
+          "html": "<p class=\"lead\">Geiger, ausgebildet in Straßburg, Stuttgart und London, heute bei der Philharmonie Baden-Baden. Er leitet das Orchester seit 2010.</p>",
           "buttons": [
             {
-              "label": "LinkedIn-Profil",
-              "href": "https://www.linkedin.com/in/marc-bender-30762224/",
-              "style": "ghost"
+              "label": "Die künstlerische Leitung entdecken",
+              "href": "page:direction",
+              "style": "dark"
             }
           ],
           "ratio": "tall"

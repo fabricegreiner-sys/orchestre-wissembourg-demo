@@ -25,6 +25,10 @@
       "label": "Accueil"
     },
     {
+      "slug": "direction",
+      "label": "Directeur artistique"
+    },
+    {
       "slug": "orchestre",
       "label": "L'orchestre"
     },
@@ -59,8 +63,8 @@
             "href": "page:orchestre"
           },
           {
-            "label": "Direction artistique",
-            "href": "page:orchestre#direction"
+            "label": "Directeur artistique",
+            "href": "page:direction"
           },
           {
             "label": "Agenda & saisons",
@@ -311,6 +315,114 @@
         }
       ]
     },
+    "direction": {
+      "title": "Marc Bender, directeur artistique — Orchestre de Chambre de Wissembourg",
+      "description": "Marc Bender dirige l'Orchestre de Chambre de Wissembourg depuis 2010. Violoniste à la Philharmonie de Baden-Baden, formé à Strasbourg, Stuttgart et Londres.",
+      "og_image": "marc_bender",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Direction artistique",
+          "h1": "Marc Bender",
+          "lead": "Violoniste et chef d'orchestre. Il dirige l'Orchestre de Chambre de Wissembourg depuis 2010 et porte le projet franco-allemand de l'ensemble."
+        },
+        {
+          "type": "split",
+          "image": "marc_bender",
+          "ratio": "tall",
+          "image_alt": "Marc Bender, direction artistique",
+          "eyebrow": "Portrait",
+          "h2": "Un violon comme trait d'union",
+          "html": "<p class=\"lead\">Marc Bender étudie le violon au Conservatoire de Strasbourg, dans les classes d'Odile Meyer-Siat puis de Haïk Davtian.</p><p>Il se perfectionne ensuite à la Musikhochschule de Stuttgart auprès de Kolja Lessing, puis au Royal College of Music de Londres auprès de Levon Chilingirian.</p><p>Il a joué au sein de l'English Chamber Orchestra, du Heilbronner Kammerorchester, du Tübinger Kammerorchester et de l'Orchestre Philharmonique de Strasbourg, et s'est produit en concert dans toute l'Europe et en Asie. Il est aujourd'hui violoniste à la Philharmonie de Baden-Baden.</p><p>Depuis 2010, il assure la direction musicale de l'Orchestre de Chambre de Wissembourg, dont il a accompagné la transformation en ensemble franco-allemand aux côtés de l'école de musique de Landau.</p>",
+          "buttons": [
+            {
+              "label": "Profil LinkedIn",
+              "href": "https://www.linkedin.com/in/marc-bender-30762224/",
+              "style": "ghost"
+            }
+          ]
+        },
+        {
+          "type": "stats",
+          "ink": true,
+          "items": [
+            {
+              "n": "2010",
+              "l": "à la direction de l'orchestre"
+            },
+            {
+              "n": "3",
+              "l": "conservatoires et académies"
+            },
+            {
+              "n": "4",
+              "l": "orchestres professionnels"
+            },
+            {
+              "n": "2",
+              "l": "continents en tournée"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Parcours",
+          "h2": "Formation et carrière",
+          "items": [
+            {
+              "when": "Formation",
+              "what": "Conservatoire de Strasbourg",
+              "text": "Violon, dans les classes d'Odile Meyer-Siat puis de Haïk Davtian."
+            },
+            {
+              "when": "Perfectionnement",
+              "what": "Musikhochschule de Stuttgart",
+              "text": "Auprès de Kolja Lessing."
+            },
+            {
+              "when": "Perfectionnement",
+              "what": "Royal College of Music, Londres",
+              "text": "Auprès de Levon Chilingirian."
+            },
+            {
+              "when": "Carrière d'orchestre",
+              "what": "English Chamber Orchestra, Heilbronn, Tübingen, Strasbourg",
+              "text": "Violoniste au sein du Heilbronner Kammerorchester, du Tübinger Kammerorchester et de l'Orchestre Philharmonique de Strasbourg. Concerts dans toute l'Europe et en Asie."
+            },
+            {
+              "when": "Depuis 2010",
+              "what": "Direction de l'Orchestre de Chambre de Wissembourg",
+              "text": "Direction musicale de l'ensemble et développement du projet franco-allemand avec l'école de musique de Landau."
+            },
+            {
+              "when": "Aujourd'hui",
+              "what": "Philharmonie de Baden-Baden",
+              "text": "Violoniste au sein de l'orchestre."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "ink": true,
+          "text": "La musique, un langage universel, au-delà des frontières.",
+          "cite": "Devise de l'Orchestre de Chambre de Wissembourg"
+        },
+        {
+          "type": "cta",
+          "h2": "Travailler avec l'orchestre",
+          "html": "Projet de concert, invitation d'un soliste, partenariat avec une école de musique ou une institution : la direction artistique répond directement aux propositions.",
+          "buttons": [
+            {
+              "label": "Écrire à l'orchestre",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
     "orchestre": {
       "title": "L'orchestre franco-allemand — Orchestre de Chambre de Wissembourg",
       "description": "Un orchestre de chambre franco-allemand de cinquante musiciens, dirigé par Marc Bender, en partenariat avec l'école de musique de Landau depuis 2021.",
@@ -334,12 +446,12 @@
           "h2": "Marc Bender",
           "image": "marc_bender",
           "image_alt": "Marc Bender, directeur musical de l'Orchestre de Chambre de Wissembourg",
-          "html": "<p class=\"lead\">Directeur musical de l'orchestre depuis 2010.</p><p>Marc Bender étudie le violon au Conservatoire de Strasbourg, dans les classes d'Odile Meyer-Siat puis de Haïk Davtian, avant de se perfectionner à la Musikhochschule de Stuttgart auprès de Kolja Lessing et au Royal College of Music de Londres auprès de Levon Chilingirian.</p><p>Il a joué au sein de l'English Chamber Orchestra, du Heilbronner Kammerorchester, du Tübingen Kammerorchester et de l'Orchestre Philharmonique de Strasbourg, et s'est produit en concert dans toute l'Europe et en Asie. Il est aujourd'hui violoniste à la Philharmonie de Baden-Baden.</p>",
+          "html": "<p class=\"lead\">Violoniste formé à Strasbourg, Stuttgart et Londres, aujourd'hui à la Philharmonie de Baden-Baden. Il dirige l'orchestre depuis 2010.</p>",
           "buttons": [
             {
-              "label": "Profil LinkedIn",
-              "href": "https://www.linkedin.com/in/marc-bender-30762224/",
-              "style": "ghost"
+              "label": "Découvrir le directeur artistique",
+              "href": "page:direction",
+              "style": "dark"
             }
           ],
           "ratio": "tall"

@@ -321,6 +321,42 @@ h3 { font-size: 1.2rem; }
 .clip__source { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
 .clip h3 { font-size: 1.05rem; margin: .3em 0 .2em; }
 
+/* ---------- Frise de parcours ---------- */
+.timeline { position: relative; margin: 0; padding: 0 0 0 30px; list-style: none; }
+.timeline::before {
+  content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px;
+  width: 1px; background: var(--line);
+}
+.timeline__item { position: relative; padding: 0 0 30px; }
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before {
+  content: ""; position: absolute; left: -30px; top: 7px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--gold);
+}
+.section--alt .timeline__item::before { background: var(--paper-alt); }
+.timeline__when {
+  display: block; font-size: .74rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+}
+.timeline__what { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 .3em; }
+.timeline__item p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+
+/* ---------- Citation ---------- */
+.quote {
+  margin: 0; padding: 0 0 0 28px; border-left: 3px solid var(--gold);
+  max-width: 62ch;
+}
+.quote p {
+  font-family: var(--serif); font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.45; font-style: italic; color: var(--ink); margin: 0 0 .7em;
+}
+.section--ink .quote p { color: #eef2f8; }
+.quote figcaption {
+  font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+}
+.section--ink .quote figcaption { color: var(--gold-light); }
+
 /* ---------- Archives saisons ---------- */
 .seasons { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
 .seasons a {
