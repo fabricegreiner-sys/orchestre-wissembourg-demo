@@ -211,7 +211,7 @@
           "ink": true,
           "eyebrow": "Distinction",
           "h2": "Prix du Triangle de Weimar 2024",
-          "html": "<p class=\"lead\" style=\"max-width:70ch\">Le Prix du Triangle de Weimar 2024 a été décerné au projet <em>Youth Europe Music</em> par l'association Weimarer Dreieck, en présence du maire de la ville et du Ministerpräsident Bodo Ramelow — une reconnaissance de l'engagement européen porté par l'orchestre.</p>",
+          "html": "<p class=\"lead u-measure\">Le Prix du Triangle de Weimar 2024 a été décerné au projet <em>Youth Europe Music</em> par l'association Weimarer Dreieck, en présence du maire de la ville et du Ministerpräsident Bodo Ramelow — une reconnaissance de l'engagement européen porté par l'orchestre.</p>",
           "items": [
             {
               "id": "goOJV-_8cI0",
@@ -460,7 +460,7 @@
           "type": "desks",
           "eyebrow": "Les musiciens",
           "h2": "Les pupitres",
-          "html": "<p class=\"lead\" style=\"max-width:70ch\">Cordes, vents et percussions : l'orchestre réunit une cinquantaine d'instrumentistes français et allemands. La liste nominative des musiciens par pupitre est en cours de constitution et sera publiée ici.</p>",
+          "html": "<p class=\"lead u-measure\">Cordes, vents et percussions : l'orchestre réunit une cinquantaine d'instrumentistes français et allemands. La liste nominative des musiciens par pupitre est en cours de constitution et sera publiée ici.</p>",
           "items": [
             {
               "image": "pupitre_violons",
@@ -599,7 +599,7 @@
           "ink": true,
           "eyebrow": "Captations",
           "h2": "Les concerts en vidéo",
-          "html": "<p class=\"lead\" style=\"max-width:70ch\">Les vidéos restent hébergées sur la chaîne de l'orchestre et sont intégrées ici. Rien n'est chargé tant que vous n'avez pas cliqué : aucun cookie tiers à l'ouverture de la page.</p>",
+          "html": "<p class=\"lead u-measure\">Les vidéos restent hébergées sur la chaîne de l'orchestre et sont intégrées ici. Rien n'est chargé tant que vous n'avez pas cliqué : aucun cookie tiers à l'ouverture de la page.</p>",
           "items": [
             {
               "id": "goOJV-_8cI0",
@@ -681,7 +681,7 @@
           "narrow": true,
           "eyebrow": "Le fonds photographique",
           "h2": "Treize ans d'images, conservés pour de bon",
-          "html": "<p class=\"lead\">La médiathèque accumulée depuis 2013 représente près de 3 Go : photographies de concert, affiches, scans de presse, programmes.</p><p>Ce fonds est intégralement récupéré et conservé. Il vit désormais à deux endroits, chacun avec son rôle :</p><div class=\"note\"><p><strong>Sur le site</strong> — une sélection par saison, en résolution adaptée à l'écran. Les images se chargent en une fraction de seconde là où les fichiers d'origine, jusqu'à 5 000 pixels de large, pénalisaient chaque visite.</p></div><div class=\"note\" style=\"margin-top:16px\"><p><strong>Hors du site</strong> — l'intégralité des originaux en haute définition, sur l'espace de stockage de l'association et sur une sauvegarde physique. Un site web sert à montrer, pas à archiver : les originaux restent disponibles pour la presse, les affiches et les tirages.</p></div><p class=\"muted\" style=\"margin-top:20px\">Cette récupération est à faire tant que l'ancien hébergement est actif. Une fois l'abonnement résilié, les fichiers ne sont plus téléchargeables.</p>"
+          "html": "<p class=\"lead\">La médiathèque accumulée depuis 2013 représente près de 3 Go : photographies de concert, affiches, scans de presse, programmes.</p><p>Ce fonds est intégralement récupéré et conservé. Il vit désormais à deux endroits, chacun avec son rôle :</p><div class=\"note\"><p><strong>Sur le site</strong> — une sélection par saison, en résolution adaptée à l'écran. Les images se chargent en une fraction de seconde là où les fichiers d'origine, jusqu'à 5 000 pixels de large, pénalisaient chaque visite.</p></div><div class=\"note u-mt-16\"><p><strong>Hors du site</strong> — l'intégralité des originaux en haute définition, sur l'espace de stockage de l'association et sur une sauvegarde physique. Un site web sert à montrer, pas à archiver : les originaux restent disponibles pour la presse, les affiches et les tirages.</p></div><p class=\"muted u-mt-20\">Cette récupération est à faire tant que l'ancien hébergement est actif. Une fois l'abonnement résilié, les fichiers ne sont plus téléchargeables.</p>"
         }
       ]
     },

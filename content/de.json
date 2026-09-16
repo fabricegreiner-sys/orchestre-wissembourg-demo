@@ -211,7 +211,7 @@
           "ink": true,
           "eyebrow": "Auszeichnung",
           "h2": "Preis des Weimarer Dreiecks 2024",
-          "html": "<p class=\"lead\" style=\"max-width:70ch\">Der Preis des Weimarer Dreiecks 2024 wurde dem Projekt <em>Youth Europe Music</em> vom Verein Weimarer Dreieck verliehen — in Anwesenheit des Oberbürgermeisters der Stadt und von Ministerpräsident Bodo Ramelow. Eine Anerkennung für das europäische Engagement des Orchesters.</p>",
+          "html": "<p class=\"lead u-measure\">Der Preis des Weimarer Dreiecks 2024 wurde dem Projekt <em>Youth Europe Music</em> vom Verein Weimarer Dreieck verliehen — in Anwesenheit des Oberbürgermeisters der Stadt und von Ministerpräsident Bodo Ramelow. Eine Anerkennung für das europäische Engagement des Orchesters.</p>",
           "items": [
             {
               "id": "goOJV-_8cI0",
@@ -460,7 +460,7 @@
           "type": "desks",
           "eyebrow": "Die Musikerinnen und Musiker",
           "h2": "Die Register",
-          "html": "<p class=\"lead\" style=\"max-width:70ch\">Streicher, Bläser und Schlagwerk: Das Orchester vereint rund fünfzig Instrumentalistinnen und Instrumentalisten aus Frankreich und Deutschland. Die namentliche Liste nach Registern wird derzeit erstellt und hier veröffentlicht.</p>",
+          "html": "<p class=\"lead u-measure\">Streicher, Bläser und Schlagwerk: Das Orchester vereint rund fünfzig Instrumentalistinnen und Instrumentalisten aus Frankreich und Deutschland. Die namentliche Liste nach Registern wird derzeit erstellt und hier veröffentlicht.</p>",
           "items": [
             {
               "image": "pupitre_violons",
@@ -599,7 +599,7 @@
           "ink": true,
           "eyebrow": "Mitschnitte",
           "h2": "Die Konzerte im Video",
-          "html": "<p class=\"lead\" style=\"max-width:70ch\">Die Videos bleiben auf dem Kanal des Orchesters und werden hier eingebunden. Vor Ihrem Klick wird nichts geladen: beim Öffnen der Seite entstehen keine Cookies von Dritten.</p>",
+          "html": "<p class=\"lead u-measure\">Die Videos bleiben auf dem Kanal des Orchesters und werden hier eingebunden. Vor Ihrem Klick wird nichts geladen: beim Öffnen der Seite entstehen keine Cookies von Dritten.</p>",
           "items": [
             {
               "id": "goOJV-_8cI0",
@@ -681,7 +681,7 @@
           "narrow": true,
           "eyebrow": "Der Fotobestand",
           "h2": "Dreizehn Jahre Bilder, dauerhaft gesichert",
-          "html": "<p class=\"lead\">Die seit 2013 gewachsene Mediathek umfasst fast 3 GB: Konzertfotos, Plakate, Pressescans, Programmhefte.</p><p>Dieser Bestand wird vollständig übernommen und gesichert. Er lebt künftig an zwei Orten, jeder mit seiner Aufgabe:</p><div class=\"note\"><p><strong>Auf der Website</strong> — eine Auswahl je Spielzeit, in bildschirmgerechter Auflösung. Die Bilder erscheinen in Sekundenbruchteilen, während die Originaldateien mit bis zu 5 000 Pixeln Breite bisher jeden Seitenaufruf ausbremsten.</p></div><div class=\"note\" style=\"margin-top:16px\"><p><strong>Außerhalb der Website</strong> — sämtliche Originale in hoher Auflösung, auf dem Speicher des Vereins und auf einer physischen Sicherung. Eine Website dient dem Zeigen, nicht dem Archivieren: die Originale bleiben für Presse, Plakate und Abzüge verfügbar.</p></div><p class=\"muted\" style=\"margin-top:20px\">Diese Sicherung muss erfolgen, solange der alte Hosting-Vertrag läuft. Nach der Kündigung sind die Dateien nicht mehr herunterladbar.</p>"
+          "html": "<p class=\"lead\">Die seit 2013 gewachsene Mediathek umfasst fast 3 GB: Konzertfotos, Plakate, Pressescans, Programmhefte.</p><p>Dieser Bestand wird vollständig übernommen und gesichert. Er lebt künftig an zwei Orten, jeder mit seiner Aufgabe:</p><div class=\"note\"><p><strong>Auf der Website</strong> — eine Auswahl je Spielzeit, in bildschirmgerechter Auflösung. Die Bilder erscheinen in Sekundenbruchteilen, während die Originaldateien mit bis zu 5 000 Pixeln Breite bisher jeden Seitenaufruf ausbremsten.</p></div><div class=\"note u-mt-16\"><p><strong>Außerhalb der Website</strong> — sämtliche Originale in hoher Auflösung, auf dem Speicher des Vereins und auf einer physischen Sicherung. Eine Website dient dem Zeigen, nicht dem Archivieren: die Originale bleiben für Presse, Plakate und Abzüge verfügbar.</p></div><p class=\"muted u-mt-20\">Diese Sicherung muss erfolgen, solange der alte Hosting-Vertrag läuft. Nach der Kündigung sind die Dateien nicht mehr herunterladbar.</p>"
         }
       ]
     },

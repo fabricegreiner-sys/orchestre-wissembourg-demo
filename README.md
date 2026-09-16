@@ -130,6 +130,37 @@ Ordre à respecter — ne pas résilier WordPress avant que le nouveau site soit
 Prévoir un TTL court (300 s) sur les enregistrements avant la bascule, et garder
 l'export WordPress (Outils → Exporter) comme filet de sécurité.
 
+## En-têtes de sécurité HTTP
+
+`build.py` génère `docs/_headers` : HSTS, CSP stricte sans `unsafe-inline`,
+`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`,
+`Permissions-Policy` et les en-têtes cross-origin.
+
+**GitHub Pages ignore ce fichier** — la plateforme ne permet aucun en-tête HTTP
+personnalisé, quelle que soit la configuration. Un scan securityheaders.com y
+donnera toujours F. Ce n'est pas un défaut du site, c'est une limite de
+l'hébergeur.
+
+Deux façons d'obtenir la note A :
+
+1. **Cloudflare Pages** (recommandé) — connecter le dépôt, dossier de publication
+   `docs`, aucune commande de build. Le fichier `_headers` est appliqué
+   automatiquement. Gratuit, et le `_headers` gère aussi le cache des assets.
+2. **Cloudflare en frontal de GitHub Pages** — passer le DNS par Cloudflare et
+   ajouter les en-têtes via une Transform Rule de réponse. Plus de pièces mobiles.
+
+En attendant, chaque page embarque une CSP en balise `meta` : elle protège
+réellement le visiteur, mais reste invisible pour les scanners, qui ne lisent
+que les en-têtes HTTP. `frame-ancestors`, HSTS et `Permissions-Policy` sont
+inopérants en balise meta — d'où la nécessité de la bascule.
+
+La CSP n'autorise aucun script inline : le JSON-LD est validé par empreinte
+SHA-256 recalculée à chaque build, et le script de redirection de langue est
+externalisé dans `assets/js/lang-redirect.js`. Aucun attribut `style=` en ligne
+non plus, d'où les classes utilitaires `u-*` de la feuille de style. **Toute
+nouvelle ressource externe doit être déclarée dans la fonction `csp()` de
+`build.py`**, sinon le navigateur la bloquera.
+
 ## Reste à configurer
 
 - **Formulaire de contact** : `action` pointe sur un identifiant Formspree fictif

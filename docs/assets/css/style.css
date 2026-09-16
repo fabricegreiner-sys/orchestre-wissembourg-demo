@@ -321,6 +321,15 @@ h3 { font-size: 1.2rem; }
 .clip__source { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
 .clip h3 { font-size: 1.05rem; margin: .3em 0 .2em; }
 
+/* ---------- Utilitaires ----------
+   Remplacent les attributs style="" en ligne, pour permettre une CSP
+   stricte sans 'unsafe-inline'. */
+.u-measure { max-width: 70ch; }
+.u-mt-16 { margin-top: 16px; }
+.u-mt-20 { margin-top: 20px; }
+.u-mt-18 { margin-top: 18px; }
+.u-mt-32 { margin-top: 32px; }
+
 /* ---------- Frise de parcours ---------- */
 .timeline { position: relative; margin: 0; padding: 0 0 0 30px; list-style: none; }
 .timeline::before {

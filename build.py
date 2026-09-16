@@ -12,6 +12,8 @@ Sortie : ./docs/  (racine de publication GitHub Pages)
 from __future__ import annotations
 
 import argparse
+import base64
+import hashlib
 import html
 import json
 import shutil
@@ -205,7 +207,7 @@ def b_events(b: dict, lang: str, ctx: dict) -> str:
   <div><h3>{e(ev["title"])}</h3><p class="event__meta">{e(ev.get("meta", ""))}</p></div>
   {btn}
 </article>""")
-    note = f'<div class="note" style="margin-top:32px">{b["note"]}</div>' if b.get("note") else ""
+    note = f'<div class="note u-mt-32">{b["note"]}</div>' if b.get("note") else ""
     return (section_open(b) + eyebrow(b) + heading(b) + b.get("html", "")
             + "".join(rows) + note + SECTION_CLOSE)
 
@@ -302,7 +304,7 @@ def b_contact(b: dict, lang: str, ctx: dict) -> str:
     <p class="lead">{m.get("html", "")}</p>
     <p><a class="btn btn--primary" href="mailto:{e(m["address"])}">{e(m["address"])}</a></p>
     {f'<p class="muted">{e(m["hint"])}</p>' if m.get("hint") else ''}
-    {f'<ul class="seasons" style="margin-top:18px">{subjects}</ul>' if subjects else ''}
+    {f'<ul class="seasons u-mt-18">{subjects}</ul>' if subjects else ''}
   </div>
 </div></div></section>"""
 
@@ -431,6 +433,8 @@ PAGE = """<!DOCTYPE html>
 <meta property="og:image" content="{og_image}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1726">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="{csp}">
 <link rel="icon" href="{favicon}">
 <link rel="stylesheet" href="../assets/css/style.css">
 <script type="application/ld+json">{jsonld}</script>
@@ -463,6 +467,63 @@ PAGE = """<!DOCTYPE html>
 """
 
 
+# --------------------------------------------------------------------------
+# En-têtes de sécurité
+# --------------------------------------------------------------------------
+
+def sha256_csp(text: str) -> str:
+    """Empreinte d'un script inline, au format attendu par la CSP."""
+    digest = hashlib.sha256(text.encode("utf-8")).digest()
+    return "'sha256-" + base64.b64encode(digest).decode("ascii") + "'"
+
+
+def csp(hashes: list[str], *, with_frame_ancestors: bool) -> str:
+    """Politique de sécurité du contenu.
+
+    Aucun 'unsafe-inline' : toutes les règles sont dans la feuille de style,
+    et les seuls scripts en ligne (JSON-LD) sont autorisés par empreinte.
+    """
+    img = "'self' data:"
+    if IMAGE_MODE != "local":
+        img += " https://orchestre-wissembourg.com"
+    parts = [
+        "default-src 'self'",
+        "base-uri 'self'",
+        "object-src 'none'",
+        "form-action 'self'",
+        f"img-src {img}",
+        "style-src 'self'",
+        "script-src 'self' " + " ".join(hashes),
+        "frame-src https://www.youtube-nocookie.com",
+        "connect-src 'self'",
+        "upgrade-insecure-requests",
+    ]
+    if with_frame_ancestors:
+        # Ignoré lorsqu'il est délivré par balise meta : réservé au vrai en-tête HTTP.
+        parts.insert(3, "frame-ancestors 'none'")
+    return "; ".join(parts)
+
+
+HEADERS_TEMPLATE = """\
+# En-têtes de sécurité HTTP.
+# Lu automatiquement par Cloudflare Pages et Netlify.
+# GitHub Pages IGNORE ce fichier : il ne permet aucun en-tête personnalisé.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: {csp}
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-Permitted-Cross-Domain-Policies: none
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+"""
+
+
 def jsonld(data: dict, lang: str) -> str:
     return json.dumps({
         "@context": "https://schema.org",
@@ -487,6 +548,7 @@ def jsonld(data: dict, lang: str) -> str:
 def render_page(data: dict, slug: str, page: dict, lang: str) -> str:
     ctx = {"play_label": data["ui"]["play"], "video_note": data["ui"]["video_note"]}
     body = "\n".join(BLOCKS[b["type"]](b, lang, ctx) for b in page["blocks"])
+    ld = jsonld(data, lang)
     alternates = "\n".join(
         f'<link rel="alternate" hreflang="{c}" href="{data["base_url"]}/{c}/{slug}.html">' for c in LANGS
     ) + f'\n<link rel="alternate" hreflang="x-default" href="{data["base_url"]}/{DEFAULT_LANG}/{slug}.html">'
@@ -502,7 +564,8 @@ def render_page(data: dict, slug: str, page: dict, lang: str) -> str:
         og_image=e(media(page.get("og_image", "hero"))),
         favicon=e(media("logo")),
         logo=e(media("logo")),
-        jsonld=jsonld(data, lang),
+        jsonld=ld,
+        csp=e(csp([sha256_csp(ld)], with_frame_ancestors=False)),
         ribbon=data.get("ribbon", ""),
         skip=e(data["ui"]["skip"]),
         brand_name=e(data["brand_name"]),
@@ -533,12 +596,14 @@ def build() -> None:
     count = 0
     slugs: list[str] = []
     base_url = ""
+    ld_hashes: list[str] = []
     for lang in LANGS:
         with (CONTENT / f"{lang}.json").open(encoding="utf-8") as fh:
             data = json.load(fh)
         if BASE_URL_OVERRIDE:
             data["base_url"] = BASE_URL_OVERRIDE.rstrip("/")
         base_url = data["base_url"]
+        ld_hashes.append(sha256_csp(jsonld(data, lang)))
         target = OUT / lang
         target.mkdir(parents=True, exist_ok=True)
         for slug, page in data["pages"].items():
@@ -548,20 +613,27 @@ def build() -> None:
                 slugs.append(slug)
 
     # Redirection racine : détection de langue navigateur, repli FR.
+    # Redirection racine. Le script est externalisé : aucun script inline,
+    # la CSP peut donc rester stricte.
+    (OUT / "assets" / "js" / "lang-redirect.js").write_text(
+        '(function(){var l="%s";try{l=localStorage.getItem("ocw-lang")||'
+        '((navigator.language||"fr").slice(0,2)==="de"?"de":"fr");}catch(e){}'
+        'location.replace(l+"/index.html");})();\n' % DEFAULT_LANG,
+        encoding="utf-8")
+
     (OUT / "index.html").write_text(f"""<!DOCTYPE html>
 <html lang="{DEFAULT_LANG}"><head><meta charset="utf-8">
 <title>Orchestre de Chambre de Wissembourg</title>
 <link rel="canonical" href="{DEFAULT_LANG}/index.html">
 <meta http-equiv="refresh" content="0; url={DEFAULT_LANG}/index.html">
-<script>
-(function(){{
-  var l="{DEFAULT_LANG}";
-  try{{ l=localStorage.getItem("ocw-lang")||((navigator.language||"fr").slice(0,2)==="de"?"de":"fr"); }}catch(e){{}}
-  location.replace(l+"/index.html");
-}})();
-</script>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script src="assets/js/lang-redirect.js" defer></script>
 </head><body><p><a href="{DEFAULT_LANG}/index.html">Orchestre de Chambre de Wissembourg</a></p></body></html>
 """, encoding="utf-8")
+
+    (OUT / "_headers").write_text(
+        HEADERS_TEMPLATE.format(csp=csp(ld_hashes, with_frame_ancestors=True)),
+        encoding="utf-8")
 
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / "robots.txt").write_text(
