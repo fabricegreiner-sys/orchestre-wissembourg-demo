@@ -146,10 +146,7 @@
               "style": "ghost"
             }
           ],
-          "video": {
-            "file": "hero.mp4",
-            "webm": "hero.webm"
-          }
+          "motion": "kenburns"
         },
         {
           "type": "stats",
@@ -172,15 +169,6 @@
               "l": "saisons de concerts"
             }
           ]
-        },
-        {
-          "type": "figure",
-          "alt": true,
-          "eyebrow": "L'ensemble au complet",
-          "h2": "Cinquante musiciens, deux pays",
-          "image": "hero",
-          "image_alt": "Photo de groupe de l'Orchestre de Chambre de Wissembourg au complet sur scène",
-          "caption": "L'Orchestre de Chambre de Wissembourg réuni sur scène, musiciens français et allemands confondus, sous la direction de Marc Bender."
         },
         {
           "type": "posterFeatured",
@@ -446,6 +434,15 @@
           "eyebrow": "L'ensemble",
           "h1": "L'orchestre franco-allemand",
           "lead": "La musique, un langage universel, au-delà des frontières. — Musik, eine universelle Sprache, über Grenzen hinweg."
+        },
+        {
+          "type": "figure",
+          "alt": false,
+          "eyebrow": "L'ensemble au complet",
+          "h2": "Cinquante musiciens, deux pays",
+          "image": "hero",
+          "image_alt": "Photo de groupe de l'Orchestre de Chambre de Wissembourg au complet sur scène",
+          "caption": "L'Orchestre de Chambre de Wissembourg réuni sur scène, musiciens français et allemands confondus, sous la direction de Marc Bender."
         },
         {
           "type": "prose",

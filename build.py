@@ -133,6 +133,13 @@ def hero_media(b: dict) -> str:
     n'est pas en mode économie de données. L'image reste l'affiche du lecteur,
     donc le rendu est identique tant que la vidéo n'a pas démarré.
     """
+    # Travelling CSS sur la photo : préféré à une vidéo dès que la source est
+    # une image fixe — rien à télécharger, et la netteté suit la définition de
+    # l'écran au lieu d'être figée par l'encodage.
+    if b.get("motion") == "kenburns":
+        return img(b["image"], b.get("image_alt", ""),
+                   cls="hero__media--motion", lazy=False)
+
     v = b.get("video")
     src = (STATIC / "video" / v["file"]) if v else None
     # Seuil de 50 ko : ignore les fichiers témoins ou tronqués, qui donneraient

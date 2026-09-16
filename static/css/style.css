@@ -171,6 +171,26 @@ h3 { font-size: 1.2rem; }
   opacity: 1; filter: brightness(1.18) saturate(1.06) contrast(1.04);
 }
 .hero__video { display: block; background: var(--ink); }
+
+/* Travelling lent sur la photo fixe : le navigateur recadre l'image d'origine
+   en continu, donc le rendu reste net quelle que soit la définition de l'écran.
+   Aucun fichier supplémentaire, aucune recompression. */
+.hero__media--motion {
+  animation: hero-pan 44s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes hero-pan {
+  0%   { transform: scale(1.32) translate(-7%,  2.5%); }
+  20%  { transform: scale(1.62) translate( 3%, -2.0%); }
+  40%  { transform: scale(1.45) translate(11%,  3.0%); }
+  60%  { transform: scale(1.70) translate(-4%, -3.5%); }
+  80%  { transform: scale(1.40) translate(-11%, 1.5%); }
+  100% { transform: scale(1.32) translate(-7%,  2.5%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__media--motion { animation: none; transform: scale(1.06); }
+}
 /* Voile latéral : assombrit la colonne de texte, laisse la photo lisible à droite. */
 .hero::after {
   content: ""; position: absolute; inset: 0;

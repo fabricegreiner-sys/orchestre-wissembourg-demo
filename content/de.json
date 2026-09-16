@@ -146,10 +146,7 @@
               "style": "ghost"
             }
           ],
-          "video": {
-            "file": "hero.mp4",
-            "webm": "hero.webm"
-          }
+          "motion": "kenburns"
         },
         {
           "type": "stats",
@@ -172,15 +169,6 @@
               "l": "Konzertspielzeiten"
             }
           ]
-        },
-        {
-          "type": "figure",
-          "alt": true,
-          "eyebrow": "Das Ensemble in voller Besetzung",
-          "h2": "Fünfzig Musikerinnen und Musiker, zwei Länder",
-          "image": "hero",
-          "image_alt": "Gruppenfoto des Kammerorchesters Wissembourg in voller Besetzung auf der Bühne",
-          "caption": "Das Kammerorchester Wissembourg auf der Bühne, französische und deutsche Mitglieder gemeinsam, unter der Leitung von Marc Bender."
         },
         {
           "type": "posterFeatured",
@@ -446,6 +434,15 @@
           "eyebrow": "Das Ensemble",
           "h1": "Das deutsch-französische Orchester",
           "lead": "Musik, eine universelle Sprache, über Grenzen hinweg. — La musique, un langage universel, au-delà des frontières."
+        },
+        {
+          "type": "figure",
+          "alt": false,
+          "eyebrow": "Das Ensemble in voller Besetzung",
+          "h2": "Fünfzig Musikerinnen und Musiker, zwei Länder",
+          "image": "hero",
+          "image_alt": "Gruppenfoto des Kammerorchesters Wissembourg in voller Besetzung auf der Bühne",
+          "caption": "Das Kammerorchester Wissembourg auf der Bühne, französische und deutsche Mitglieder gemeinsam, unter der Leitung von Marc Bender."
         },
         {
           "type": "prose",
