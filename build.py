@@ -363,6 +363,16 @@ def b_contact(b: dict, lang: str, ctx: dict) -> str:
 </div></div></section>"""
 
 
+def b_figure(b: dict, lang: str, ctx: dict) -> str:
+    """Photo affichée dans son intégralité, sans recadrage ni hauteur imposée."""
+    cap = f'<figcaption>{b["caption"]}</figcaption>' if b.get("caption") else ""
+    return (section_open(b) + eyebrow(b) + heading(b) + b.get("html", "")
+            + f'<figure class="figure-wide">'
+            + img(b["image"], b.get("image_alt", ""))
+            + cap + "</figure>"
+            + buttons(b.get("buttons", []), lang) + SECTION_CLOSE)
+
+
 def b_timeline(b: dict, lang: str, ctx: dict) -> str:
     items = "".join(
         f'<li class="timeline__item">'
@@ -395,6 +405,7 @@ BLOCKS = {
     "events": b_events, "videos": b_videos, "cards": b_cards, "desks": b_desks,
     "clips": b_clips, "sponsors": b_sponsors, "seasons": b_seasons,
     "contact": b_contact, "cta": b_cta, "timeline": b_timeline, "quote": b_quote,
+    "figure": b_figure,
 }
 
 
