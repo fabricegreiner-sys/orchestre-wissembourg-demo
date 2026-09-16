@@ -124,11 +124,35 @@ SECTION_CLOSE = "</div></section>"
 # Blocs
 # --------------------------------------------------------------------------
 
+def hero_media(b: dict) -> str:
+    """Visuel du bandeau : vidéo de fond si le fichier existe, image sinon.
+
+    La vidéo n'est jamais chargée par le HTML — c'est main.js qui décide, après
+    avoir vérifié que l'utilisateur ne demande pas de mouvement réduit et qu'il
+    n'est pas en mode économie de données. L'image reste l'affiche du lecteur,
+    donc le rendu est identique tant que la vidéo n'a pas démarré.
+    """
+    v = b.get("video")
+    src = (STATIC / "video" / v["file"]) if v else None
+    # Seuil de 50 ko : ignore les fichiers témoins ou tronqués, qui donneraient
+    # un lecteur vidéo en erreur au lieu du repli image.
+    if not src or not src.exists() or src.stat().st_size < 50_000:
+        return img(b["image"], b.get("image_alt", ""), lazy=False)
+
+    poster = media(b["image"])
+    srcs = [f'{{"src":"../assets/video/{v["file"]}","type":"video/mp4"}}']
+    if v.get("webm") and (STATIC / "video" / v["webm"]).exists():
+        srcs.insert(0, f'{{"src":"../assets/video/{v["webm"]}","type":"video/webm"}}')
+    return (f'<video class="hero__video" poster="{e(poster)}" preload="none" '
+            f'muted loop playsinline aria-hidden="true" tabindex="-1" '
+            f"data-sources='[{','.join(srcs)}]'></video>")
+
+
 def b_hero(b: dict, lang: str, ctx: dict) -> str:
     badges = "".join(f'<span class="badge">{e(x)}</span>' for x in b.get("badges", []))
     return f"""
 <section class="hero">
-  <div class="hero__media">{img(b["image"], b.get("image_alt", ""), lazy=False)}</div>
+  <div class="hero__media">{hero_media(b)}</div>
   <div class="wrap"><div class="hero__inner">
     {f'<div class="hero__badges">{badges}</div>' if badges else ''}
     <h1>{e(b["h1"])}</h1>
@@ -492,6 +516,7 @@ def csp(hashes: list[str], *, with_frame_ancestors: bool) -> str:
         "object-src 'none'",
         "form-action 'self'",
         f"img-src {img}",
+        "media-src 'self'",
         "style-src 'self'",
         "script-src 'self' " + " ".join(hashes),
         "frame-src https://www.youtube-nocookie.com",
@@ -592,6 +617,8 @@ def build() -> None:
     shutil.copytree(STATIC / "js", OUT / "assets" / "js", dirs_exist_ok=True)
     if (STATIC / "img").exists():
         shutil.copytree(STATIC / "img", OUT / "assets" / "img", dirs_exist_ok=True)
+    if (STATIC / "video").exists():
+        shutil.copytree(STATIC / "video", OUT / "assets" / "video", dirs_exist_ok=True)
 
     count = 0
     slugs: list[str] = []

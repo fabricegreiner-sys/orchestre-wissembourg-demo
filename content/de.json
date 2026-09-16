@@ -145,7 +145,11 @@
               "href": "page:soutenir",
               "style": "ghost"
             }
-          ]
+          ],
+          "video": {
+            "file": "hero.mp4",
+            "webm": "hero.webm"
+          }
         },
         {
           "type": "stats",

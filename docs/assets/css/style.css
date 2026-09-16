@@ -165,10 +165,12 @@ h3 { font-size: 1.2rem; }
 /* ---------- Hero ---------- */
 .hero { position: relative; color: #fff; background: var(--ink); overflow: hidden; }
 .hero__media { position: absolute; inset: 0; }
-.hero__media img {
+.hero__media img,
+.hero__video {
   width: 100%; height: 100%; object-fit: cover; object-position: center 58%;
   opacity: 1; filter: brightness(1.35) saturate(1.05);
 }
+.hero__video { display: block; background: var(--ink); }
 /* Voile latéral : assombrit la colonne de texte, laisse la photo lisible à droite. */
 .hero::after {
   content: ""; position: absolute; inset: 0;

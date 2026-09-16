@@ -7,11 +7,12 @@ Bilingue FR/DE, générateur maison en Python (stdlib uniquement), sortie 100 % 
 
 | Critère | WordPress.com Premium | Ce site |
 |---|---|---|
-| Coût annuel | 96 € HT + domaine | **0 €** (GitHub Pages) + domaine |
+| Coût annuel | 96 € HT + domaine | **0 €** (Cloudflare) + domaine |
 | Version allemande structurée | non | **oui** (`/fr/`, `/de/`, `hreflang`) |
 | Cookies tiers au chargement | oui (stats, barre WP) | **aucun** — vidéos YouTube en façade cliquable |
 | Poids / dépendances | thème + JS WordPress | 1 CSS, 1 JS (~3 ko), aucune police externe |
 | Surface d'attaque | PHP + base + comptes | **fichiers statiques** — rien à patcher |
+| En-têtes de sécurité | non configurables | **note A** sur securityheaders.com |
 | Sauvegarde / réversibilité | export XML | dépôt Git complet |
 
 ## Arborescence
@@ -45,7 +46,7 @@ python3 -m http.server -d docs 8000    # http://localhost:8000
 ```
 
 Les chemins sont **relatifs** : le site fonctionne en `file://`, dans un sous-dossier
-(`user.github.io/ocw/`) ou à la racine d'un domaine, sans reconfiguration.
+(`domaine.tld/sous-dossier/`) ou à la racine d'un domaine, sans reconfiguration.
 
 ## Modifier le contenu
 
@@ -64,7 +65,8 @@ chaque page est une liste de blocs typés.
 | `videos` | vidéos YouTube en façade cliquable |
 | `cards`, `desks`, `clips` | cartes, pupitres, coupures de presse |
 | `sponsors`, `seasons` | logos partenaires, archives de saisons |
-| `contact`, `cta` | coordonnées + formulaire, bandeau d'appel à l'action |
+| `contact`, `cta` | coordonnées + lien mailto, bandeau d'appel à l'action |
+| `timeline`, `quote` | frise de parcours, citation mise en exergue |
 
 Options communes : `eyebrow`, `h2`, `alt` (fond alterné), `ink` (fond sombre),
 `narrow` (colonne étroite), `buttons`.
@@ -84,93 +86,85 @@ Le script télécharge tous les médias listés dans `content/media.json` vers
 `static/img/`, génère les WebP si `cwebp` est installé, puis relance le build
 en mode local.
 
-## Publier sur GitHub Pages
+## Héberger
 
-```bash
-cd site-ocw
-git init && git add -A && git commit -m "Refonte statique OCW — FR/DE"
-git branch -M main
-git remote add origin git@github.com:<compte>/orchestre-wissembourg.git
-git push -u origin main
-```
+**Dépôt sur GitHub, hébergement sur Cloudflare.** Le dépôt reste la source ;
+Cloudflare sert `docs/` et applique `_headers`.
 
-Puis dans **Settings → Pages** du dépôt : *Source* = `Deploy from a branch`,
-*Branch* = `main`, *Folder* = `/docs`. L'URL `https://<compte>.github.io/orchestre-wissembourg/`
-est active en une à deux minutes.
+Le Worker est configuré par `wrangler.jsonc` : `assets.directory` pointe sur
+`./docs`, et il n'y a **délibérément pas de clé `main`** — un Worker
+« assets-only ». Ajouter un script désactiverait l'application automatique de
+`_headers`.
+
+Piège du tableau de bord : créer un *Worker* au lieu d'un projet *Pages* fait
+disparaître le champ « Build output directory ». C'est normal, `wrangler.jsonc`
+le remplace.
+
+L'URL publique se déclare dans `.baseurl` à la racine. Le script de publication
+la lit en priorité ; elle alimente les URL canoniques, les `hreflang` et le
+sitemap. La changer d'hébergeur revient à éditer ce fichier et à reconstruire.
+
+Mise à jour courante : double-clic sur `4-Mettre-a-jour-le-site.command`
+(reconstruit, commite, pousse). `3-Corriger-et-republier.command` est réservé
+aux réparations lourdes — il recrée le dépôt git et force le push.
 
 ## Basculer le domaine orchestre-wissembourg.com
 
 Ordre à respecter — ne pas résilier WordPress avant que le nouveau site soit validé.
 
 1. Récupérer les images (`tools/download-images.sh`), rebuild, commit, push.
-2. Créer le fichier `CNAME` à la racine du dépôt contenant `orchestre-wissembourg.com`.
-   `build.py` le recopie automatiquement dans `docs/`.
-3. Chez le registrar (le domaine est aujourd'hui géré par WordPress.com — vérifier
-   s'il faut d'abord le transférer ou seulement déléguer les DNS), remplacer les
-   enregistrements par :
+2. Transférer le nom de domaine hors de WordPress.com : déverrouiller, récupérer
+   le code d'autorisation, transférer chez le registrar retenu. **Titulaire = l'association**,
+   pas le prestataire. Impossible dans les 60 jours suivant un enregistrement ou un
+   transfert précédent.
+3. Dans le Worker Cloudflare : Settings → Domains & Routes → Add custom domain,
+   saisir `orchestre-wissembourg.com` puis `www.orchestre-wissembourg.com`.
+   Si le domaine est dans le même compte Cloudflare, les enregistrements DNS et le
+   certificat sont créés automatiquement ; sinon, suivre les valeurs indiquées.
+4. Mettre `.baseurl` à `https://orchestre-wissembourg.com`, reconstruire, pousser —
+   canonical, hreflang et sitemap suivent.
+5. Vérifier les deux langues, le sitemap, les redirections et un scan
+   securityheaders.com, puis seulement résilier l'abonnement WordPress.com.
 
-   ```
-   @      A       185.199.108.153
-   @      A       185.199.109.153
-   @      A       185.199.110.153
-   @      A       185.199.111.153
-   @      AAAA    2606:50c0:8000::153
-   @      AAAA    2606:50c0:8001::153
-   @      AAAA    2606:50c0:8002::153
-   @      AAAA    2606:50c0:8003::153
-   www    CNAME   <compte>.github.io.
-   ```
-
-4. **Settings → Pages → Custom domain** : saisir `orchestre-wissembourg.com`,
-   attendre la validation DNS, puis cocher **Enforce HTTPS** (certificat
-   Let's Encrypt automatique, quelques minutes).
-5. Vérifier les deux langues, le sitemap et les redirections, puis seulement
-   résilier l'abonnement WordPress.com.
-
-Prévoir un TTL court (300 s) sur les enregistrements avant la bascule, et garder
-l'export WordPress (Outils → Exporter) comme filet de sécurité.
+Prévoir un TTL court (300 s) avant la bascule, et garder l'export WordPress
+(Outils → Exporter) comme filet de sécurité.
 
 ## En-têtes de sécurité HTTP
 
-`build.py` génère `docs/_headers` : HSTS, CSP stricte sans `unsafe-inline`,
-`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`,
-`Permissions-Policy` et les en-têtes cross-origin.
+`build.py` génère `docs/_headers` : HSTS, CSP stricte, `X-Frame-Options`,
+`X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` et les en-têtes
+cross-origin. Cloudflare les applique — **note A sur securityheaders.com**.
 
-**GitHub Pages ignore ce fichier** — la plateforme ne permet aucun en-tête HTTP
-personnalisé, quelle que soit la configuration. Un scan securityheaders.com y
-donnera toujours F. Ce n'est pas un défaut du site, c'est une limite de
-l'hébergeur.
+À savoir si l'on envisage un autre hébergeur : **GitHub Pages ignore ce fichier**
+et ne permet aucun en-tête personnalisé, quelle que soit la configuration. Un scan
+y donnera toujours F. Ce n'est pas un défaut du site.
 
-Deux façons d'obtenir la note A :
-
-1. **Cloudflare Pages** (recommandé) — connecter le dépôt, dossier de publication
-   `docs`, aucune commande de build. Le fichier `_headers` est appliqué
-   automatiquement. Gratuit, et le `_headers` gère aussi le cache des assets.
-2. **Cloudflare en frontal de GitHub Pages** — passer le DNS par Cloudflare et
-   ajouter les en-têtes via une Transform Rule de réponse. Plus de pièces mobiles.
-
-En attendant, chaque page embarque une CSP en balise `meta` : elle protège
-réellement le visiteur, mais reste invisible pour les scanners, qui ne lisent
-que les en-têtes HTTP. `frame-ancestors`, HSTS et `Permissions-Policy` sont
-inopérants en balise meta — d'où la nécessité de la bascule.
-
-La CSP n'autorise aucun script inline : le JSON-LD est validé par empreinte
+La CSP n'autorise **aucun script inline** : le JSON-LD est validé par empreinte
 SHA-256 recalculée à chaque build, et le script de redirection de langue est
 externalisé dans `assets/js/lang-redirect.js`. Aucun attribut `style=` en ligne
-non plus, d'où les classes utilitaires `u-*` de la feuille de style. **Toute
-nouvelle ressource externe doit être déclarée dans la fonction `csp()` de
-`build.py`**, sinon le navigateur la bloquera.
+non plus, d'où les classes utilitaires `u-*` de la feuille de style. Chaque page
+embarque en plus la CSP en balise `meta`, utile si le site est un jour servi par
+un hébergeur sans en-têtes.
+
+**Toute nouvelle ressource externe — police, carte, widget HelloAsso — doit être
+déclarée dans la fonction `csp()` de `build.py`**, sinon le navigateur la bloquera
+silencieusement. Après ajout, vérifier la console du navigateur.
 
 ## Reste à configurer
 
-- **Formulaire de contact** : `action` pointe sur un identifiant Formspree fictif
-  dans `content/*.json` → à remplacer par un vrai endpoint, ou par un service
-  auto-hébergé si l'on veut éviter tout tiers.
+- **Adresse e-mail** : la page contact renvoie vers `contact@orchestre-wissembourg.com`,
+  qui n'existe pas encore. À créer en redirection chez le registrar, vers la boîte
+  du bureau. Sans elle, le seul lien de contact du site est mort.
 - **Don / adhésion / billetterie** : les boutons pointent vers `helloasso.com` →
   à remplacer par les URLs des formulaires réels une fois le compte association créé.
-- **Newsletter** : lien générique Brevo → à remplacer par l'URL du formulaire d'inscription.
+- **Interface d'édition pour le bureau** : le dépôt contient le résultat généré,
+  donc modifier `content/*.json` ne reconstruit rien. Il faut d'abord une GitHub
+  Action qui exécute `build.py`, puis un CMS (Decap ou Sveltia). À développer
+  seulement une fois le devis signé.
 - **Contenus à obtenir de l'association** : programme réel de la saison en cours,
   liste nominative des musiciens par pupitre, noms et sites des sept sponsors,
-  textes alternatifs des affiches, adresse e-mail de contact publique.
+  textes alternatifs des affiches, dates du parcours de Marc Bender pour la frise.
 - **Bandeau « maquette de démonstration »** : défini par la clé `ribbon` dans
   `content/fr.json` et `content/de.json` — le vider avant la mise en production.
+- **Désactiver GitHub Pages** dans les réglages du dépôt, pour ne pas laisser
+  deux copies du site en ligne.
