@@ -3,7 +3,7 @@
 # GitHub Pages IGNORE ce fichier : la plateforme ne permet aucun en-tête personnalisé.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self' 'sha256-KcfwgHcfrvDJ0+bm7s9FqwU3zq0CkqlhvTy9VjnEu6g=' 'sha256-Yka8vWoDoW2XoDMCX2v2fmQx65blEe9xt6okxx6rNpA='; frame-src https://www.youtube-nocookie.com; connect-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self' 'sha256-KcfwgHcfrvDJ0+bm7s9FqwU3zq0CkqlhvTy9VjnEu6g=' 'sha256-Yka8vWoDoW2XoDMCX2v2fmQx65blEe9xt6okxx6rNpA=' 'sha256-Nrhunaf4E3D0wqz/hsqkt1zm7juEsUYGWGnOQmsF2O4='; frame-src https://www.youtube-nocookie.com; connect-src 'self'; upgrade-insecure-requests
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

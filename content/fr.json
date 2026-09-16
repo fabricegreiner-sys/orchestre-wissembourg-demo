@@ -133,7 +133,7 @@
           ],
           "h1": "Orchestre de Chambre de Wissembourg",
           "tagline": "La musique est notre passion",
-          "lead": "Une cinquantaine de musiciens amateurs et professionnels, français et allemands, de tous âges et de tous horizons, réunis sous la direction de <strong>Marc Bender</strong> pour faire vivre la musique de chambre de part et d'autre du Rhin.",
+          "lead": "Une cinquantaine de musiciens amateurs et professionnels, français, allemands et polonais, de tous âges et de tous horizons, réunis sous la direction de <strong>Marc Bender</strong> pour faire vivre la musique de chambre de part et d'autre du Rhin.",
           "buttons": [
             {
               "label": "Voir les concerts",
@@ -161,7 +161,7 @@
               "l": "année de fondation"
             },
             {
-              "n": "2",
+              "n": "3",
               "l": "pays, un seul orchestre"
             },
             {
@@ -198,7 +198,7 @@
           "image": "weimar",
           "image_alt": "Le Prix du Triangle de Weimar 2024 remis à l'orchestre",
           "image_right": true,
-          "html": "<p class=\"lead\">L'association OCW a été fondée en 2013 à l'initiative d'élèves motivés, entourés de professeurs passionnés.</p><p>En partenariat avec l'école de musique de Landau depuis 2021, l'ensemble réunit aujourd'hui une cinquantaine de musiciens amateurs et professionnels, de tous âges et de tous horizons, sous la direction de Marc Bender.</p><p>Concerts, tournées, partenariats avec d'autres écoles de musique internationales : chaque projet est une occasion d'enrichissement personnel, culturel et musical — et crée des liens d'amitié durables.</p><div class=\"bilingual\"><p class=\"eyebrow\">Auf Deutsch</p><p>Musik, eine universelle Sprache, über Grenzen hinweg! Der Verein OCW wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet.</p></div>",
+          "html": "<p class=\"lead\">L'association OCW a été fondée en 2013 à l'initiative d'élèves motivés, entourés de professeurs passionnés.</p><p>En partenariat avec l'école de musique de Landau depuis 2021, l'ensemble réunit aujourd'hui une cinquantaine de musiciens amateurs et professionnels, de tous âges et de tous horizons, sous la direction de Marc Bender.</p><p>Concerts, tournées, partenariats avec d'autres écoles de musique internationales : chaque projet est une occasion d'enrichissement personnel, culturel et musical — et crée des liens d'amitié durables. Dans l'esprit du Triangle de Weimar, l'ensemble a donné des concerts trinationaux réunissant musiciens français, allemands et polonais.</p><div class=\"bilingual\"><p class=\"eyebrow\">Auf Deutsch</p><p>Musik, eine universelle Sprache, über Grenzen hinweg! Der Verein OCW wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet.</p></div>",
           "buttons": [
             {
               "label": "Découvrir l'orchestre",
@@ -438,11 +438,12 @@
         {
           "type": "figure",
           "alt": false,
+          "crop": "band",
           "eyebrow": "L'ensemble au complet",
-          "h2": "Cinquante musiciens, deux pays",
+          "h2": "Cinquante musiciens, trois pays",
           "image": "hero",
           "image_alt": "Photo de groupe de l'Orchestre de Chambre de Wissembourg au complet sur scène",
-          "caption": "L'Orchestre de Chambre de Wissembourg réuni sur scène, musiciens français et allemands confondus, sous la direction de Marc Bender."
+          "caption": "L'Orchestre de Chambre de Wissembourg réuni sur scène, musiciens français, allemands et polonais confondus, sous la direction de Marc Bender."
         },
         {
           "type": "prose",

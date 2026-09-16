@@ -1,7 +1,7 @@
 # Orchestre de Chambre de Wissembourg — refonte statique
 
 Clone modernisé du site `orchestre-wissembourg.com`, destiné à remplacer WordPress.com.
-Bilingue FR/DE, générateur maison en Python (stdlib uniquement), sortie 100 % statique.
+Trilingue FR/DE/PL, générateur maison en Python (stdlib uniquement), sortie 100 % statique.
 
 ## Pourquoi ce socle
 
@@ -22,8 +22,9 @@ site-ocw/
 ├── build.py              générateur (aucune dépendance)
 ├── content/
 │   ├── media.json        table des médias : URL WordPress ↔ nom de fichier local
-│   ├── fr.json           tout le contenu français
-│   └── de.json           tout le contenu allemand
+│   ├── fr.json           tout le contenu français (langue de référence)
+│   ├── de.json           tout le contenu allemand
+│   └── pl.json           tout le contenu polonais — généré par tools/make-pl.py
 ├── static/
 │   ├── css/style.css     feuille de style unique
 │   ├── js/main.js        menu mobile + façade vidéo RGPD
@@ -50,7 +51,7 @@ Les chemins sont **relatifs** : le site fonctionne en `file://`, dans un sous-do
 
 ## Modifier le contenu
 
-Tout est dans `content/fr.json` et `content/de.json`. Aucun HTML à écrire :
+Tout est dans `content/fr.json`, `content/de.json` et `content/pl.json`. Aucun HTML à écrire :
 chaque page est une liste de blocs typés.
 
 | Bloc | Usage |
@@ -123,7 +124,7 @@ Ordre à respecter — ne pas résilier WordPress avant que le nouveau site soit
    certificat sont créés automatiquement ; sinon, suivre les valeurs indiquées.
 4. Mettre `.baseurl` à `https://orchestre-wissembourg.com`, reconstruire, pousser —
    canonical, hreflang et sitemap suivent.
-5. Vérifier les deux langues, le sitemap, les redirections et un scan
+5. Vérifier les trois langues, le sitemap, les redirections et un scan
    securityheaders.com, puis seulement résilier l'abonnement WordPress.com.
 
 Prévoir un TTL court (300 s) avant la bascule, et garder l'export WordPress
@@ -165,6 +166,31 @@ silencieusement. Après ajout, vérifier la console du navigateur.
   liste nominative des musiciens par pupitre, noms et sites des sept sponsors,
   textes alternatifs des affiches, dates du parcours de Marc Bender pour la frise.
 - **Bandeau « maquette de démonstration »** : défini par la clé `ribbon` dans
-  `content/fr.json` et `content/de.json` — le vider avant la mise en production.
+  les fichiers `content/*.json` — le vider avant la mise en production.
 - **Désactiver GitHub Pages** dans les réglages du dépôt, pour ne pas laisser
   deux copies du site en ligne.
+
+
+## La version polonaise
+
+L'orchestre joue avec des musiciens polonais (concerts trinationaux dans
+l'esprit du Triangle de Weimar). La troisième langue est donc du contenu,
+pas un gadget.
+
+`content/pl.json` n'est **pas** édité à la main : il est régénéré par
+
+    python3 tools/make-pl.py
+
+qui recopie la structure de `content/fr.json` à l'identique et remplace
+chaque chaîne via une table de traduction. Toute chaîne absente de la table
+est affichée en fin d'exécution — impossible de livrer une page à moitié
+française sans le voir. Neuf chaînes restent volontairement non traduites :
+noms propres, adresse e-mail, noms des membres du bureau.
+
+Conséquence pratique : **une modification de contenu se fait dans `fr.json`**,
+puis on ajoute la traduction dans la table de `tools/make-pl.py` et on
+régénère. Éditer directement `pl.json` revient à voir ses changements écrasés
+au prochain passage du script.
+
+Une relecture par un locuteur natif reste souhaitable avant de montrer la
+version polonaise au bureau.

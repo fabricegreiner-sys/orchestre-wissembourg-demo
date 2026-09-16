@@ -133,7 +133,7 @@
           ],
           "h1": "Kammerorchester Wissembourg",
           "tagline": "Musik ist unsere Leidenschaft",
-          "lead": "Rund fünfzig Laien- und Berufsmusikerinnen und -musiker aus Frankreich und Deutschland, aller Altersgruppen und Herkunft, vereint unter der Leitung von <strong>Marc Bender</strong>, um die Kammermusik beiderseits des Rheins lebendig zu halten.",
+          "lead": "Rund fünfzig Laien- und Berufsmusikerinnen und -musiker aus Frankreich, Deutschland und Polen, aller Altersgruppen und Herkunft, vereint unter der Leitung von <strong>Marc Bender</strong>, um die Kammermusik beiderseits des Rheins lebendig zu halten.",
           "buttons": [
             {
               "label": "Konzerte ansehen",
@@ -161,7 +161,7 @@
               "l": "Gründungsjahr"
             },
             {
-              "n": "2",
+              "n": "3",
               "l": "Länder, ein Orchester"
             },
             {
@@ -198,7 +198,7 @@
           "image": "weimar",
           "image_alt": "Verleihung des Weimarer-Dreieck-Preises 2024 an das Orchester",
           "image_right": true,
-          "html": "<p class=\"lead\">Der Verein OCW wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet, umgeben von leidenschaftlichen Lehrkräften.</p><p>In Partnerschaft mit der Musikschule Landau seit 2021 vereint das Ensemble heute rund fünfzig Laien- und Berufsmusikerinnen und -musiker aller Altersgruppen und Herkunft unter der Leitung von Marc Bender.</p><p>Konzerte, Tourneen und Partnerschaften mit anderen internationalen Musikschulen: Jedes Projekt bringt eine persönliche, kulturelle und musikalische Bereicherung — und schafft dauerhafte Freundschaften.</p><div class=\"bilingual\"><p class=\"eyebrow\">En français</p><p>La musique, un langage universel, au-delà des frontières ! L'association OCW a été fondée en 2013 à l'initiative d'élèves motivés.</p></div>",
+          "html": "<p class=\"lead\">Der Verein OCW wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet, umgeben von leidenschaftlichen Lehrkräften.</p><p>In Partnerschaft mit der Musikschule Landau seit 2021 vereint das Ensemble heute rund fünfzig Laien- und Berufsmusikerinnen und -musiker aller Altersgruppen und Herkunft unter der Leitung von Marc Bender.</p><p>Konzerte, Tourneen und Partnerschaften mit anderen internationalen Musikschulen: Jedes Projekt bringt eine persönliche, kulturelle und musikalische Bereicherung — und schafft dauerhafte Freundschaften. Im Geist des Weimarer Dreiecks hat das Ensemble trinationale Konzerte mit französischen, deutschen und polnischen Musikerinnen und Musikern gegeben.</p><div class=\"bilingual\"><p class=\"eyebrow\">En français</p><p>La musique, un langage universel, au-delà des frontières ! L'association OCW a été fondée en 2013 à l'initiative d'élèves motivés.</p></div>",
           "buttons": [
             {
               "label": "Das Orchester entdecken",
@@ -438,11 +438,12 @@
         {
           "type": "figure",
           "alt": false,
+          "crop": "band",
           "eyebrow": "Das Ensemble in voller Besetzung",
-          "h2": "Fünfzig Musikerinnen und Musiker, zwei Länder",
+          "h2": "Fünfzig Musikerinnen und Musiker, drei Länder",
           "image": "hero",
           "image_alt": "Gruppenfoto des Kammerorchesters Wissembourg in voller Besetzung auf der Bühne",
-          "caption": "Das Kammerorchester Wissembourg auf der Bühne, französische und deutsche Mitglieder gemeinsam, unter der Leitung von Marc Bender."
+          "caption": "Das Kammerorchester Wissembourg auf der Bühne, französische, deutsche und polnische Mitglieder gemeinsam, unter der Leitung von Marc Bender."
         },
         {
           "type": "prose",

@@ -363,6 +363,19 @@ h3 { font-size: 1.2rem; }
   width: 100%; height: auto; display: block;
   border-radius: var(--r); box-shadow: var(--shadow-lg);
 }
+/* Recadrage bandeau : on retire le plafond et le sol du gymnase,
+   les musiciens restent visibles en pied. Fenêtre = 30 % → 82 % de la hauteur. */
+.figure-wide--band img {
+  aspect-ratio: 2.9 / 1;
+  object-fit: cover;
+  object-position: center 62%;
+}
+@media (max-width: 820px) {
+  /* Bandeau un peu moins étiré sur petit écran : on garde le haut propre,
+     on tolère un peu de parquet en bas. */
+  .figure-wide--band img { aspect-ratio: 2.4 / 1; object-position: center 80%; }
+}
+
 .figure-wide figcaption {
   margin-top: 16px; font-size: .92rem; color: var(--muted); max-width: 72ch;
 }

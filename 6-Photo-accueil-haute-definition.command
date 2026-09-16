@@ -50,7 +50,7 @@ fi
 
 TAILLE=$(du -k "$DEST/$FICHIER" | cut -f1)
 if [ "$TAILLE" -gt 1024 ]; then
-  echo "  ${YEL}Attention : $((TAILLE))  ko. Baisse QUALITE ou LARGEUR si le chargement traîne.${RESET}"
+  echo "  ${YEL}Attention : ${TAILLE} ko. Baisse QUALITE ou LARGEUR si le chargement traîne.${RESET}"
 fi
 
 echo

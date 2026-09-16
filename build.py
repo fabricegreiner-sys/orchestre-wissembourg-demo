@@ -25,7 +25,7 @@ CONTENT = ROOT / "content"
 STATIC = ROOT / "static"
 OUT = ROOT / "docs"
 
-LANGS = ("fr", "de")
+LANGS = ("fr", "de", "pl")
 DEFAULT_LANG = "fr"
 BASE_URL_OVERRIDE = ""  # renseigné par --base-url : canonical / hreflang / sitemap
 
@@ -376,10 +376,12 @@ def b_contact(b: dict, lang: str, ctx: dict) -> str:
 
 
 def b_figure(b: dict, lang: str, ctx: dict) -> str:
-    """Photo affichée dans son intégralité, sans recadrage ni hauteur imposée."""
+    """Photo pleine largeur. crop="band" recadre en bandeau panoramique
+    (le recadrage est purement CSS : le fichier source reste intact)."""
     cap = f'<figcaption>{b["caption"]}</figcaption>' if b.get("caption") else ""
+    cls = "figure-wide figure-wide--band" if b.get("crop") == "band" else "figure-wide"
     return (section_open(b) + eyebrow(b) + heading(b) + b.get("html", "")
-            + f'<figure class="figure-wide">'
+            + f'<figure class="{cls}">'
             + img(b["image"], b.get("image_alt", ""))
             + cap + "</figure>"
             + buttons(b.get("buttons", []), lang) + SECTION_CLOSE)
@@ -722,8 +724,9 @@ def build() -> None:
     # la CSP peut donc rester stricte.
     redirect_js = OUT / "assets" / "js" / "lang-redirect.js"
     redirect_js.write_text(
-        '(function(){var l="%s";try{l=localStorage.getItem("ocw-lang")||'
-        '((navigator.language||"fr").slice(0,2)==="de"?"de":"fr");}catch(e){}'
+        '(function(){var l="%s";try{var n=(navigator.language||"fr").slice(0,2);'
+        'l=localStorage.getItem("ocw-lang")||'
+        '(n==="de"?"de":n==="pl"?"pl":"fr");}catch(e){}'
         'location.replace(l+"/index.html");})();\n' % DEFAULT_LANG,
         encoding="utf-8")
     redirect_name = f"lang-redirect.{fingerprint(redirect_js)}.js"

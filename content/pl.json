@@ -1,0 +1,934 @@
+{
+  "lang": "pl",
+  "locale": "pl_PL",
+  "base_url": "https://orchestre-wissembourg.com",
+  "site_name": "Orchestre de Chambre de Wissembourg",
+  "brand_name": "Orchestre de Chambre",
+  "brand_tag": "Wissembourg · Zespół francusko-niemiecki",
+  "same_as": [
+    "https://www.facebook.com/OrchestredeWissembourg/",
+    "https://www.linkedin.com/in/marc-bender-30762224/"
+  ],
+  "ribbon": "<div class=\"demo-ribbon\">Makieta demonstracyjna — propozycja nowej wersji strony Orchestre de Chambre de Wissembourg. Żadna treść nie jest oficjalna.</div>",
+  "ui": {
+    "skip": "Przejdź do treści głównej",
+    "nav_label": "Nawigacja główna",
+    "menu": "Otwórz menu",
+    "support": "Wesprzyj nas",
+    "support_href": "page:soutenir",
+    "play": "Odtwórz wideo",
+    "video_note": "Wideo ładuje się dopiero po kliknięciu. Wcześniej żadnych plików cookie YouTube."
+  },
+  "nav": [
+    {
+      "slug": "index",
+      "label": "Strona główna"
+    },
+    {
+      "slug": "direction",
+      "label": "Dyrygent"
+    },
+    {
+      "slug": "orchestre",
+      "label": "Orkiestra"
+    },
+    {
+      "slug": "agenda",
+      "label": "Kalendarz"
+    },
+    {
+      "slug": "archives",
+      "label": "Archiwum"
+    },
+    {
+      "slug": "presse",
+      "label": "Prasa"
+    },
+    {
+      "slug": "contact",
+      "label": "Kontakt"
+    }
+  ],
+  "footer": {
+    "address": "8 rue de l'Ordre Teutonique<br>67160 Wissembourg — Francja",
+    "blurb": "Stowarzyszenie prawa lokalnego wpisane do rejestru sądu w Haguenau, założone w grudniu 2013 roku.",
+    "legal": "© 2026 Orchestre de Chambre de Wissembourg — stowarzyszenie non profit",
+    "credit": "Strona lekka, bez plików cookie śledzących i bez reklam.",
+    "columns": [
+      {
+        "title": "Poznaj",
+        "links": [
+          {
+            "label": "Orkiestra francusko-niemiecka",
+            "href": "page:orchestre"
+          },
+          {
+            "label": "Dyrektor artystyczny",
+            "href": "page:direction"
+          },
+          {
+            "label": "Kalendarz i sezony",
+            "href": "page:agenda"
+          },
+          {
+            "label": "Przegląd prasy",
+            "href": "page:presse"
+          }
+        ]
+      },
+      {
+        "title": "Włącz się",
+        "links": [
+          {
+            "label": "Przekaż darowiznę",
+            "href": "page:soutenir#don"
+          },
+          {
+            "label": "Zostań członkiem stowarzyszenia",
+            "href": "page:soutenir#adhesion"
+          },
+          {
+            "label": "Mecenat firmowy",
+            "href": "page:soutenir#mecenat"
+          },
+          {
+            "label": "Dołącz do orkiestry",
+            "href": "page:contact"
+          }
+        ]
+      },
+      {
+        "title": "Obserwuj",
+        "links": [
+          {
+            "label": "Facebook",
+            "href": "https://www.facebook.com/OrchestredeWissembourg/"
+          },
+          {
+            "label": "Otrzymuj program",
+            "href": "mailto:contact@orchestre-wissembourg.com?subject=Inscription à la lettre d'information"
+          },
+          {
+            "label": "Archiwum",
+            "href": "page:archives"
+          }
+        ]
+      }
+    ]
+  },
+  "pages": {
+    "index": {
+      "title": "Orchestre de Chambre de Wissembourg — Muzyka jest naszą pasją",
+      "description": "Francusko-niemiecka orkiestra kameralna z Wissembourga: około pięćdziesięciu muzyków amatorów i zawodowców pod dyrekcją Marca Bendera. Laureat Nagrody Trójkąta Weimarskiego 2024.",
+      "og_image": "hero",
+      "blocks": [
+        {
+          "type": "hero",
+          "image": "hero",
+          "image_alt": "Orkiestra Kameralna Wissembourg podczas koncertu",
+          "badges": [
+            "Nagroda Trójkąta Weimarskiego 2024",
+            "Partnerstwo z Musikschule Landau",
+            "Założona w 2013 roku"
+          ],
+          "h1": "Orchestre de Chambre de Wissembourg",
+          "tagline": "Muzyka jest naszą pasją",
+          "lead": "Około pięćdziesięciu muzyków amatorów i zawodowców — Francuzów, Niemców i Polaków — w każdym wieku i z różnych środowisk, zjednoczonych pod dyrekcją <strong>Marca Bendera</strong>, by muzyka kameralna żyła po obu stronach Renu.",
+          "buttons": [
+            {
+              "label": "Zobacz koncerty",
+              "href": "page:agenda",
+              "style": "primary"
+            },
+            {
+              "label": "Wesprzyj orkiestrę",
+              "href": "page:soutenir",
+              "style": "ghost"
+            }
+          ],
+          "motion": "kenburns"
+        },
+        {
+          "type": "stats",
+          "ink": true,
+          "items": [
+            {
+              "n": "50",
+              "l": "muzyków"
+            },
+            {
+              "n": "2013",
+              "l": "rok założenia"
+            },
+            {
+              "n": "3",
+              "l": "kraje, jedna orkiestra"
+            },
+            {
+              "n": "14",
+              "l": "sezonów koncertowych"
+            }
+          ]
+        },
+        {
+          "type": "posterFeatured",
+          "eyebrow": "Na afiszu",
+          "h2": "Najbliższy koncert",
+          "image": "affiche_actu",
+          "image_alt": "Afisz najbliższego koncertu Orkiestry Kameralnej Wissembourg",
+          "html": "<p class=\"lead\">Zapraszamy na najbliższy koncert orkiestry. Wstęp wolny, zbiórka na rzecz stowarzyszenia — wkrótce będzie można zarezerwować miejsce online.</p><p class=\"muted\">Data i miejsce w tej makiecie są przykładowe i należy je przepisać z oficjalnego afisza. W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
+          "buttons": [
+            {
+              "label": "Wszystkie koncerty",
+              "href": "page:agenda",
+              "style": "dark"
+            },
+            {
+              "label": "Rezerwacja (do uruchomienia)",
+              "href": "page:soutenir#billetterie",
+              "style": "ghost"
+            }
+          ]
+        },
+        {
+          "type": "split",
+          "alt": true,
+          "eyebrow": "Zespół",
+          "h2": "Orkiestra bez granic",
+          "image": "weimar",
+          "image_alt": "Wręczenie orkiestrze Nagrody Trójkąta Weimarskiego 2024",
+          "image_right": true,
+          "html": "<p class=\"lead\">Stowarzyszenie OCW powstało w 2013 roku z inicjatywy zaangażowanych uczniów, wspieranych przez oddanych nauczycieli.</p><p>Od 2021 roku, we współpracy ze szkołą muzyczną w Landau, zespół skupia dziś około pięćdziesięciu muzyków amatorów i zawodowców, w każdym wieku i z różnych środowisk, pod dyrekcją Marca Bendera.</p><p>Koncerty, trasy, partnerstwa z innymi międzynarodowymi szkołami muzycznymi: każdy projekt to okazja do rozwoju osobistego, kulturalnego i muzycznego — i źródło trwałych przyjaźni. W duchu Trójkąta Weimarskiego zespół dał koncerty trójnarodowe, łączące muzyków francuskich, niemieckich i polskich.</p><div class=\"bilingual\"><p class=\"eyebrow\">Auf Deutsch</p><p>Musik, eine universelle Sprache, über Grenzen hinweg! Der Verein OCW wurde 2013 auf Initiative motivierter Schülerinnen und Schüler gegründet.</p></div>",
+          "buttons": [
+            {
+              "label": "Poznaj orkiestrę",
+              "href": "page:orchestre",
+              "style": "dark"
+            }
+          ]
+        },
+        {
+          "type": "videos",
+          "ink": true,
+          "eyebrow": "Wyróżnienie",
+          "h2": "Nagroda Trójkąta Weimarskiego 2024",
+          "html": "<p class=\"lead u-measure\">Nagroda Trójkąta Weimarskiego 2024 została przyznana projektowi <em>Youth Europe Music</em> przez stowarzyszenie Weimarer Dreieck, w obecności burmistrza miasta i premiera landu Bodo Ramelowa — to uznanie dla europejskiego zaangażowania orkiestry.</p>",
+          "items": [
+            {
+              "id": "goOJV-_8cI0",
+              "label": "Ceremonia wręczenia Nagrody Trójkąta Weimarskiego 2024"
+            },
+            {
+              "id": "D73fEIjB0qc",
+              "label": "Youth Europe Music — fragment koncertu"
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "eyebrow": "Włącz się",
+          "h2": "Trzy sposoby, by wesprzeć orkiestrę",
+          "items": [
+            {
+              "image": "affiche_df25",
+              "title": "Przyjdź na koncert",
+              "text": "Koncerty we Francji i w Niemczech przez cały sezon — w kościołach, salach i szkołach muzycznych Górnego Renu.",
+              "link": "page:agenda",
+              "link_label": "Zobacz kalendarz"
+            },
+            {
+              "image": "pupitre_violons",
+              "title": "Dołącz do pulpitów",
+              "text": "Grasz na instrumencie smyczkowym lub dętym, amatorsko albo zawodowo? Orkiestra przyjmuje nowych muzyków w każdym sezonie.",
+              "link": "page:contact",
+              "link_label": "Napisz do nas"
+            },
+            {
+              "image": "pupitre_celli",
+              "title": "Zostań mecenasem",
+              "text": "Osoby prywatne i firmy: darowizna daje prawo do ulgi podatkowej od 60 do 66 % (prawo francuskie) i finansuje nuty, transport oraz wynajem sal.",
+              "link": "page:soutenir",
+              "link_label": "Wesprzyj nas"
+            }
+          ]
+        },
+        {
+          "type": "sponsors",
+          "alt": true,
+          "eyebrow": "Wspierają nas",
+          "h2": "Partnerzy i mecenasi",
+          "html": "<p class=\"lead\">Serdecznie dziękujemy naszym sponsorom, dzięki którym każdy sezon koncertowy jest możliwy.</p>",
+          "items": [
+            {
+              "image": "sponsor_ville",
+              "name": "Miasto Wissembourg"
+            },
+            {
+              "image": "sponsor_smsas",
+              "name": "SMSAS"
+            },
+            {
+              "image": "sponsor_1",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_2",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_3",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_4",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_fb",
+              "name": "Partner"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Zostań partnerem",
+              "href": "page:soutenir#mecenat",
+              "style": "dark"
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Newsletter",
+          "h2": "Nie przegap żadnego koncertu",
+          "html": "Otrzymuj program sezonu i przypomnienia o koncertach, dwa do czterech razy w roku. Wypisanie jednym kliknięciem, żadnych danych przekazywanych osobom trzecim.",
+          "buttons": [
+            {
+              "label": "Otrzymuj program e-mailem",
+              "href": "mailto:contact@orchestre-wissembourg.com?subject=Inscription à la lettre d'information",
+              "style": "primary"
+            },
+            {
+              "label": "Obserwuj na Facebooku",
+              "href": "https://www.facebook.com/OrchestredeWissembourg/",
+              "style": "ghost"
+            }
+          ]
+        }
+      ]
+    },
+    "direction": {
+      "title": "Marc Bender, dyrektor artystyczny — Orchestre de Chambre de Wissembourg",
+      "description": "Marc Bender kieruje Orkiestrą Kameralną Wissembourg od 2010 roku. Skrzypek Filharmonii Baden-Baden, kształcony w Strasburgu, Stuttgarcie i Londynie.",
+      "og_image": "marc_bender",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Dyrekcja artystyczna",
+          "h1": "Marc Bender",
+          "lead": "Skrzypek i dyrygent. Od 2010 roku kieruje Orkiestrą Kameralną Wissembourg i rozwija jej francusko-niemiecki projekt."
+        },
+        {
+          "type": "split",
+          "image": "marc_bender",
+          "ratio": "tall",
+          "image_alt": "Marc Bender, dyrekcja artystyczna",
+          "eyebrow": "Sylwetka",
+          "h2": "Skrzypce jako łącznik",
+          "html": "<p class=\"lead\">Marc Bender studiował skrzypce w Konserwatorium w Strasburgu, w klasach Odile Meyer-Siat, a następnie Haïka Davtiana.</p><p>Kształcił się dalej w Musikhochschule w Stuttgarcie u Kolji Lessinga, a potem w Royal College of Music w Londynie u Levona Chilingiriana.</p><p>Grał w English Chamber Orchestra, Heilbronner Kammerorchester, Tübinger Kammerorchester oraz w Orkiestrze Filharmonicznej w Strasburgu, występował w całej Europie i w Azji. Dziś jest skrzypkiem Filharmonii Baden-Baden.</p><p>Od 2010 roku sprawuje kierownictwo muzyczne Orkiestry Kameralnej Wissembourg i towarzyszył jej przemianie w zespół francusko-niemiecki u boku szkoły muzycznej w Landau.</p>",
+          "buttons": [
+            {
+              "label": "Profil LinkedIn",
+              "href": "https://www.linkedin.com/in/marc-bender-30762224/",
+              "style": "ghost"
+            }
+          ]
+        },
+        {
+          "type": "stats",
+          "ink": true,
+          "items": [
+            {
+              "n": "2010",
+              "l": "lat na czele orkiestry"
+            },
+            {
+              "n": "3",
+              "l": "konserwatoria i akademie"
+            },
+            {
+              "n": "4",
+              "l": "orkiestry zawodowe"
+            },
+            {
+              "n": "2",
+              "l": "kontynenty w trasie"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Droga zawodowa",
+          "h2": "Wykształcenie i kariera",
+          "items": [
+            {
+              "when": "Studia",
+              "what": "Konserwatorium w Strasburgu",
+              "text": "Skrzypce, w klasach Odile Meyer-Siat, a następnie Haïka Davtiana."
+            },
+            {
+              "when": "Studia podyplomowe",
+              "what": "Musikhochschule w Stuttgarcie",
+              "text": "U Kolji Lessinga."
+            },
+            {
+              "when": "Studia podyplomowe",
+              "what": "Royal College of Music, Londyn",
+              "text": "U Levona Chilingiriana."
+            },
+            {
+              "when": "Kariera orkiestrowa",
+              "what": "English Chamber Orchestra, Heilbronn, Tybinga, Strasburg",
+              "text": "Skrzypek Heilbronner Kammerorchester, Tübinger Kammerorchester i Orkiestry Filharmonicznej w Strasburgu. Koncerty w całej Europie i w Azji."
+            },
+            {
+              "when": "Od 2010 roku",
+              "what": "Kierownictwo Orkiestry Kameralnej Wissembourg",
+              "text": "Kierownictwo muzyczne zespołu i rozwój projektu francusko-niemieckiego ze szkołą muzyczną w Landau."
+            },
+            {
+              "when": "Obecnie",
+              "what": "Filharmonia Baden-Baden",
+              "text": "Skrzypek w orkiestrze."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "ink": true,
+          "text": "Muzyka, język uniwersalny, ponad granicami.",
+          "cite": "Dewiza Orkiestry Kameralnej Wissembourg"
+        },
+        {
+          "type": "cta",
+          "h2": "Współpraca z orkiestrą",
+          "html": "Projekt koncertu, zaproszenie solisty, partnerstwo ze szkołą muzyczną lub instytucją: dyrekcja artystyczna odpowiada na propozycje bezpośrednio.",
+          "buttons": [
+            {
+              "label": "Napisz do orkiestry",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
+    "orchestre": {
+      "title": "Orkiestra francusko-niemiecka — Orchestre de Chambre de Wissembourg",
+      "description": "Francusko-niemiecka orkiestra kameralna licząca pięćdziesięciu muzyków, pod dyrekcją Marca Bendera, we współpracy ze szkołą muzyczną w Landau od 2021 roku.",
+      "og_image": "hero",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Zespół",
+          "h1": "Orkiestra francusko-niemiecka",
+          "lead": "Muzyka, język uniwersalny, ponad granicami. — Musik, eine universelle Sprache, über Grenzen hinweg."
+        },
+        {
+          "type": "figure",
+          "alt": false,
+          "crop": "band",
+          "eyebrow": "Zespół w pełnym składzie",
+          "h2": "Pięćdziesięciu muzyków, trzy kraje",
+          "image": "hero",
+          "image_alt": "Zdjęcie grupowe Orkiestry Kameralnej Wissembourg w pełnym składzie na scenie",
+          "caption": "Orkiestra Kameralna Wissembourg na scenie — muzycy francuscy, niemieccy i polscy razem, pod dyrekcją Marca Bendera."
+        },
+        {
+          "type": "prose",
+          "narrow": true,
+          "html": "<p class=\"lead\">Celem takiej struktury jest wspólne i trwałe dzielenie się radością gry na instrumencie w przyjaznej atmosferze oraz otwieranie się na inne kraje — Niemcy, Polskę… Muzyka jest bowiem językiem uniwersalnym.</p><p>Orkiestra francusko-niemiecka realizuje przez cały rok różne projekty: koncerty, trasy, partnerstwa z innymi międzynarodowymi szkołami muzycznymi. Te doświadczenia wzbogacają osobiście, kulturalnie i muzycznie, a także tworzą trwałe przyjaźnie.</p><p>Stowarzyszenie OCW (Orchestre de Chambre de Wissembourg) powstało w 2013 roku z inicjatywy zaangażowanych uczniów, wspieranych przez oddanych nauczycieli. Zespół, współpracujący ze szkołą muzyczną w Landau od 2021 roku, liczy dziś około pięćdziesięciu muzyków amatorów i zawodowców, w każdym wieku i z różnych środowisk, pod dyrekcją Marca Bendera.</p><div class=\"bilingual\"><p class=\"eyebrow\">Auf Deutsch</p><p>Das Ziel einer solchen Struktur ist, gemeinsam und nachhaltig die Freude am Spielen eines Instruments in einer freundlichen Atmosphäre zu teilen und auch die Offenheit gegenüber anderen Ländern (Deutschland, Polen…) zu fördern. Musik ist eine universelle Sprache!</p><p>Das deutsch-französische Orchester bietet daher das ganze Jahr über verschiedene Projekte an, wie Konzerte, Tourneen und Partnerschaften mit anderen internationalen Musikschulen.</p></div>"
+        },
+        {
+          "type": "split",
+          "alt": true,
+          "eyebrow": "Dyrekcja artystyczna",
+          "h2": "Marc Bender",
+          "image": "marc_bender",
+          "image_alt": "Marc Bender, dyrektor muzyczny Orkiestry Kameralnej Wissembourg",
+          "html": "<p class=\"lead\">Skrzypek kształcony w Strasburgu, Stuttgarcie i Londynie, dziś w Filharmonii Baden-Baden. Kieruje orkiestrą od 2010 roku.</p>",
+          "buttons": [
+            {
+              "label": "Poznaj dyrektora artystycznego",
+              "href": "page:direction",
+              "style": "dark"
+            }
+          ],
+          "ratio": "tall"
+        },
+        {
+          "type": "desks",
+          "eyebrow": "Muzycy",
+          "h2": "Pulpity",
+          "html": "<p class=\"lead u-measure\">Smyczki, instrumenty dęte i perkusja: orkiestra skupia około pięćdziesięciu instrumentalistów z Francji, Niemiec i Polski. Imienna lista muzyków według pulpitów jest w opracowaniu i zostanie tu opublikowana.</p>",
+          "items": [
+            {
+              "image": "pupitre_violons",
+              "label": "Skrzypce I i II"
+            },
+            {
+              "image": "pupitre_altos",
+              "label": "Altówki"
+            },
+            {
+              "image": "pupitre_celli",
+              "label": "Wiolonczele"
+            },
+            {
+              "image": "pupitre_basses",
+              "label": "Kontrabasy"
+            }
+          ]
+        },
+        {
+          "type": "split",
+          "alt": true,
+          "eyebrow": "Stowarzyszenie",
+          "h2": "Stowarzyszenie w służbie edukacji muzycznej",
+          "image": "orchestre_2",
+          "image_alt": "Partnerstwo z Kreismusikschule Südliche Weinstraße w Landau",
+          "image_right": true,
+          "html": "<p>Stowarzyszenie <strong>Orchestre de Chambre de Wissembourg</strong> powstało w grudniu 2013 roku, aby dalej rozwijać edukację muzyczną. Jest wpisane do rejestru sądu w Haguenau.</p><h3>Zarząd</h3><ul class=\"infolist\"><li><strong>Marc Bender</strong>Dyrektor muzyczny</li><li><strong>William Hege</strong>Prezes</li><li><strong>Adeline Hirschler</strong>Skarbniczka</li><li><strong>Gabrièle Hege</strong>Sekretarz</li></ul>",
+          "fit": "contain"
+        },
+        {
+          "type": "cta",
+          "h2": "Grasz na instrumencie?",
+          "html": "W każdym sezonie orkiestra przyjmuje nowych muzyków — zarówno doświadczonych amatorów, jak i zawodowców, z Francji, Niemiec i Polski. Napisz do nas, a podamy terminy najbliższych prób.",
+          "buttons": [
+            {
+              "label": "Dołącz do orkiestry",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
+    "agenda": {
+      "title": "Kalendarz i sezony — Orchestre de Chambre de Wissembourg",
+      "description": "Nadchodzące koncerty Orkiestry Kameralnej Wissembourg oraz archiwum czternastu sezonów od 2011 roku.",
+      "og_image": "affiche_actu",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Bieżący sezon",
+          "h1": "Kalendarz koncertów",
+          "lead": "Koncerty we Francji i w Niemczech — w kościołach, salach i szkołach muzycznych Górnego Renu. Wstęp wolny lub zbiórka, o ile nie zaznaczono inaczej."
+        },
+        {
+          "type": "events",
+          "eyebrow": "Wkrótce",
+          "h2": "Nadchodzące koncerty",
+          "html": "<p class=\"lead\">Przykład wyglądu: w wersji docelowej każdy koncert jest wpisem o określonej strukturze — zaindeksowanym przez Google, możliwym do wyeksportowania do kalendarzy kulturalnych i do przypomnienia w newsletterze.</p>",
+          "items": [
+            {
+              "day": "18",
+              "month": "paź.",
+              "year": "2026",
+              "title": "Koncert inaugurujący sezon",
+              "meta": "20.00 · Kościół św. Piotra i Pawła, Wissembourg · Program do potwierdzenia · Wstęp wolny, zbiórka",
+              "link": "page:soutenir#billetterie",
+              "link_label": "Rezerwuj"
+            },
+            {
+              "day": "29",
+              "month": "lis.",
+              "year": "2026",
+              "title": "Deutsch-Französisches Konzert",
+              "meta": "17.00 · Musikschule Landau (Niemcy) · We współpracy ze szkołą muzyczną w Landau",
+              "link": "page:soutenir#billetterie",
+              "link_label": "Rezerwuj"
+            },
+            {
+              "day": "24",
+              "month": "sty.",
+              "year": "2027",
+              "title": "Koncert noworoczny",
+              "meta": "16.00 · Salle de la Nef, Wissembourg · Program wiedeński",
+              "link": "page:soutenir#billetterie",
+              "link_label": "Rezerwuj"
+            }
+          ],
+          "note": "<p><strong>Do uzupełnienia przez stowarzyszenie.</strong> Te trzy daty są przykładami formatowania, pokazującymi wygląd strony. Należy je zastąpić rzeczywistym programem sezonu.</p>"
+        }
+      ]
+    },
+    "archives": {
+      "title": "Archiwum — Orchestre de Chambre de Wissembourg",
+      "description": "Czternaście sezonów koncertowych: afisze, zdjęcia i nagrania Orkiestry Kameralnej Wissembourg od 2011 roku.",
+      "og_image": "weimar",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Pamięć orkiestry",
+          "h1": "Archiwum",
+          "lead": "Czternaście sezonów koncertowych od 2011 roku, we Francji i w Niemczech. Afisze, fotografie i nagrania wideo: wszystko zachowane i ponownie udostępnione, wreszcie w czytelnej formie."
+        },
+        {
+          "type": "posters",
+          "alt": false,
+          "eyebrow": "Sezon 2024-2025",
+          "h2": "Afisze ostatniego sezonu",
+          "html": "<p class=\"lead\">Każdy sezon ma własną galerię. Afisze są pokazywane na pełnej stronie i zoptymalizowane tak, by ładowały się szybko, także na telefonie w sieci 4G.</p>",
+          "items": [
+            {
+              "image": "affiche_mai25",
+              "caption": "Koncert, maj 2025"
+            },
+            {
+              "image": "affiche_mars25",
+              "caption": "Koncert wiosenny 2025"
+            },
+            {
+              "image": "affiche_df25",
+              "caption": "Deutsch-Französisches Konzert — styczeń 2025"
+            },
+            {
+              "image": "affiche_oct24",
+              "caption": "Koncert, październik 2024"
+            },
+            {
+              "image": "affiche_oct24b",
+              "caption": "Koncert jesienny 2024"
+            }
+          ]
+        },
+        {
+          "type": "videos",
+          "ink": true,
+          "eyebrow": "Nagrania",
+          "h2": "Koncerty na wideo",
+          "html": "<p class=\"lead u-measure\">Nagrania pozostają na kanale orkiestry i są tu osadzone. Nic nie ładuje się, dopóki nie klikniesz: żadnych plików cookie osób trzecich przy otwarciu strony.</p>",
+          "items": [
+            {
+              "id": "goOJV-_8cI0",
+              "label": "Ceremonia wręczenia Nagrody Trójkąta Weimarskiego 2024"
+            },
+            {
+              "id": "D73fEIjB0qc",
+              "label": "Youth Europe Music — fragment koncertu"
+            }
+          ]
+        },
+        {
+          "type": "seasons",
+          "eyebrow": "Wszystkie sezony",
+          "h2": "Od 2011 roku do dziś",
+          "html": "<p class=\"lead\">Szczegółowe strony każdego sezonu, przeniesione ze starej witryny. Będą tu dodawane w miarę postępu migracji.</p>",
+          "items": [
+            {
+              "label": "Sezon 2024-2025",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2024-2025/"
+            },
+            {
+              "label": "Sezon 2023-2024",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2023-2024/"
+            },
+            {
+              "label": "Sezon 2022-2023",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2022-2023/"
+            },
+            {
+              "label": "Sezon 2021-2022",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2021-2022/"
+            },
+            {
+              "label": "Sezon 2020-2021",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2020-2021/"
+            },
+            {
+              "label": "Sezon 2019-2020",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2019-2020/"
+            },
+            {
+              "label": "Sezon 2018-2019",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2018-2019/"
+            },
+            {
+              "label": "Sezon 2017-2018",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2017-2018/"
+            },
+            {
+              "label": "Sezon 2016-2017",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2016-2017/"
+            },
+            {
+              "label": "Sezon 2015-2016",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2015-2016/"
+            },
+            {
+              "label": "Sezon 2014-2015",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2014-2015/"
+            },
+            {
+              "label": "Sezon 2013-2014",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2013-2014/"
+            },
+            {
+              "label": "Sezon 2012-2013",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2012-2013/"
+            },
+            {
+              "label": "Sezon 2011-2012",
+              "url": "https://orchestre-wissembourg.com/historique/saison-2011-2012/"
+            }
+          ],
+          "alt": true
+        },
+        {
+          "type": "prose",
+          "narrow": true,
+          "eyebrow": "Zbiór fotograficzny",
+          "h2": "Trzynaście lat zdjęć, zachowanych na dobre",
+          "html": "<p class=\"lead\">Zbiór zgromadzony od 2013 roku to blisko 3 GB: zdjęcia koncertowe, afisze, skany prasowe, programy.</p><p>Całość została odzyskana i zachowana. Żyje teraz w dwóch miejscach, każde w swojej roli:</p><div class=\"note\"><p><strong>Na stronie</strong> — wybór z każdego sezonu, w rozdzielczości dopasowanej do ekranu. Zdjęcia ładują się w ułamku sekundy, podczas gdy pliki źródłowe, szerokie nawet na 5000 pikseli, obciążały każdą wizytę.</p></div><div class=\"note u-mt-16\"><p><strong>Poza stroną</strong> — komplet oryginałów w wysokiej rozdzielczości, w przestrzeni dyskowej stowarzyszenia i na kopii fizycznej. Strona internetowa służy do pokazywania, nie do archiwizacji: oryginały pozostają dostępne dla prasy, na afisze i do druku.</p></div><p class=\"muted u-mt-20\">Odzyskanie plików trzeba wykonać, dopóki stary hosting działa. Po rozwiązaniu abonamentu nie będzie już można ich pobrać.</p>"
+        }
+      ]
+    },
+    "presse": {
+      "title": "Przegląd prasy — Orchestre de Chambre de Wissembourg",
+      "description": "Artykuły prasowe poświęcone Orkiestrze Kameralnej Wissembourg i jej dyrektorowi muzycznemu Marcowi Benderowi.",
+      "og_image": "presse_bender",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Strefa prasowa",
+          "h1": "Piszą o nas",
+          "lead": "Artykuły opublikowane we francuskiej i niemieckiej prasie regionalnej. Dziennikarze: zdjęcia w wysokiej rozdzielczości i materiały prasowe udostępniamy na życzenie."
+        },
+        {
+          "type": "clips",
+          "eyebrow": "Wybór",
+          "h2": "Artykuły",
+          "items": [
+            {
+              "source": "Dernières Nouvelles d'Alsace · 22 maja 2024",
+              "title": "Koncert trójnarodowy w Wissembourgu",
+              "text": "Orkiestra łączy muzyków francuskich, niemieckich i polskich w koncercie pod znakiem europejskiej przyjaźni.",
+              "image": "presse_1",
+              "link": "https://orchestre-wissembourg.com/wp-content/uploads/2024/06/article-dna-2024_05_22-concert-trinational.pdf",
+              "link_label": "Przeczytaj artykuł (PDF)"
+            },
+            {
+              "source": "Sylwetka",
+              "title": "Marc Bender, skrzypce jako łącznik",
+              "text": "Sylwetka dyrektora muzycznego orkiestry, skrzypka Filharmonii Baden-Baden.",
+              "image": "presse_bender"
+            },
+            {
+              "source": "Prasa regionalna · wrzesień 2022",
+              "title": "Orkiestra wraca po wakacjach",
+              "text": "Relacja z inauguracyjnego koncertu zespołu francusko-niemieckiego.",
+              "image": "presse_2022"
+            },
+            {
+              "source": "Prasa regionalna · styczeń 2020",
+              "title": "Koncert noworoczny",
+              "text": "Orkiestra otwiera rok przy komplecie publiczności.",
+              "image": "presse_2020"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Kontakt dla prasy",
+          "h2": "Materiały prasowe",
+          "html": "<div class=\"note\"><p>Zdjęcia w wysokiej rozdzielczości do swobodnego wykorzystania, biografia dyrygenta, historia stowarzyszenia i projekty afiszy: napisz do nas, a prześlemy komplet w ciągu 48 godzin.</p></div>",
+          "buttons": [
+            {
+              "label": "Poproś o materiały prasowe",
+              "href": "page:contact",
+              "style": "dark"
+            }
+          ]
+        }
+      ]
+    },
+    "soutenir": {
+      "title": "Wesprzyj nas — Orchestre de Chambre de Wissembourg",
+      "description": "Darowizna, członkostwo, mecenat firmowy: trzy sposoby wsparcia Orkiestry Kameralnej Wissembourg, z ulgą podatkową.",
+      "og_image": "weimar",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Mecenat i darowizny",
+          "h1": "Spraw, by orkiestra żyła",
+          "lead": "Nuty, wynajem sal, transport instrumentów, przejazdy przez granicę: każdy sezon kosztuje. Orkiestra to stowarzyszenie w pełni wolontariackie — Twoje wsparcie trafia wprost do muzyki."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Przekaż darowiznę",
+              "text": "Jednorazowo lub co miesiąc, od 10 €. Automatyczne potwierdzenie podatkowe: darowizna 100 € kosztuje realnie 34 € po uldze podatkowej 66 % (prawo francuskie).",
+              "link": "https://www.helloasso.com/",
+              "link_label": "Przekaż online"
+            },
+            {
+              "title": "Zostań członkiem stowarzyszenia",
+              "text": "Zostań członkiem, otrzymuj program w przedpremierowo i bierz udział w walnym zgromadzeniu. Składka roczna od 20 €.",
+              "link": "https://www.helloasso.com/",
+              "link_label": "Dołącz"
+            },
+            {
+              "title": "Mecenat firmowy",
+              "text": "60 % ulgi w podatku dochodowym od osób prawnych, do 0,5 ‰ obrotu (prawo francuskie). Twoje logo na afiszach, w programie i na tej stronie, z linkiem do firmy.",
+              "link": "page:contact",
+              "link_label": "Skontaktuj się z nami"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "alt": true,
+          "narrow": true,
+          "eyebrow": "Jak to działa",
+          "h2": "Płatności online bezpłatne dla stowarzyszenia",
+          "html": "<p class=\"lead\">Darowizny, składki członkowskie i bilety będą obsługiwane przez <strong>HelloAsso</strong>, wiodącą platformę francuskich stowarzyszeń: 0 % prowizji, automatyczne potwierdzenie podatkowe, hosting we Francji i zgodność z RODO.</p><div class=\"note\"><p><strong>Do uruchomienia.</strong> Powyższe przyciski prowadzą dziś do HelloAsso wyłącznie poglądowo. Po założeniu konta stowarzyszenia (bezpłatnie, około trzydziestu minut) będą kierować do prawdziwych formularzy darowizny, członkostwa i rezerwacji.</p></div><h3 id=\"billetterie\">Bilety</h3><p>Rezerwacja online pozwala zająć miejsce z wyprzedzeniem, oszacować frekwencję i wysłać automatyczne przypomnienie dzień przed koncertem. Działa także przy wstępie wolnym: rezerwacja jest bezpłatna, a zbiórka odbywa się na miejscu.</p><h3 id=\"adhesion\">Członkostwo</h3><p>Składka wspiera bieżącą działalność stowarzyszenia i daje prawo głosu na dorocznym walnym zgromadzeniu.</p><h3 id=\"mecenat\">Mecenat firmowy</h3><p>Mecenat reguluje francuska ustawa Aillagon z 1 sierpnia 2003 roku: 60 % kwoty darowizny podlega odliczeniu od podatku dochodowego od osób prawnych, do 0,5 ‰ obrotu netto, z możliwością przeniesienia na pięć lat. W zamian firma otrzymuje widoczność (logo, wzmianka, zaproszenia) o wartości do 25 % kwoty darowizny.</p>"
+        },
+        {
+          "type": "sponsors",
+          "eyebrow": "Już nas wspierają",
+          "h2": "Nasi partnerzy",
+          "html": "<p class=\"lead\">Serdecznie dziękujemy naszym sponsorom za niezmienne wsparcie.</p>",
+          "items": [
+            {
+              "image": "sponsor_ville",
+              "name": "Miasto Wissembourg"
+            },
+            {
+              "image": "sponsor_smsas",
+              "name": "SMSAS"
+            },
+            {
+              "image": "sponsor_1",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_2",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_3",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_4",
+              "name": "Partner"
+            },
+            {
+              "image": "sponsor_fb",
+              "name": "Partner"
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "h2": "Pytanie o mecenat?",
+          "html": "William Hege, prezes stowarzyszenia, odpowiada bezpośrednio firmom i fundacjom, które chcą zaangażować się u boku orkiestry.",
+          "buttons": [
+            {
+              "label": "Nawiąż kontakt",
+              "href": "page:contact",
+              "style": "primary"
+            }
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Kontakt — Orchestre de Chambre de Wissembourg",
+      "description": "Kontakt z Orkiestrą Kameralną Wissembourg: projekt koncertu, zgłoszenie muzyka, mecenat, prasa.",
+      "og_image": "hero",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "eyebrow": "Kontakt",
+          "h1": "Napisz do nas",
+          "lead": "Projekt koncertu, pytanie, sugestia? Chęć dołączenia do orkiestry? Zamiar zostania mecenasem? Odpowiadamy na każdą wiadomość."
+        },
+        {
+          "type": "contact",
+          "eyebrow": "Dane kontaktowe",
+          "h2": "Orchestre de Chambre de Wissembourg",
+          "html": "",
+          "info": [
+            {
+              "label": "E-mail",
+              "value": "<a href=\"mailto:contact@orchestre-wissembourg.com\">contact@orchestre-wissembourg.com</a>"
+            },
+            {
+              "label": "Adres",
+              "value": "8 rue de l'Ordre Teutonique<br>67160 Wissembourg — Francja"
+            },
+            {
+              "label": "Prezes",
+              "value": "William Hege"
+            },
+            {
+              "label": "Kierownictwo muzyczne",
+              "value": "Marc Bender"
+            },
+            {
+              "label": "Skarbnik",
+              "value": "Adeline Hirschler"
+            },
+            {
+              "label": "Sekretariat",
+              "value": "Gabrièle Hege"
+            },
+            {
+              "label": "Media społecznościowe",
+              "value": "<a href=\"https://www.facebook.com/OrchestredeWissembourg/\" target=\"_blank\" rel=\"noopener\">Facebook — Orchestre de Wissembourg</a>"
+            },
+            {
+              "label": "Status prawny",
+              "value": "Stowarzyszenie prawa lokalnego wpisane do rejestru sądu w Haguenau, założone w grudniu 2013 roku."
+            }
+          ],
+          "mailto": {
+            "address": "contact@orchestre-wissembourg.com",
+            "title": "Napisz do nas",
+            "html": "Jeden adres do wszystkich spraw. Twoja wiadomość trafia wprost do skrzynki zarządu.",
+            "hint": "Bez formularza, bez usług osób trzecich, żadnych danych zapisywanych na stronie.",
+            "subjects": [
+              {
+                "label": "Zaproponuj koncert",
+                "subject": "Propozycja koncertu"
+              },
+              {
+                "label": "Dołącz do orkiestry",
+                "subject": "Zgłoszenie muzyka"
+              },
+              {
+                "label": "Zostań mecenasem",
+                "subject": "Mecenat i partnerstwo"
+              },
+              {
+                "label": "Zapytanie prasowe",
+                "subject": "Zapytanie prasowe"
+              },
+              {
+                "label": "Otrzymuj program",
+                "subject": "Zapis do newslettera"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
