@@ -137,8 +137,13 @@ def hero_media(b: dict) -> str:
     # une image fixe — rien à télécharger, et la netteté suit la définition de
     # l'écran au lieu d'être figée par l'encodage.
     if b.get("motion") == "kenburns":
-        return img(b["image"], b.get("image_alt", ""),
-                   cls="hero__media--motion", lazy=False)
+        # Le travelling agrandit l'image : on prend la version haute définition
+        # si elle a été rapatriée, sinon on retombe sur la photo standard.
+        key = b["image"]
+        hd = MEDIA["files"].get(key + "_hd")
+        if hd and IMAGE_MODE == "local" and (STATIC / "img" / hd["local"]).exists():
+            key = key + "_hd"
+        return img(key, b.get("image_alt", ""), cls="hero__media--motion", lazy=False)
 
     v = b.get("video")
     src = (STATIC / "video" / v["file"]) if v else None
