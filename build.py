@@ -38,6 +38,7 @@ with (CONTENT / "media.json").open(encoding="utf-8") as fh:
 
 WP_BASE = MEDIA["wordpress_base"]
 IMAGE_MODE = "remote"
+ASSETS: dict = {}
 
 
 def media(key: str) -> str:
@@ -466,7 +467,7 @@ PAGE = """<!DOCTYPE html>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="{csp}">
 <link rel="icon" href="{favicon}">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="{css}">
 <script type="application/ld+json">{jsonld}</script>
 </head>
 <body>
@@ -491,7 +492,7 @@ PAGE = """<!DOCTYPE html>
 {body}
 </main>
 {footer}
-<script src="../assets/js/main.js" defer></script>
+<script src="{js}" defer></script>
 </body>
 </html>
 """
@@ -500,6 +501,17 @@ PAGE = """<!DOCTYPE html>
 # --------------------------------------------------------------------------
 # En-têtes de sécurité
 # --------------------------------------------------------------------------
+
+def fingerprint(path: Path) -> str:
+    """8 caractères issus du contenu du fichier, à insérer dans son nom.
+
+    Sans cela, le cache d'un an déclaré dans _headers empêche toute mise à jour
+    d'atteindre les visiteurs déjà venus : le nom de fichier ne changeant pas,
+    le navigateur et le CDN gardent l'ancienne version. Avec l'empreinte, chaque
+    modification crée une URL neuve et le cache long devient légitime.
+    """
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:8]
+
 
 def sha256_csp(text: str) -> str:
     """Empreinte d'un script inline, au format attendu par la CSP."""
@@ -550,8 +562,26 @@ HEADERS_TEMPLATE = """\
   Cross-Origin-Resource-Policy: same-origin
   X-Permitted-Cross-Domain-Policies: none
 
-/assets/*
+# CSS et JS portent une empreinte dans leur nom : un cache d'un an est sûr,
+# toute modification produit une URL différente.
+/assets/css/*
   Cache-Control: public, max-age=31536000, immutable
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images et vidéos gardent un nom stable : cache d'une semaine seulement,
+# sinon un remplacement de visuel mettrait un an à parvenir aux visiteurs.
+/assets/img/*
+  Cache-Control: public, max-age=604800
+/assets/video/*
+  Cache-Control: public, max-age=604800
+
+# Les pages sont revalidées à chaque visite : c'est ce qui rend une mise à jour
+# de contenu immédiatement visible.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
 """
 
 
@@ -576,7 +606,7 @@ def jsonld(data: dict, lang: str) -> str:
     }, ensure_ascii=False)
 
 
-def render_page(data: dict, slug: str, page: dict, lang: str) -> str:
+def render_page(data: dict, slug: str, page: dict, lang: str, assets: dict) -> str:
     ctx = {"play_label": data["ui"]["play"], "video_note": data["ui"]["video_note"]}
     body = "\n".join(BLOCKS[b["type"]](b, lang, ctx) for b in page["blocks"])
     ld = jsonld(data, lang)
@@ -597,6 +627,8 @@ def render_page(data: dict, slug: str, page: dict, lang: str) -> str:
         logo=e(media("logo")),
         jsonld=ld,
         csp=e(csp([sha256_csp(ld)], with_frame_ancestors=False)),
+        css=e(assets["css"]),
+        js=e(assets["js"]),
         ribbon=data.get("ribbon", ""),
         skip=e(data["ui"]["skip"]),
         brand_name=e(data["brand_name"]),
@@ -619,8 +651,25 @@ def render_page(data: dict, slug: str, page: dict, lang: str) -> str:
 def build() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
 
-    shutil.copytree(STATIC / "css", OUT / "assets" / "css", dirs_exist_ok=True)
-    shutil.copytree(STATIC / "js", OUT / "assets" / "js", dirs_exist_ok=True)
+    global ASSETS
+    css_dir, js_dir = OUT / "assets" / "css", OUT / "assets" / "js"
+    css_dir.mkdir(parents=True, exist_ok=True)
+    js_dir.mkdir(parents=True, exist_ok=True)
+
+    css_name = f"style.{fingerprint(STATIC / 'css' / 'style.css')}.css"
+    js_name = f"main.{fingerprint(STATIC / 'js' / 'main.js')}.js"
+    shutil.copy(STATIC / "css" / "style.css", css_dir / css_name)
+    shutil.copy(STATIC / "js" / "main.js", js_dir / js_name)
+    ASSETS = {"css": f"../assets/css/{css_name}", "js": f"../assets/js/{js_name}"}
+
+    # Purge des empreintes obsolètes, sinon le dépôt accumule les versions.
+    for d, keep, suffix in ((css_dir, css_name, ".css"), (js_dir, js_name, ".js")):
+        for f in d.glob(f"*{suffix}"):
+            if f.name != keep and f.name != "lang-redirect.js":
+                try:
+                    f.unlink()
+                except OSError:
+                    pass  # dossier monté en lecture seule pour la suppression
     if (STATIC / "img").exists():
         shutil.copytree(STATIC / "img", OUT / "assets" / "img", dirs_exist_ok=True)
     if (STATIC / "video").exists():
@@ -640,7 +689,7 @@ def build() -> None:
         target = OUT / lang
         target.mkdir(parents=True, exist_ok=True)
         for slug, page in data["pages"].items():
-            (target / f"{slug}.html").write_text(render_page(data, slug, page, lang), encoding="utf-8")
+            (target / f"{slug}.html").write_text(render_page(data, slug, page, lang, ASSETS), encoding="utf-8")
             count += 1
             if lang == DEFAULT_LANG:
                 slugs.append(slug)
@@ -648,11 +697,14 @@ def build() -> None:
     # Redirection racine : détection de langue navigateur, repli FR.
     # Redirection racine. Le script est externalisé : aucun script inline,
     # la CSP peut donc rester stricte.
-    (OUT / "assets" / "js" / "lang-redirect.js").write_text(
+    redirect_js = OUT / "assets" / "js" / "lang-redirect.js"
+    redirect_js.write_text(
         '(function(){var l="%s";try{l=localStorage.getItem("ocw-lang")||'
         '((navigator.language||"fr").slice(0,2)==="de"?"de":"fr");}catch(e){}'
         'location.replace(l+"/index.html");})();\n' % DEFAULT_LANG,
         encoding="utf-8")
+    redirect_name = f"lang-redirect.{fingerprint(redirect_js)}.js"
+    shutil.copy(redirect_js, OUT / "assets" / "js" / redirect_name)
 
     (OUT / "index.html").write_text(f"""<!DOCTYPE html>
 <html lang="{DEFAULT_LANG}"><head><meta charset="utf-8">
@@ -660,7 +712,7 @@ def build() -> None:
 <link rel="canonical" href="{DEFAULT_LANG}/index.html">
 <meta http-equiv="refresh" content="0; url={DEFAULT_LANG}/index.html">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<script src="assets/js/lang-redirect.js" defer></script>
+<script src="assets/js/{redirect_name}" defer></script>
 </head><body><p><a href="{DEFAULT_LANG}/index.html">Orchestre de Chambre de Wissembourg</a></p></body></html>
 """, encoding="utf-8")
 

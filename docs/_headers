@@ -12,5 +12,23 @@
   Cross-Origin-Resource-Policy: same-origin
   X-Permitted-Cross-Domain-Policies: none
 
-/assets/*
+# CSS et JS portent une empreinte dans leur nom : un cache d'un an est sûr,
+# toute modification produit une URL différente.
+/assets/css/*
   Cache-Control: public, max-age=31536000, immutable
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images et vidéos gardent un nom stable : cache d'une semaine seulement,
+# sinon un remplacement de visuel mettrait un an à parvenir aux visiteurs.
+/assets/img/*
+  Cache-Control: public, max-age=604800
+/assets/video/*
+  Cache-Control: public, max-age=604800
+
+# Les pages sont revalidées à chaque visite : c'est ce qui rend une mise à jour
+# de contenu immédiatement visible.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
