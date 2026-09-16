@@ -140,9 +140,15 @@ def hero_media(b: dict) -> str:
         return img(b["image"], b.get("image_alt", ""), lazy=False)
 
     poster = media(b["image"])
-    srcs = [f'{{"src":"../assets/video/{v["file"]}","type":"video/mp4"}}']
-    if v.get("webm") and (STATIC / "video" / v["webm"]).exists():
-        srcs.insert(0, f'{{"src":"../assets/video/{v["webm"]}","type":"video/webm"}}')
+    # Le navigateur retient la première source qu'il sait lire : on classe donc
+    # par poids réel, et non par format. Un WebM plus lourd que le MP4 ne doit
+    # pas passer devant lui sous prétexte qu'il est théoriquement plus efficace.
+    cands = [(src, "video/mp4")]
+    webm = (STATIC / "video" / v["webm"]) if v.get("webm") else None
+    if webm and webm.exists() and webm.stat().st_size >= 50_000:
+        cands.append((webm, "video/webm"))
+    cands.sort(key=lambda c: c[0].stat().st_size)
+    srcs = [f'{{"src":"../assets/video/{f.name}","type":"{mime}"}}' for f, mime in cands]
     return (f'<video class="hero__video" poster="{e(poster)}" preload="none" '
             f'muted loop playsinline aria-hidden="true" tabindex="-1" '
             f"data-sources='[{','.join(srcs)}]'></video>")
