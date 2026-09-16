@@ -1,6 +1,6 @@
 # En-têtes de sécurité HTTP.
-# Lu automatiquement par Cloudflare Pages et Netlify.
-# GitHub Pages IGNORE ce fichier : il ne permet aucun en-tête personnalisé.
+# Appliqué par Cloudflare (Pages ET Workers avec static assets) et par Netlify.
+# GitHub Pages IGNORE ce fichier : la plateforme ne permet aucun en-tête personnalisé.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-6XICwr1s6x5sDB13oAw2+Le7kZQvQk25CidgVSBBLng=' 'sha256-/PLqPmJ0xCvxaOX8FHSI8Ef+UalrY9mTFdMeEBZS058='; frame-src https://www.youtube-nocookie.com; connect-src 'self'; upgrade-insecure-requests

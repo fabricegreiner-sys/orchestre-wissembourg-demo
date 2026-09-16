@@ -506,8 +506,8 @@ def csp(hashes: list[str], *, with_frame_ancestors: bool) -> str:
 
 HEADERS_TEMPLATE = """\
 # En-têtes de sécurité HTTP.
-# Lu automatiquement par Cloudflare Pages et Netlify.
-# GitHub Pages IGNORE ce fichier : il ne permet aucun en-tête personnalisé.
+# Appliqué par Cloudflare (Pages ET Workers avec static assets) et par Netlify.
+# GitHub Pages IGNORE ce fichier : la plateforme ne permet aucun en-tête personnalisé.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: {csp}

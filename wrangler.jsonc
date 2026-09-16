@@ -1,0 +1,17 @@
+// Configuration Cloudflare Workers — site statique.
+//
+// Worker « assets-only » : aucun script, Cloudflare sert directement le contenu
+// de ./docs et applique les règles de docs/_headers (en-têtes de sécurité).
+// Ne pas ajouter de clé "main" : cela transformerait le Worker en script et
+// désactiverait l'application automatique de _headers sur les réponses.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "orchestre-wissembourg-demo",
+  "compatibility_date": "2026-09-16",
+  "assets": {
+    "directory": "./docs",
+    // Sert /fr/index.html pour /fr/ et renvoie une 404 propre sinon.
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
