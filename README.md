@@ -182,13 +182,15 @@ pas un gadget.
     python3 tools/make-pl.py
 
 qui recopie la structure de `content/fr.json` à l'identique et remplace
-chaque chaîne via une table de traduction. Toute chaîne absente de la table
+chaque chaîne via la table `tools/pl-translations.json` (un simple
+dictionnaire « chaîne française » → « chaîne polonaise », éditable sans
+toucher au code). Toute chaîne absente de la table
 est affichée en fin d'exécution — impossible de livrer une page à moitié
 française sans le voir. Neuf chaînes restent volontairement non traduites :
 noms propres, adresse e-mail, noms des membres du bureau.
 
 Conséquence pratique : **une modification de contenu se fait dans `fr.json`**,
-puis on ajoute la traduction dans la table de `tools/make-pl.py` et on
+puis on ajoute la traduction dans `tools/pl-translations.json` et on
 régénère. Éditer directement `pl.json` revient à voir ses changements écrasés
 au prochain passage du script.
 
