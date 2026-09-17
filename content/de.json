@@ -9,6 +9,14 @@
     "https://www.facebook.com/OrchestredeWissembourg/",
     "https://www.linkedin.com/in/marc-bender-30762224/"
   ],
+  "helloasso": {
+    "_comment": "Une seule source pour tous les liens HelloAsso. Tant qu'une campagne n'est pas publiée, laisser la valeur vide : le bouton retombe sur la page de l'association. 'widget' n'est à renseigner que pour un formulaire embarqué (ouvre https://www.helloasso.com dans la CSP).",
+    "base": "https://www.helloasso.com/associations/orchestre-de-chambre-de-wissembourg",
+    "don": "",
+    "adhesion": "",
+    "billetterie": "",
+    "widget": ""
+  },
   "ribbon": "<div class=\"demo-ribbon\">Demo-Entwurf — Vorschlag für die Neugestaltung der Website des Kammerorchesters Wissembourg. Keine offiziellen Inhalte.</div>",
   "ui": {
     "skip": "Zum Hauptinhalt springen",
@@ -176,7 +184,7 @@
           "h2": "Nächster Termin",
           "image": "affiche_actu",
           "image_alt": "Plakat des nächsten Konzerts des Kammerorchesters Wissembourg",
-          "html": "<p class=\"lead\">Begleiten Sie das Orchester beim nächsten Konzert. Eintritt frei, Spende erbeten — die Online-Reservierung wird in Kürze freigeschaltet.</p><p class=\"muted\">Datum und Ort in diesem Entwurf sind noch dem offiziellen Plakat zu entnehmen. In der endgültigen Website wird jedes Konzert als strukturierter Eintrag erfasst (Datum, Uhrzeit, Ort, Programm, Eintritt) und ist dadurch für Google und Kulturkalender auffindbar — mit einem reinen Bild ist das unmöglich.</p>",
+          "html": "<p class=\"lead\">Samstag, 7. November, 19 Uhr, Église Saint-Jean in Wissembourg: Das Orchester spielt Rossinis <em>Petite Messe solennelle</em>, tags darauf um 17 Uhr erneut in St. Johannes in Landau. Eintritt frei, Spende zugunsten des Vereins.</p><p class=\"muted\">Das Plakat muss noch durch das dieses Konzerts ersetzt werden. In der endgültigen Website wird jedes Konzert als strukturierter Eintrag erfasst (Datum, Uhrzeit, Ort, Programm, Preis): Google und Kulturkalender können ihn dann indexieren, was mit einem blossen Bild unmöglich ist.</p>",
           "buttons": [
             {
               "label": "Alle Konzerte",
@@ -531,37 +539,46 @@
           "type": "events",
           "eyebrow": "Demnächst",
           "h2": "Kommende Konzerte",
-          "html": "<p class=\"lead\">Beispielhafte Darstellung: In der endgültigen Website ist jedes Konzert ein strukturierter Eintrag — von Google auffindbar, in Kulturkalender exportierbar und per Newsletter erinnerbar.</p>",
+          "html": "<p class=\"lead\">Vier Konzerte mit demselben Werk: Rossinis <em>Petite Messe solennelle</em>. Zwei Termine stehen fest, zwei werden noch festgelegt.</p>",
           "items": [
             {
-              "day": "18",
-              "month": "Okt.",
-              "year": "2026",
-              "title": "Eröffnungskonzert der Spielzeit",
-              "meta": "20.00 Uhr · Kirche Saints-Pierre-et-Paul, Wissembourg · Programm folgt · Eintritt frei, Spende erbeten",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Reservieren"
-            },
-            {
-              "day": "29",
+              "day": "7",
               "month": "Nov.",
               "year": "2026",
-              "title": "Deutsch-Französisches Konzert",
-              "meta": "17.00 Uhr · Musikschule Landau · In Partnerschaft mit der Musikschule Landau",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Reservieren"
+              "start": "2026-11-07T19:00:00+01:00",
+              "place": {
+                "name": "Église Saint-Jean",
+                "city": "Wissembourg",
+                "country": "FR"
+              },
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Samstag, 7. November, 19 Uhr · Église Saint-Jean, Wissembourg (Frankreich) · Eintritt frei, Spende erbeten"
             },
             {
-              "day": "24",
-              "month": "Jan.",
-              "year": "2027",
-              "title": "Neujahrskonzert",
-              "meta": "16.00 Uhr · Salle de la Nef, Wissembourg · Wiener Programm",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Reservieren"
+              "day": "8",
+              "month": "Nov.",
+              "year": "2026",
+              "start": "2026-11-08T17:00:00+01:00",
+              "place": {
+                "name": "St. Johannes",
+                "city": "Landau in der Pfalz",
+                "country": "DE"
+              },
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Sonntag, 8. November, 17 Uhr · St. Johannes, Landau · Eintritt frei, Spende erbeten"
+            },
+            {
+              "tbd": "Termin offen",
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Munchhausen / Mothern · Termin und Uhrzeit werden noch festgelegt"
+            },
+            {
+              "tbd": "Termin offen",
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Straßburg · Ort und Termin werden noch festgelegt"
             }
           ],
-          "note": "<p><strong>Vom Verein zu ergänzen.</strong> Diese drei Termine sind Gestaltungsbeispiele und zeigen lediglich die Darstellung. Sie sind durch das tatsächliche Spielzeitprogramm zu ersetzen.</p>"
+          "note": "<p><strong>Infos für Musikerinnen und Musiker.</strong> Anspielprobe am Samstag, 7. November ab 15 Uhr in der Église Saint-Jean; am Sonntag, 8. November um 14.30 Uhr in Landau.</p>"
         }
       ]
     },
@@ -774,13 +791,13 @@
             {
               "title": "Spenden",
               "text": "Einmalig oder monatlich, ab 10 €. Automatische Spendenquittung: Eine Spende von 100 € kostet in Frankreich nach 66 % Steuerermäßigung real nur 34 €.",
-              "link": "https://www.helloasso.com/",
+              "link": "ha:don",
               "link_label": "Online spenden"
             },
             {
               "title": "Mitglied werden",
               "text": "Werden Sie Mitglied, erhalten Sie das Programm vorab und nehmen Sie an der Mitgliederversammlung teil. Jahresbeitrag ab 20 €.",
-              "link": "https://www.helloasso.com/",
+              "link": "ha:adhesion",
               "link_label": "Beitreten"
             },
             {
@@ -797,7 +814,7 @@
           "narrow": true,
           "eyebrow": "So funktioniert es",
           "h2": "Online-Zahlung, für den Verein kostenlos",
-          "html": "<p class=\"lead\">Spenden, Mitgliedsbeiträge und Kartenverkauf laufen künftig über <strong>HelloAsso</strong>, die führende Plattform französischer Vereine: 0 % Provision, automatische Spendenquittung, Hosting in Frankreich und DSGVO-Konformität.</p><div class=\"note\"><p><strong>Noch zu aktivieren.</strong> Die Schaltflächen oben verweisen derzeit beispielhaft auf HelloAsso. Sobald das Vereinskonto eingerichtet ist (kostenlos, rund dreißig Minuten), führen sie zu den echten Formularen für Spende, Mitgliedschaft und Kartenreservierung.</p></div><h3 id=\"billetterie\">Kartenreservierung</h3><p>Die Online-Reservierung erlaubt es, im Voraus einen Platz zu sichern, die erwartete Auslastung abzuschätzen und am Vortag automatisch zu erinnern. Sie ist mit freiem Eintritt vereinbar: Man reserviert kostenlos, die Spende erfolgt vor Ort.</p><h3 id=\"adhesion\">Mitgliedschaft</h3><p>Die Mitgliedschaft trägt den laufenden Betrieb des Vereins und gibt Stimmrecht in der jährlichen Mitgliederversammlung.</p><h3 id=\"mecenat\">Unternehmens-Sponsoring</h3><p>Das Mäzenatentum ist in Frankreich durch das Gesetz Aillagon vom 1. August 2003 geregelt: 60 % des Spendenbetrags sind von der Körperschaftsteuer absetzbar, begrenzt auf 0,5 ‰ des Nettoumsatzes, mit Übertragsmöglichkeit auf fünf Geschäftsjahre. Als Gegenleistung erhält das Unternehmen Sichtbarkeit (Logo, Nennung, Einladungen) bis zu 25 % des Spendenbetrags.</p>"
+          "html": "<p class=\"lead\">Spenden, Mitgliedsbeiträge und Kartenverkauf laufen künftig über <strong>HelloAsso</strong>, die führende Plattform französischer Vereine: 0 % Provision, automatische Spendenquittung, Hosting in Frankreich und DSGVO-Konformität.</p><div class=\"note\"><p><strong>Konto vorhanden, Kampagne fehlt noch.</strong> Der Verein hat bereits seine HelloAsso-Seite. Der Vorstand muss dort nur noch das Spendenformular anlegen: Die Schaltflächen oben verweisen dann automatisch darauf, ohne weiteren Eingriff auf der Website. Bis dahin führen sie zur Vereinsseite.</p></div><h3 id=\"billetterie\">Kartenreservierung</h3><p>Die Online-Reservierung erlaubt es, im Voraus einen Platz zu sichern, die erwartete Auslastung abzuschätzen und am Vortag automatisch zu erinnern. Sie ist mit freiem Eintritt vereinbar: Man reserviert kostenlos, die Spende erfolgt vor Ort.</p><h3 id=\"adhesion\">Mitgliedschaft</h3><p>Die Mitgliedschaft trägt den laufenden Betrieb des Vereins und gibt Stimmrecht in der jährlichen Mitgliederversammlung.</p><h3 id=\"mecenat\">Unternehmens-Sponsoring</h3><p>Das Mäzenatentum ist in Frankreich durch das Gesetz Aillagon vom 1. August 2003 geregelt: 60 % des Spendenbetrags sind von der Körperschaftsteuer absetzbar, begrenzt auf 0,5 ‰ des Nettoumsatzes, mit Übertragsmöglichkeit auf fünf Geschäftsjahre. Als Gegenleistung erhält das Unternehmen Sichtbarkeit (Logo, Nennung, Einladungen) bis zu 25 % des Spendenbetrags.</p>"
         },
         {
           "type": "sponsors",

@@ -84,9 +84,17 @@ def buttons(items: list[dict], lang: str) -> str:
     return '<div class="btn-row">' + "".join(out) + "</div>"
 
 
+HELLOASSO: dict = {}
+
+
 def resolve_href(href: str, lang: str) -> str:
     """`page:slug` -> <slug>.html (chemins relatifs : file://, sous-dossier ou domaine
-    racine fonctionnent sans reconfiguration) ; `media:key` -> URL média."""
+    racine fonctionnent sans reconfiguration) ; `media:key` -> URL média ;
+    `ha:<clé>` -> URL HelloAsso, avec repli sur la page de l'association tant
+    que la campagne correspondante n'est pas publiée."""
+    if href.startswith("ha:"):
+        key = href[3:]
+        return HELLOASSO.get(key) or HELLOASSO.get("base", "")
     if href.startswith("page:"):
         slug = href[5:]
         anchor = ""
@@ -237,15 +245,19 @@ def b_events(b: dict, lang: str, ctx: dict) -> str:
     rows = []
     for ev in b["items"]:
         btn = ""
+        tbd = ev.get("tbd")
         if ev.get("link"):
-            btn = (f'<a class="btn btn--dark btn--sm" href="{e(resolve_href(ev["link"], lang))}">'
+            href = resolve_href(ev["link"], lang)
+            ext = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
+            btn = (f'<a class="btn btn--dark btn--sm" href="{e(href)}"{ext}>'
                    f'{e(ev.get("link_label", "→"))}</a>')
         rows.append(f"""
 <article class="event">
-  <div class="event__date">
-    <span class="event__day">{e(ev["day"])}</span>
-    <span class="event__month">{e(ev["month"])}</span>
-    <span class="event__year">{e(ev["year"])}</span>
+  <div class="event__date{" event__date--tbd" if tbd else ""}">
+    {f'<span class="event__tbd">{e(tbd)}</span>' if tbd else
+     f'<span class="event__day">{e(ev["day"])}</span>'
+     f'<span class="event__month">{e(ev["month"])}</span>'
+     f'<span class="event__year">{e(ev["year"])}</span>'}
   </div>
   <div><h3>{e(ev["title"])}</h3><p class="event__meta">{e(ev.get("meta", ""))}</p></div>
   {btn}
@@ -493,7 +505,7 @@ PAGE = """<!DOCTYPE html>
 <meta http-equiv="Content-Security-Policy" content="{csp}">
 <link rel="icon" href="{favicon}">
 <link rel="stylesheet" href="{css}">
-<script type="application/ld+json">{jsonld}</script>
+<script type="application/ld+json">{jsonld}</script>{extra_jsonld}
 </head>
 <body>
 {ribbon}
@@ -562,7 +574,8 @@ def csp(hashes: list[str], *, with_frame_ancestors: bool) -> str:
         "media-src 'self'",
         "style-src 'self'",
         "script-src 'self' " + " ".join(hashes),
-        "frame-src https://www.youtube-nocookie.com",
+        "frame-src https://www.youtube-nocookie.com"
+        + (" https://www.helloasso.com" if HELLOASSO.get("widget") else ""),
         "connect-src 'self'",
         "upgrade-insecure-requests",
     ]
@@ -610,6 +623,52 @@ HEADERS_TEMPLATE = """\
 """
 
 
+def jsonld_events(data: dict, lang: str, page: dict) -> list[dict]:
+    """Fiches Event schema.org pour les concerts dont la date est arrêtée.
+    Sans date de début, Google ignore la fiche : les concerts « à fixer »
+    sont volontairement omis plutôt que publiés incomplets."""
+    out = []
+    for b in page["blocks"]:
+        if b["type"] != "events":
+            continue
+        for ev in b["items"]:
+            if ev.get("tbd") or not ev.get("start"):
+                continue
+            place = ev.get("place", {})
+            out.append({
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": ev["title"],
+                "startDate": ev["start"],
+                "eventStatus": "https://schema.org/EventScheduled",
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                "description": ev.get("meta", ""),
+                "location": {
+                    "@type": "Place",
+                    "name": place.get("name", ""),
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": place.get("city", ""),
+                        "addressCountry": place.get("country", "FR"),
+                    },
+                },
+                "organizer": {
+                    "@type": "MusicGroup",
+                    "name": data["site_name"],
+                    "url": data["base_url"] + f"/{lang}/",
+                },
+                "performer": {"@type": "MusicGroup", "name": data["site_name"]},
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock",
+                    "url": data["base_url"] + f"/{lang}/agenda.html",
+                },
+            })
+    return out
+
+
 def jsonld(data: dict, lang: str) -> str:
     return json.dumps({
         "@context": "https://schema.org",
@@ -631,10 +690,23 @@ def jsonld(data: dict, lang: str) -> str:
     }, ensure_ascii=False)
 
 
+def page_jsonld(data: dict, lang: str, page: dict) -> list[str]:
+    """Tous les blocs JSON-LD d'une page, dans l'ordre d'insertion.
+    La CSP autorise chacun par empreinte : cette liste est la source unique
+    des deux (rendu et en-têtes), impossible qu'elles divergent."""
+    return [jsonld(data, lang)] + [
+        json.dumps(ev, ensure_ascii=False) for ev in jsonld_events(data, lang, page)
+    ]
+
+
 def render_page(data: dict, slug: str, page: dict, lang: str, assets: dict) -> str:
     ctx = {"play_label": data["ui"]["play"], "video_note": data["ui"]["video_note"]}
     body = "\n".join(BLOCKS[b["type"]](b, lang, ctx) for b in page["blocks"])
-    ld = jsonld(data, lang)
+    blocks_ld = page_jsonld(data, lang, page)
+    ld = blocks_ld[0]
+    extra_ld = "".join(
+        f'\n<script type="application/ld+json">{x}</script>' for x in blocks_ld[1:]
+    )
     alternates = "\n".join(
         f'<link rel="alternate" hreflang="{c}" href="{data["base_url"]}/{c}/{slug}.html">' for c in LANGS
     ) + f'\n<link rel="alternate" hreflang="x-default" href="{data["base_url"]}/{DEFAULT_LANG}/{slug}.html">'
@@ -651,7 +723,8 @@ def render_page(data: dict, slug: str, page: dict, lang: str, assets: dict) -> s
         favicon=e(media("logo")),
         logo=e(media("logo")),
         jsonld=ld,
-        csp=e(csp([sha256_csp(ld)], with_frame_ancestors=False)),
+        extra_jsonld=extra_ld,
+        csp=e(csp([sha256_csp(x) for x in blocks_ld], with_frame_ancestors=False)),
         css=e(assets["css"]),
         js=e(assets["js"]),
         ribbon=data.get("ribbon", ""),
@@ -710,10 +783,15 @@ def build() -> None:
         if BASE_URL_OVERRIDE:
             data["base_url"] = BASE_URL_OVERRIDE.rstrip("/")
         base_url = data["base_url"]
-        ld_hashes.append(sha256_csp(jsonld(data, lang)))
+        HELLOASSO.clear()
+        HELLOASSO.update(data.get("helloasso", {}))
         target = OUT / lang
         target.mkdir(parents=True, exist_ok=True)
         for slug, page in data["pages"].items():
+            for x in page_jsonld(data, lang, page):
+                h = sha256_csp(x)
+                if h not in ld_hashes:
+                    ld_hashes.append(h)
             (target / f"{slug}.html").write_text(render_page(data, slug, page, lang, ASSETS), encoding="utf-8")
             count += 1
             if lang == DEFAULT_LANG:

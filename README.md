@@ -194,3 +194,34 @@ au prochain passage du script.
 
 Une relecture par un locuteur natif reste souhaitable avant de montrer la
 version polonaise au bureau.
+
+
+## Don, adhésion, billetterie (HelloAsso)
+
+Le compte de l'association existe :
+<https://www.helloasso.com/associations/orchestre-de-chambre-de-wissembourg>
+
+Tous les liens de paiement passent par **une seule clé** `helloasso` à la
+racine de chaque fichier de contenu :
+
+    "helloasso": {
+      "base":        "https://www.helloasso.com/associations/orchestre-de-chambre-de-wissembourg",
+      "don":         "",
+      "adhesion":    "",
+      "billetterie": "",
+      "widget":      ""
+    }
+
+Dans les blocs, on écrit `"link": "ha:don"` et non l'URL. `resolve_href()`
+résout `ha:<clé>` et **retombe sur `base` quand la clé est vide** : aucun lien
+mort tant que le formulaire n'est pas publié, et une seule valeur à changer
+le jour où il l'est.
+
+Pour renseigner ces URL sans éditer les JSON : `7-Activer-le-don-HelloAsso.command`
+(il refuse toute URL qui ne pointe pas sur le compte de l'association, écrit
+dans les trois langues, reconstruit et affiche le résultat).
+
+`widget` n'est à remplir que pour un formulaire **embarqué en iframe**. Le
+renseigner ajoute automatiquement `https://www.helloasso.com` au `frame-src`
+de la CSP — c'est la seule raison d'ouvrir ce domaine. Par défaut on ne
+l'embarque pas : le lien sortant ne charge rien de tiers sur le site.

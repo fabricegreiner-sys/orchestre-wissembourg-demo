@@ -9,6 +9,14 @@
     "https://www.facebook.com/OrchestredeWissembourg/",
     "https://www.linkedin.com/in/marc-bender-30762224/"
   ],
+  "helloasso": {
+    "_comment": "Une seule source pour tous les liens HelloAsso. Tant qu'une campagne n'est pas publiée, laisser la valeur vide : le bouton retombe sur la page de l'association. 'widget' n'est à renseigner que pour un formulaire embarqué (ouvre https://www.helloasso.com dans la CSP).",
+    "base": "https://www.helloasso.com/associations/orchestre-de-chambre-de-wissembourg",
+    "don": "",
+    "adhesion": "",
+    "billetterie": "",
+    "widget": ""
+  },
   "ribbon": "<div class=\"demo-ribbon\">Makieta demonstracyjna — propozycja nowej wersji strony Orchestre de Chambre de Wissembourg. Żadna treść nie jest oficjalna.</div>",
   "ui": {
     "skip": "Przejdź do treści głównej",
@@ -106,7 +114,7 @@
           },
           {
             "label": "Otrzymuj program",
-            "href": "mailto:contact@orchestre-wissembourg.com?subject=Inscription à la lettre d'information"
+            "href": "mailto:contact@orchestre-wissembourg.com?subject=Zapis do newslettera"
           },
           {
             "label": "Archiwum",
@@ -176,7 +184,7 @@
           "h2": "Najbliższy koncert",
           "image": "affiche_actu",
           "image_alt": "Afisz najbliższego koncertu Orkiestry Kameralnej Wissembourg",
-          "html": "<p class=\"lead\">Zapraszamy na najbliższy koncert orkiestry. Wstęp wolny, zbiórka na rzecz stowarzyszenia — wkrótce będzie można zarezerwować miejsce online.</p><p class=\"muted\">Data i miejsce w tej makiecie są przykładowe i należy je przepisać z oficjalnego afisza. W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
+          "html": "<p class=\"lead\">W sobotę 7 listopada o godz. 19, w kościele Saint-Jean w Wissembourgu, orkiestra wykona <em>Petite Messe solennelle</em> Rossiniego; nazajutrz o godz. 17 w St. Johannes w Landau. Wstęp wolny, zbiórka na rzecz stowarzyszenia.</p><p class=\"muted\">Afisz trzeba jeszcze zastąpić afiszem tego koncertu. W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
           "buttons": [
             {
               "label": "Wszystkie koncerty",
@@ -304,7 +312,7 @@
           "buttons": [
             {
               "label": "Otrzymuj program e-mailem",
-              "href": "mailto:contact@orchestre-wissembourg.com?subject=Inscription à la lettre d'information",
+              "href": "mailto:contact@orchestre-wissembourg.com?subject=Zapis do newslettera",
               "style": "primary"
             },
             {
@@ -531,37 +539,46 @@
           "type": "events",
           "eyebrow": "Wkrótce",
           "h2": "Nadchodzące koncerty",
-          "html": "<p class=\"lead\">Przykład wyglądu: w wersji docelowej każdy koncert jest wpisem o określonej strukturze — zaindeksowanym przez Google, możliwym do wyeksportowania do kalendarzy kulturalnych i do przypomnienia w newsletterze.</p>",
+          "html": "<p class=\"lead\">Cztery koncerty wokół jednego dzieła: <em>Petite Messe solennelle</em> Rossiniego. Dwie daty są ustalone, dwie pozostają do uzgodnienia.</p>",
           "items": [
             {
-              "day": "18",
-              "month": "paź.",
-              "year": "2026",
-              "title": "Koncert inaugurujący sezon",
-              "meta": "20.00 · Kościół św. Piotra i Pawła, Wissembourg · Program do potwierdzenia · Wstęp wolny, zbiórka",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Rezerwuj"
-            },
-            {
-              "day": "29",
+              "day": "7",
               "month": "lis.",
               "year": "2026",
-              "title": "Deutsch-Französisches Konzert",
-              "meta": "17.00 · Musikschule Landau (Niemcy) · We współpracy ze szkołą muzyczną w Landau",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Rezerwuj"
+              "start": "2026-11-07T19:00:00+01:00",
+              "place": {
+                "name": "Église Saint-Jean",
+                "city": "Wissembourg",
+                "country": "FR"
+              },
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Sobota 7 listopada, godz. 19 · Église Saint-Jean, Wissembourg (Francja) · Wstęp wolny, zbiórka"
             },
             {
-              "day": "24",
-              "month": "sty.",
-              "year": "2027",
-              "title": "Koncert noworoczny",
-              "meta": "16.00 · Salle de la Nef, Wissembourg · Program wiedeński",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Rezerwuj"
+              "day": "8",
+              "month": "lis.",
+              "year": "2026",
+              "start": "2026-11-08T17:00:00+01:00",
+              "place": {
+                "name": "St. Johannes",
+                "city": "Landau in der Pfalz",
+                "country": "DE"
+              },
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Niedziela 8 listopada, godz. 17 · St. Johannes, Landau (Niemcy) · Wstęp wolny, zbiórka"
+            },
+            {
+              "tbd": "Data do ustalenia",
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Munchhausen / Mothern · Data i godzina w trakcie ustalania"
+            },
+            {
+              "tbd": "Data do ustalenia",
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Strasburg · Miejsce i data w trakcie ustalania"
             }
           ],
-          "note": "<p><strong>Do uzupełnienia przez stowarzyszenie.</strong> Te trzy daty są przykładami formatowania, pokazującymi wygląd strony. Należy je zastąpić rzeczywistym programem sezonu.</p>"
+          "note": "<p><strong>Informacje dla muzyków.</strong> Próba w sobotę 7 listopada od godz. 15 w kościele Saint-Jean; Anspielprobe w niedzielę 8 listopada o godz. 14.30 w Landau.</p>"
         }
       ]
     },
@@ -774,13 +791,13 @@
             {
               "title": "Przekaż darowiznę",
               "text": "Jednorazowo lub co miesiąc, od 10 €. Automatyczne potwierdzenie podatkowe: darowizna 100 € kosztuje realnie 34 € po uldze podatkowej 66 % (prawo francuskie).",
-              "link": "https://www.helloasso.com/",
+              "link": "ha:don",
               "link_label": "Przekaż online"
             },
             {
               "title": "Zostań członkiem stowarzyszenia",
               "text": "Zostań członkiem, otrzymuj program w przedpremierowo i bierz udział w walnym zgromadzeniu. Składka roczna od 20 €.",
-              "link": "https://www.helloasso.com/",
+              "link": "ha:adhesion",
               "link_label": "Dołącz"
             },
             {
@@ -797,7 +814,7 @@
           "narrow": true,
           "eyebrow": "Jak to działa",
           "h2": "Płatności online bezpłatne dla stowarzyszenia",
-          "html": "<p class=\"lead\">Darowizny, składki członkowskie i bilety będą obsługiwane przez <strong>HelloAsso</strong>, wiodącą platformę francuskich stowarzyszeń: 0 % prowizji, automatyczne potwierdzenie podatkowe, hosting we Francji i zgodność z RODO.</p><div class=\"note\"><p><strong>Do uruchomienia.</strong> Powyższe przyciski prowadzą dziś do HelloAsso wyłącznie poglądowo. Po założeniu konta stowarzyszenia (bezpłatnie, około trzydziestu minut) będą kierować do prawdziwych formularzy darowizny, członkostwa i rezerwacji.</p></div><h3 id=\"billetterie\">Bilety</h3><p>Rezerwacja online pozwala zająć miejsce z wyprzedzeniem, oszacować frekwencję i wysłać automatyczne przypomnienie dzień przed koncertem. Działa także przy wstępie wolnym: rezerwacja jest bezpłatna, a zbiórka odbywa się na miejscu.</p><h3 id=\"adhesion\">Członkostwo</h3><p>Składka wspiera bieżącą działalność stowarzyszenia i daje prawo głosu na dorocznym walnym zgromadzeniu.</p><h3 id=\"mecenat\">Mecenat firmowy</h3><p>Mecenat reguluje francuska ustawa Aillagon z 1 sierpnia 2003 roku: 60 % kwoty darowizny podlega odliczeniu od podatku dochodowego od osób prawnych, do 0,5 ‰ obrotu netto, z możliwością przeniesienia na pięć lat. W zamian firma otrzymuje widoczność (logo, wzmianka, zaproszenia) o wartości do 25 % kwoty darowizny.</p>"
+          "html": "<p class=\"lead\">Darowizny, składki członkowskie i bilety będą obsługiwane przez <strong>HelloAsso</strong>, wiodącą platformę francuskich stowarzyszeń: 0 % prowizji, automatyczne potwierdzenie podatkowe, hosting we Francji i zgodność z RODO.</p><div class=\"note\"><p><strong>Konto założone, kampania do opublikowania.</strong> Stowarzyszenie ma już swoją stronę w HelloAsso. Zarząd musi jeszcze utworzyć tam formularz darowizny: powyższe przyciski połączą się z nim automatycznie, bez zmian na stronie. Na razie prowadzą do strony stowarzyszenia.</p></div><h3 id=\"billetterie\">Bilety</h3><p>Rezerwacja online pozwala zająć miejsce z wyprzedzeniem, oszacować frekwencję i wysłać automatyczne przypomnienie dzień przed koncertem. Działa także przy wstępie wolnym: rezerwacja jest bezpłatna, a zbiórka odbywa się na miejscu.</p><h3 id=\"adhesion\">Członkostwo</h3><p>Składka wspiera bieżącą działalność stowarzyszenia i daje prawo głosu na dorocznym walnym zgromadzeniu.</p><h3 id=\"mecenat\">Mecenat firmowy</h3><p>Mecenat reguluje francuska ustawa Aillagon z 1 sierpnia 2003 roku: 60 % kwoty darowizny podlega odliczeniu od podatku dochodowego od osób prawnych, do 0,5 ‰ obrotu netto, z możliwością przeniesienia na pięć lat. W zamian firma otrzymuje widoczność (logo, wzmianka, zaproszenia) o wartości do 25 % kwoty darowizny.</p>"
         },
         {
           "type": "sponsors",

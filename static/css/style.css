@@ -380,6 +380,14 @@ h3 { font-size: 1.2rem; }
   margin-top: 16px; font-size: .92rem; color: var(--muted); max-width: 72ch;
 }
 
+/* Concert dont la date n'est pas arrêtée : même gabarit, contraste réduit,
+   pour qu'il se lise comme une annonce et non comme un rendez-vous ferme. */
+.event__date--tbd { background: transparent; border: 1px dashed var(--line); }
+.event__tbd {
+  display: block; padding: 0 6px; font-size: .78rem; line-height: 1.25;
+  font-weight: 600; letter-spacing: .02em; color: var(--muted); text-transform: uppercase;
+}
+
 /* ---------- Frise de parcours ---------- */
 .timeline { position: relative; margin: 0; padding: 0 0 0 30px; list-style: none; }
 .timeline::before {

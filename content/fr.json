@@ -9,6 +9,14 @@
     "https://www.facebook.com/OrchestredeWissembourg/",
     "https://www.linkedin.com/in/marc-bender-30762224/"
   ],
+  "helloasso": {
+    "_comment": "Une seule source pour tous les liens HelloAsso. Tant qu'une campagne n'est pas publiée, laisser la valeur vide : le bouton retombe sur la page de l'association. 'widget' n'est à renseigner que pour un formulaire embarqué (ouvre https://www.helloasso.com dans la CSP).",
+    "base": "https://www.helloasso.com/associations/orchestre-de-chambre-de-wissembourg",
+    "don": "",
+    "adhesion": "",
+    "billetterie": "",
+    "widget": ""
+  },
   "ribbon": "<div class=\"demo-ribbon\">Maquette de démonstration — refonte proposée du site de l'Orchestre de Chambre de Wissembourg. Aucun contenu n'est officiel.</div>",
   "ui": {
     "skip": "Aller au contenu principal",
@@ -176,7 +184,7 @@
           "h2": "Prochain rendez-vous",
           "image": "affiche_actu",
           "image_alt": "Affiche du prochain concert de l'Orchestre de Chambre de Wissembourg",
-          "html": "<p class=\"lead\">Retrouvez l'orchestre pour son prochain concert. Entrée libre, plateau au profit de l'association — la billetterie en ligne permettra bientôt de réserver sa place à l'avance.</p><p class=\"muted\">Les informations de date et de lieu de cette maquette sont à reprendre depuis l'affiche officielle. Dans le site définitif, chaque concert est saisi comme une fiche structurée (date, heure, lieu, programme, tarif) : Google et les agendas culturels peuvent alors l'indexer, ce qui est impossible avec une simple image.</p>",
+          "html": "<p class=\"lead\">Samedi 7 novembre à 19 h, église Saint-Jean à Wissembourg : l'orchestre donne la <em>Petite Messe solennelle</em> de Rossini, reprise le lendemain à 17 h à St. Johannes de Landau. Entrée libre, plateau au profit de l'association.</p><p class=\"muted\">L'affiche reste à remplacer par celle de ce concert. Dans le site définitif, chaque concert est saisi comme une fiche structurée (date, heure, lieu, programme, tarif) : Google et les agendas culturels peuvent alors l'indexer, ce qui est impossible avec une simple image.</p>",
           "buttons": [
             {
               "label": "Tous les concerts",
@@ -531,37 +539,46 @@
           "type": "events",
           "eyebrow": "Prochainement",
           "h2": "Concerts à venir",
-          "html": "<p class=\"lead\">Exemple de rendu : dans le site définitif, chaque concert est une fiche structurée — donc indexable par Google, exportable vers les agendas culturels et rappelable par newsletter.</p>",
+          "html": "<p class=\"lead\">Quatre concerts autour d'une même œuvre : la <em>Petite Messe solennelle</em> de Rossini. Deux dates sont arrêtées, deux restent à caler.</p>",
           "items": [
             {
-              "day": "18",
-              "month": "Oct.",
+              "day": "7",
+              "month": "nov.",
               "year": "2026",
-              "title": "Concert d'ouverture de saison",
-              "meta": "20 h 00 · Église Saints-Pierre-et-Paul, Wissembourg · Programme à confirmer · Entrée libre, plateau",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Réserver"
+              "start": "2026-11-07T19:00:00+01:00",
+              "place": {
+                "name": "Église Saint-Jean",
+                "city": "Wissembourg",
+                "country": "FR"
+              },
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Samedi 7 novembre, 19 h · Église Saint-Jean, Wissembourg · Entrée libre, plateau"
             },
             {
-              "day": "29",
-              "month": "Nov.",
+              "day": "8",
+              "month": "nov.",
               "year": "2026",
-              "title": "Deutsch-Französisches Konzert",
-              "meta": "17 h 00 · Musikschule Landau (Allemagne) · En partenariat avec l'école de musique de Landau",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Réserver"
+              "start": "2026-11-08T17:00:00+01:00",
+              "place": {
+                "name": "St. Johannes",
+                "city": "Landau in der Pfalz",
+                "country": "DE"
+              },
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Dimanche 8 novembre, 17 h · St. Johannes, Landau (Allemagne) · Entrée libre, plateau"
             },
             {
-              "day": "24",
-              "month": "Jan.",
-              "year": "2027",
-              "title": "Concert du Nouvel An",
-              "meta": "16 h 00 · Salle de la Nef, Wissembourg · Programme viennois",
-              "link": "page:soutenir#billetterie",
-              "link_label": "Réserver"
+              "tbd": "Date à fixer",
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Munchhausen / Mothern · Date et horaire en cours de calage"
+            },
+            {
+              "tbd": "Date à fixer",
+              "title": "Petite Messe solennelle — Rossini",
+              "meta": "Strasbourg · Lieu et date en cours de calage"
             }
           ],
-          "note": "<p><strong>À compléter par l'association.</strong> Ces trois dates sont des exemples de mise en forme, destinés à montrer le rendu. Elles sont à remplacer par le programme réel de la saison.</p>"
+          "note": "<p><strong>Informations musiciens.</strong> Raccord le samedi 7 novembre à partir de 15 h à l'église Saint-Jean ; Anspielprobe le dimanche 8 novembre à 14 h 30 à Landau.</p>"
         }
       ]
     },
@@ -774,13 +791,13 @@
             {
               "title": "Faire un don",
               "text": "Ponctuel ou mensuel, à partir de 10 €. Reçu fiscal automatique : un don de 100 € ne vous coûte réellement que 34 € après réduction d'impôt de 66 %.",
-              "link": "https://www.helloasso.com/",
+              "link": "ha:don",
               "link_label": "Donner en ligne"
             },
             {
               "title": "Adhérer à l'association",
               "text": "Devenez membre, recevez le programme en avant-première et prenez part à l'assemblée générale. Adhésion annuelle à partir de 20 €.",
-              "link": "https://www.helloasso.com/",
+              "link": "ha:adhesion",
               "link_label": "Adhérer"
             },
             {
@@ -797,7 +814,7 @@
           "narrow": true,
           "eyebrow": "Comment ça marche",
           "h2": "Un paiement en ligne gratuit pour l'association",
-          "html": "<p class=\"lead\">Dons, adhésions et billetterie passeront par <strong>HelloAsso</strong>, la plateforme de référence des associations françaises : 0 % de commission, reçu fiscal généré automatiquement, hébergement en France et conformité RGPD.</p><div class=\"note\"><p><strong>À activer.</strong> Les boutons ci-dessus pointent aujourd'hui vers HelloAsso à titre d'illustration. Une fois le compte de l'association créé (gratuit, une trentaine de minutes), ils pointeront vers les formulaires réels de don, d'adhésion et de billetterie.</p></div><h3 id=\"billetterie\">Billetterie</h3><p>La billetterie en ligne permet de réserver sa place à l'avance, de connaître l'affluence attendue et d'envoyer un rappel automatique la veille du concert. Elle reste compatible avec l'entrée libre : on réserve gratuitement, et le plateau se fait sur place.</p><h3 id=\"adhesion\">Adhésion</h3><p>L'adhésion soutient le fonctionnement courant de l'association et donne voix au chapitre lors de l'assemblée générale annuelle.</p><h3 id=\"mecenat\">Mécénat d'entreprise</h3><p>Le mécénat relève de la loi Aillagon du 1<sup>er</sup> août 2003 : 60 % du montant du don est déductible de l'impôt sur les sociétés, dans la limite de 0,5 ‰ du chiffre d'affaires hors taxes, avec report possible sur cinq exercices. En contrepartie, l'entreprise bénéficie d'une visibilité (logo, mention, invitations) plafonnée à 25 % du montant du don.</p>"
+          "html": "<p class=\"lead\">Dons, adhésions et billetterie passeront par <strong>HelloAsso</strong>, la plateforme de référence des associations françaises : 0 % de commission, reçu fiscal généré automatiquement, hébergement en France et conformité RGPD.</p><div class=\"note\"><p><strong>Compte ouvert, campagne à publier.</strong> L'association dispose déjà de sa page HelloAsso. Il reste au bureau à y créer le formulaire de don : les boutons ci-dessus s'y brancheront sans nouvelle intervention sur le site. En attendant, ils mènent à la page de l'association.</p></div><h3 id=\"billetterie\">Billetterie</h3><p>La billetterie en ligne permet de réserver sa place à l'avance, de connaître l'affluence attendue et d'envoyer un rappel automatique la veille du concert. Elle reste compatible avec l'entrée libre : on réserve gratuitement, et le plateau se fait sur place.</p><h3 id=\"adhesion\">Adhésion</h3><p>L'adhésion soutient le fonctionnement courant de l'association et donne voix au chapitre lors de l'assemblée générale annuelle.</p><h3 id=\"mecenat\">Mécénat d'entreprise</h3><p>Le mécénat relève de la loi Aillagon du 1<sup>er</sup> août 2003 : 60 % du montant du don est déductible de l'impôt sur les sociétés, dans la limite de 0,5 ‰ du chiffre d'affaires hors taxes, avec report possible sur cinq exercices. En contrepartie, l'entreprise bénéficie d'une visibilité (logo, mention, invitations) plafonnée à 25 % du montant du don.</p>"
         },
         {
           "type": "sponsors",

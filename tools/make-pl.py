@@ -5,9 +5,9 @@ sont remplacées. Toute chaîne non traduite est signalée en fin d'exécution :
 impossible de livrer une page à moitié française sans s'en apercevoir."""
 import json, copy, pathlib
 
-SKIP_KEYS = {"type","image","href","src","id","icon","video","motion","crop",
+SKIP_KEYS = {"type","image","src","id","icon","video","motion","crop",
              "alt","logo","poster","n","lang","locale","base_url","og_image","same_as",
-             "youtube","file","class","tone","variant","doc","slug","style","ratio","fit"}
+             "youtube","file","class","tone","variant","doc","slug","style","ratio","fit","link","base","widget","start","place"}
 
 T = {
 # ------------------------------------------------- textes alternatifs (a11y)
@@ -209,6 +209,24 @@ T = {
 "<p class=\"lead\">Exemple de rendu : dans le site définitif, chaque concert est une fiche structurée — donc indexable par Google, exportable vers les agendas culturels et rappelable par newsletter.</p>":
   "<p class=\"lead\">Przykład wyglądu: w wersji docelowej każdy koncert jest wpisem o określonej strukturze — zaindeksowanym przez Google, możliwym do wyeksportowania do kalendarzy kulturalnych i do przypomnienia w newsletterze.</p>",
 "Oct.": "paź.", "Nov.": "lis.", "Jan.": "sty.",
+"nov.": "lis.",
+# --- saison 2026-2027 : Petite Messe solennelle de Rossini, quatre dates ---
+"<p class=\"lead\">Quatre concerts autour d'une même œuvre : la <em>Petite Messe solennelle</em> de Rossini. Deux dates sont arrêtées, deux restent à caler.</p>":
+  "<p class=\"lead\">Cztery koncerty wokół jednego dzieła: <em>Petite Messe solennelle</em> Rossiniego. Dwie daty są ustalone, dwie pozostają do uzgodnienia.</p>",
+"Petite Messe solennelle — Rossini": "Petite Messe solennelle — Rossini",
+"Samedi 7 novembre, 19 h · Église Saint-Jean, Wissembourg · Entrée libre, plateau":
+  "Sobota 7 listopada, godz. 19 · Église Saint-Jean, Wissembourg (Francja) · Wstęp wolny, zbiórka",
+"Dimanche 8 novembre, 17 h · St. Johannes, Landau (Allemagne) · Entrée libre, plateau":
+  "Niedziela 8 listopada, godz. 17 · St. Johannes, Landau (Niemcy) · Wstęp wolny, zbiórka",
+"Munchhausen / Mothern · Date et horaire en cours de calage":
+  "Munchhausen / Mothern · Data i godzina w trakcie ustalania",
+"Strasbourg · Lieu et date en cours de calage":
+  "Strasburg · Miejsce i data w trakcie ustalania",
+"Date à fixer": "Data do ustalenia",
+"<p><strong>Informations musiciens.</strong> Raccord le samedi 7 novembre à partir de 15 h à l'église Saint-Jean ; Anspielprobe le dimanche 8 novembre à 14 h 30 à Landau.</p>":
+  "<p><strong>Informacje dla muzyków.</strong> Próba w sobotę 7 listopada od godz. 15 w kościele Saint-Jean; Anspielprobe w niedzielę 8 listopada o godz. 14.30 w Landau.</p>",
+"<p class=\"lead\">Samedi 7 novembre à 19 h, église Saint-Jean à Wissembourg : l'orchestre donne la <em>Petite Messe solennelle</em> de Rossini, reprise le lendemain à 17 h à St. Johannes de Landau. Entrée libre, plateau au profit de l'association.</p><p class=\"muted\">L'affiche reste à remplacer par celle de ce concert. Dans le site définitif, chaque concert est saisi comme une fiche structurée (date, heure, lieu, programme, tarif) : Google et les agendas culturels peuvent alors l'indexer, ce qui est impossible avec une simple image.</p>":
+  "<p class=\"lead\">W sobotę 7 listopada o godz. 19, w kościele Saint-Jean w Wissembourgu, orkiestra wykona <em>Petite Messe solennelle</em> Rossiniego; nazajutrz o godz. 17 w St. Johannes w Landau. Wstęp wolny, zbiórka na rzecz stowarzyszenia.</p><p class=\"muted\">Afisz trzeba jeszcze zastąpić afiszem tego koncertu. W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
 "Concert d'ouverture de saison": "Koncert inaugurujący sezon",
 "20 h 00 · Église Saints-Pierre-et-Paul, Wissembourg · Programme à confirmer · Entrée libre, plateau":
   "20.00 · Kościół św. Piotra i Pawła, Wissembourg · Program do potwierdzenia · Wstęp wolny, zbiórka",
@@ -297,8 +315,8 @@ T = {
 "Nous contacter": "Skontaktuj się z nami",
 "Comment ça marche": "Jak to działa",
 "Un paiement en ligne gratuit pour l'association": "Płatności online bezpłatne dla stowarzyszenia",
-"<p class=\"lead\">Dons, adhésions et billetterie passeront par <strong>HelloAsso</strong>, la plateforme de référence des associations françaises : 0 % de commission, reçu fiscal généré automatiquement, hébergement en France et conformité RGPD.</p><div class=\"note\"><p><strong>À activer.</strong> Les boutons ci-dessus pointent aujourd'hui vers HelloAsso à titre d'illustration. Une fois le compte de l'association créé (gratuit, une trentaine de minutes), ils pointeront vers les formulaires réels de don, d'adhésion et de billetterie.</p></div><h3 id=\"billetterie\">Billetterie</h3><p>La billetterie en ligne permet de réserver sa place à l'avance, de connaître l'affluence attendue et d'envoyer un rappel automatique la veille du concert. Elle reste compatible avec l'entrée libre : on réserve gratuitement, et le plateau se fait sur place.</p><h3 id=\"adhesion\">Adhésion</h3><p>L'adhésion soutient le fonctionnement courant de l'association et donne voix au chapitre lors de l'assemblée générale annuelle.</p><h3 id=\"mecenat\">Mécénat d'entreprise</h3><p>Le mécénat relève de la loi Aillagon du 1<sup>er</sup> août 2003 : 60 % du montant du don est déductible de l'impôt sur les sociétés, dans la limite de 0,5 ‰ du chiffre d'affaires hors taxes, avec report possible sur cinq exercices. En contrepartie, l'entreprise bénéficie d'une visibilité (logo, mention, invitations) plafonnée à 25 % du montant du don.</p>":
-  "<p class=\"lead\">Darowizny, składki członkowskie i bilety będą obsługiwane przez <strong>HelloAsso</strong>, wiodącą platformę francuskich stowarzyszeń: 0 % prowizji, automatyczne potwierdzenie podatkowe, hosting we Francji i zgodność z RODO.</p><div class=\"note\"><p><strong>Do uruchomienia.</strong> Powyższe przyciski prowadzą dziś do HelloAsso wyłącznie poglądowo. Po założeniu konta stowarzyszenia (bezpłatnie, około trzydziestu minut) będą kierować do prawdziwych formularzy darowizny, członkostwa i rezerwacji.</p></div><h3 id=\"billetterie\">Bilety</h3><p>Rezerwacja online pozwala zająć miejsce z wyprzedzeniem, oszacować frekwencję i wysłać automatyczne przypomnienie dzień przed koncertem. Działa także przy wstępie wolnym: rezerwacja jest bezpłatna, a zbiórka odbywa się na miejscu.</p><h3 id=\"adhesion\">Członkostwo</h3><p>Składka wspiera bieżącą działalność stowarzyszenia i daje prawo głosu na dorocznym walnym zgromadzeniu.</p><h3 id=\"mecenat\">Mecenat firmowy</h3><p>Mecenat reguluje francuska ustawa Aillagon z 1 sierpnia 2003 roku: 60 % kwoty darowizny podlega odliczeniu od podatku dochodowego od osób prawnych, do 0,5 ‰ obrotu netto, z możliwością przeniesienia na pięć lat. W zamian firma otrzymuje widoczność (logo, wzmianka, zaproszenia) o wartości do 25 % kwoty darowizny.</p>",
+"<p class=\"lead\">Dons, adhésions et billetterie passeront par <strong>HelloAsso</strong>, la plateforme de référence des associations françaises : 0 % de commission, reçu fiscal généré automatiquement, hébergement en France et conformité RGPD.</p><div class=\"note\"><p><strong>Compte ouvert, campagne à publier.</strong> L'association dispose déjà de sa page HelloAsso. Il reste au bureau à y créer le formulaire de don : les boutons ci-dessus s'y brancheront sans nouvelle intervention sur le site. En attendant, ils mènent à la page de l'association.</p></div><h3 id=\"billetterie\">Billetterie</h3><p>La billetterie en ligne permet de réserver sa place à l'avance, de connaître l'affluence attendue et d'envoyer un rappel automatique la veille du concert. Elle reste compatible avec l'entrée libre : on réserve gratuitement, et le plateau se fait sur place.</p><h3 id=\"adhesion\">Adhésion</h3><p>L'adhésion soutient le fonctionnement courant de l'association et donne voix au chapitre lors de l'assemblée générale annuelle.</p><h3 id=\"mecenat\">Mécénat d'entreprise</h3><p>Le mécénat relève de la loi Aillagon du 1<sup>er</sup> août 2003 : 60 % du montant du don est déductible de l'impôt sur les sociétés, dans la limite de 0,5 ‰ du chiffre d'affaires hors taxes, avec report possible sur cinq exercices. En contrepartie, l'entreprise bénéficie d'une visibilité (logo, mention, invitations) plafonnée à 25 % du montant du don.</p>":
+  "<p class=\"lead\">Darowizny, składki członkowskie i bilety będą obsługiwane przez <strong>HelloAsso</strong>, wiodącą platformę francuskich stowarzyszeń: 0 % prowizji, automatyczne potwierdzenie podatkowe, hosting we Francji i zgodność z RODO.</p><div class=\"note\"><p><strong>Konto założone, kampania do opublikowania.</strong> Stowarzyszenie ma już swoją stronę w HelloAsso. Zarząd musi jeszcze utworzyć tam formularz darowizny: powyższe przyciski połączą się z nim automatycznie, bez zmian na stronie. Na razie prowadzą do strony stowarzyszenia.</p></div><h3 id=\"billetterie\">Bilety</h3><p>Rezerwacja online pozwala zająć miejsce z wyprzedzeniem, oszacować frekwencję i wysłać automatyczne przypomnienie dzień przed koncertem. Działa także przy wstępie wolnym: rezerwacja jest bezpłatna, a zbiórka odbywa się na miejscu.</p><h3 id=\"adhesion\">Członkostwo</h3><p>Składka wspiera bieżącą działalność stowarzyszenia i daje prawo głosu na dorocznym walnym zgromadzeniu.</p><h3 id=\"mecenat\">Mecenat firmowy</h3><p>Mecenat reguluje francuska ustawa Aillagon z 1 sierpnia 2003 roku: 60 % kwoty darowizny podlega odliczeniu od podatku dochodowego od osób prawnych, do 0,5 ‰ obrotu netto, z możliwością przeniesienia na pięć lat. W zamian firma otrzymuje widoczność (logo, wzmianka, zaproszenia) o wartości do 25 % kwoty darowizny.</p>",
 "Ils nous soutiennent déjà": "Już nas wspierają",
 "Nos partenaires": "Nasi partnerzy",
 "<p class=\"lead\">Nous remercions chaleureusement nos sponsors pour leur soutien fidèle.</p>":
@@ -342,7 +360,8 @@ T = {
 missing = []
 def tr(o, path=""):
     if isinstance(o, dict):
-        return {k: (v if k in SKIP_KEYS else tr(v, f"{path}.{k}")) for k, v in o.items()}
+        return {k: (v if k in SKIP_KEYS or k.startswith("_") else tr(v, f"{path}.{k}"))
+                for k, v in o.items()}
     if isinstance(o, list):
         return [tr(v, f"{path}[{i}]") for i, v in enumerate(o)]
     if isinstance(o, str):
@@ -350,7 +369,14 @@ def tr(o, path=""):
             return T[o]
         if o.startswith("Saison 20"):          # « Saison 2013-2014 » → « Sezon 2013-2014 »
             return "Sezon " + o[7:]
-        if o.strip() and not o.startswith(("http", "page:", "#", "mailto:")) and not o.isdigit():
+        if o.startswith("mailto:") and "?subject=" in o:
+            # L'objet pré-rempli est vu par l'utilisateur : il se traduit aussi.
+            adr, sujet = o.split("?subject=", 1)
+            if sujet in T:
+                return f"{adr}?subject={T[sujet]}"
+            missing.append((path + " [objet mailto]", sujet))
+            return o
+        if o.strip() and not o.startswith(("http", "page:", "media:", "ha:", "#", "mailto:")) and not o.isdigit():
             missing.append((path, o))
         return o
     return o
