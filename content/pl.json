@@ -182,9 +182,9 @@
           "type": "posterFeatured",
           "eyebrow": "Na afiszu",
           "h2": "Najbliższy koncert",
-          "image": "affiche_actu",
-          "image_alt": "Afisz najbliższego koncertu Orkiestry Kameralnej Wissembourg",
-          "html": "<p class=\"lead\">W sobotę 7 listopada o godz. 19, w kościele Saint-Jean w Wissembourgu, orkiestra wykona <em>Petite Messe solennelle</em> Rossiniego; nazajutrz o godz. 17 w St. Johannes w Landau. Wstęp wolny, zbiórka na rzecz stowarzyszenia.</p><p class=\"muted\">Afisz trzeba jeszcze zastąpić afiszem tego koncertu. W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
+          "image": "affiche_rossini",
+          "image_alt": "Afisz koncertu Petite Messe solennelle Rossiniego w wykonaniu Orkiestry z Wissembourga i Chóru Volta, 7 i 8 listopada 2026",
+          "html": "<p class=\"lead\">W sobotę 7 listopada o godz. 19, w kościele Saint-Jean w Wissembourgu, orkiestra i <strong>Chór Volta</strong> wykonają <em>Petite Messe solennelle</em> Rossiniego; nazajutrz o godz. 17 w St. Johannes w Landau. Wstęp wolny, zbiórka na rzecz stowarzyszenia.</p><p class=\"muted\">W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
           "buttons": [
             {
               "label": "Wszystkie koncerty",
@@ -527,13 +527,21 @@
     "agenda": {
       "title": "Kalendarz i sezony — Orchestre de Chambre de Wissembourg",
       "description": "Nadchodzące koncerty Orkiestry Kameralnej Wissembourg oraz archiwum czternastu sezonów od 2011 roku.",
-      "og_image": "affiche_actu",
+      "og_image": "affiche_rossini",
       "blocks": [
         {
           "type": "pagehead",
           "eyebrow": "Bieżący sezon",
           "h1": "Kalendarz koncertów",
           "lead": "Koncerty we Francji i w Niemczech — w kościołach, salach i szkołach muzycznych Górnego Renu. Wstęp wolny lub zbiórka, o ile nie zaznaczono inaczej."
+        },
+        {
+          "type": "posterFeatured",
+          "eyebrow": "Na afiszu",
+          "h2": "Petite Messe solennelle",
+          "image": "affiche_rossini",
+          "image_alt": "Afisz koncertu Petite Messe solennelle Rossiniego w wykonaniu Orkiestry z Wissembourga i Chóru Volta, 7 i 8 listopada 2026",
+          "html": "<p class=\"lead\">Orkiestra Kameralna Wissembourg i <strong>Chór Volta</strong> wokół dzieła, które Rossini nazywał swoim „ostatnim grzechem starości”. Cztery koncerty po obu stronach Renu.</p><p class=\"muted\">Wstęp wolny, zbiórka na rzecz obu stowarzyszeń.</p>"
         },
         {
           "type": "events",

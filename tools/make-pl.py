@@ -210,6 +210,13 @@ T = {
   "<p class=\"lead\">Przykład wyglądu: w wersji docelowej każdy koncert jest wpisem o określonej strukturze — zaindeksowanym przez Google, możliwym do wyeksportowania do kalendarzy kulturalnych i do przypomnienia w newsletterze.</p>",
 "Oct.": "paź.", "Nov.": "lis.", "Jan.": "sty.",
 "nov.": "lis.",
+"Petite Messe solennelle": "Petite Messe solennelle",
+"Affiche du concert Petite Messe solennelle de Rossini par l'Orchestre de Wissembourg et le Chœur Volta, les 7 et 8 novembre 2026":
+  "Afisz koncertu Petite Messe solennelle Rossiniego w wykonaniu Orkiestry z Wissembourga i Chóru Volta, 7 i 8 listopada 2026",
+"<p class=\"lead\">Samedi 7 novembre à 19 h, église Saint-Jean à Wissembourg : l'orchestre et le <strong>Chœur Volta</strong> donnent la <em>Petite Messe solennelle</em> de Rossini, reprise le lendemain à 17 h à St. Johannes de Landau. Entrée libre, plateau au profit de l'association.</p><p class=\"muted\">Dans le site définitif, chaque concert est saisi comme une fiche structurée (date, heure, lieu, programme, tarif) : Google et les agendas culturels peuvent alors l'indexer, ce qui est impossible avec une simple image.</p>":
+  "<p class=\"lead\">W sobotę 7 listopada o godz. 19, w kościele Saint-Jean w Wissembourgu, orkiestra i <strong>Chór Volta</strong> wykonają <em>Petite Messe solennelle</em> Rossiniego; nazajutrz o godz. 17 w St. Johannes w Landau. Wstęp wolny, zbiórka na rzecz stowarzyszenia.</p><p class=\"muted\">W wersji docelowej każdy koncert jest wpisem o określonej strukturze (data, godzina, miejsce, program, bilety): dzięki temu Google i kalendarze kulturalne mogą go zaindeksować, co przy zwykłym obrazku jest niemożliwe.</p>",
+"<p class=\"lead\">L'Orchestre de Chambre de Wissembourg et le <strong>Chœur Volta</strong> réunis autour de l'œuvre que Rossini appelait son « dernier péché de vieillesse ». Quatre concerts, de part et d'autre du Rhin.</p><p class=\"muted\">Entrée libre, plateau au profit des deux associations.</p>":
+  "<p class=\"lead\">Orkiestra Kameralna Wissembourg i <strong>Chór Volta</strong> wokół dzieła, które Rossini nazywał swoim „ostatnim grzechem starości”. Cztery koncerty po obu stronach Renu.</p><p class=\"muted\">Wstęp wolny, zbiórka na rzecz obu stowarzyszeń.</p>",
 # --- saison 2026-2027 : Petite Messe solennelle de Rossini, quatre dates ---
 "<p class=\"lead\">Quatre concerts autour d'une même œuvre : la <em>Petite Messe solennelle</em> de Rossini. Deux dates sont arrêtées, deux restent à caler.</p>":
   "<p class=\"lead\">Cztery koncerty wokół jednego dzieła: <em>Petite Messe solennelle</em> Rossiniego. Dwie daty są ustalone, dwie pozostają do uzgodnienia.</p>",
